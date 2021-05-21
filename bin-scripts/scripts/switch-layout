@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+LAYOUT="$1"
+LAYOUT=${LAYOUT:-us}
+setxkbmap -layout $LAYOUT && killall -USR1 i3status-rs

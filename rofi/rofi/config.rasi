@@ -1,0 +1,5 @@
+configuration {
+    font: "Source Code Pro for Powerline 10";
+    modi: "run,window";
+    theme: "gruvbox-dark-hard";
+}
