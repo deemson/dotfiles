@@ -1,9 +1,19 @@
 separator=false
 markup=pango
 
+[networkmanager]
+command=blocks/networkmanager.sh
+interval=10
+
+[bluetooth]
+command=blocks/bluetooth.sh
+interval=10
+signal=4
+
 [battery]
 command=blocks/battery.sh
 interval=10
+signal=2
 
 [keymap]
 command=blocks/keymap.sh

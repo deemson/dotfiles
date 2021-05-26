@@ -8,19 +8,15 @@ layout=$(setxkbmap -query | grep layout | sed --regexp-extended 's/layout: +([a-
 case $layout in
 us)
     text=EN
-    col=$col_green
     ;;
 ru)
     text=RU
-    col=$col_blue
     ;;
 ua)
     text=UA
-    col=$col_yellow
     ;;
 de)
     text=DE
-    col=$col_purple
     ;;
 esac
-printf "$lsep $icon <span fgcolor=\"$col\">$text</span> $rsep\\n"
+printf "$lsep $icon $text $rsep\\n"
