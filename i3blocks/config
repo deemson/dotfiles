@@ -4,6 +4,7 @@ markup=pango
 [networkmanager]
 command=blocks/networkmanager.sh
 interval=10
+signal=3
 
 [bluetooth]
 command=blocks/bluetooth.sh
