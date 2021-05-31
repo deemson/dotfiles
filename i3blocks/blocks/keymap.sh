@@ -19,4 +19,4 @@ de)
     text=DE
     ;;
 esac
-printf "$lsep $icon $text $rsep\\n"
+printf "$lsep $text $rsep\\n"

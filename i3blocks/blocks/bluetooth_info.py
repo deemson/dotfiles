@@ -2,7 +2,7 @@
 import sys
 
 icons = {
-    'audio-card': ''
+    'audio-card': 'A'
 }
 
 color_enabled = sys.argv[1]

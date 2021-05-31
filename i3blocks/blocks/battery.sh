@@ -3,12 +3,6 @@
 source $HOME/.config/i3blocks/colors.sh
 source $HOME/.config/i3blocks/common.sh
 
-bat_icon_full=
-bat_icon_three_quarters=
-bat_icon_half=
-bat_icon_quarter=
-bat_icon_empty=
-ac_icon=
 batstatus=""
 
 for entry in /sys/class/power_supply/*; do
@@ -16,20 +10,35 @@ for entry in /sys/class/power_supply/*; do
         battery=$(cat $entry/capacity)
         if (($battery == 100)); then
             battery=..
-            bicon=$bat_icon_full
+            bcol=$col_blue
         elif (($battery > 90)); then
-            bicon=$bat_icon_full
+            bcol=$col_blue
         elif (($battery > 60)); then
-            bicon=$bat_icon_three_quarters
+            bcol=$col_green
         elif (($battery > 40)); then
-            bicon=$bat_icon_half
+            bcol=$col_yellow
         elif (($battery > 10)); then
-            bicon=$bat_icon_quarter
+            bcol=$col_orange
         else
-            bicon=$bat_icon_empty
+            bcol=$col_red
         fi
         battery=$(printf %02d $battery)
-        batstatus+=" $bicon $battery"
+        st=$(cat $entry/status)
+        case $st in
+        Charging)
+            stsym="+"
+            stcol=$col_green
+            ;;
+        Discharging)
+            stsym="-"
+            stcol=$col_red
+            ;;
+        *)
+            stsym="?"
+            stcol=$col_bg4
+            ;;
+        esac
+        batstatus+=" <span fgcolor=\"$bcol\">$battery</span><span fgcolor=\"$stcol\">$stsym</span>"
     fi
 done
 ac=$(cat /sys/class/power_supply/AC/online)
@@ -38,4 +47,4 @@ if (($ac == 1)); then
 else
     ac_color=$col_bg1
 fi
-printf "$lsep$batstatus <span fgcolor=\"$ac_color\">$ac_icon</span> $rsep\\n"
+printf "$lsep$batstatus <span fgcolor=\"$ac_color\">.</span> $rsep\\n"
