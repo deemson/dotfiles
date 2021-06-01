@@ -10,32 +10,20 @@ for entry in /sys/class/power_supply/*; do
         battery=$(cat $entry/capacity)
         if (($battery == 100)); then
             battery=..
-            bcol=$col_blue
-        elif (($battery > 90)); then
-            bcol=$col_blue
-        elif (($battery > 60)); then
-            bcol=$col_green
-        elif (($battery > 40)); then
-            bcol=$col_yellow
-        elif (($battery > 10)); then
-            bcol=$col_orange
         else
-            bcol=$col_red
+            battery=$(printf %02d $battery)
         fi
-        battery=$(printf %02d $battery)
+        
         st=$(cat $entry/status)
         case $st in
         Charging)
             stsym="+"
-            stcol=$col_green
             ;;
         Discharging)
             stsym="-"
-            stcol=$col_red
             ;;
         *)
             stsym="?"
-            stcol=$col_bg4
             ;;
         esac
         batstatus+=" <span fgcolor=\"$col_fg\">$battery</span><span fgcolor=\"$col_gray\">$stsym</span>"
