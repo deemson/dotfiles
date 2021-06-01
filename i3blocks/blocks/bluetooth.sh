@@ -7,7 +7,7 @@ declare bt_col
 btstatus=""
 
 if bluetoothctl show | grep Powered | grep yes >/dev/null; then
-    bt_col=$col_fg
+    bt_col=$col_fg4
 else
     bt_col=$col_bg1
 fi

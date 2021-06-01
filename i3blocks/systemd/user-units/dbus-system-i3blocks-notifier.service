@@ -2,7 +2,7 @@
 Description=Notify i3blocks when certain D-Bus events occur
 
 [Service]
-ExecStart=%h/.dotfiles/systemd/scripts/dbus-system-i3blocks-notifier.sh
+ExecStart=%h/.dotfiles/i3blocks/systemd/scripts/dbus-system-i3blocks-notifier.sh
 
 [Install]
 WantedBy=default.target

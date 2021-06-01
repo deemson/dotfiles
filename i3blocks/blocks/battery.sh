@@ -38,7 +38,7 @@ for entry in /sys/class/power_supply/*; do
             stcol=$col_bg4
             ;;
         esac
-        batstatus+=" <span fgcolor=\"$bcol\">$battery</span><span fgcolor=\"$stcol\">$stsym</span>"
+        batstatus+=" <span fgcolor=\"$col_fg\">$battery</span><span fgcolor=\"$col_gray\">$stsym</span>"
     fi
 done
 ac=$(cat /sys/class/power_supply/AC/online)
@@ -47,4 +47,4 @@ if (($ac == 1)); then
 else
     ac_color=$col_bg1
 fi
-printf "$lsep$batstatus <span fgcolor=\"$ac_color\">.</span> $rsep\\n"
+printf "$lsep <span fgcolor=\"$col_fg4\">POW</span>$batstatus <span fgcolor=\"$ac_color\">AC</span> $rsep\\n"

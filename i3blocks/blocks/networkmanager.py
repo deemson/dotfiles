@@ -5,8 +5,8 @@ import re
 color_enabled = sys.argv[1]
 color_disabled = sys.argv[2]
 icons = {
-    'wifi': 'W',
-    'wireguard': 'W'
+    'wifi': 'WiFi',
+    'wireguard': 'VPN'
 }
 
 statuses = []
