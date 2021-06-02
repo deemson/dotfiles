@@ -9,7 +9,7 @@ for entry in /sys/class/power_supply/*; do
     if [[ $(basename $entry) == "BAT"* ]]; then
         battery=$(cat $entry/capacity)
         if (($battery == 100)); then
-            battery=..
+            battery=".."
         else
             battery=$(printf %02d $battery)
         fi
@@ -21,6 +21,9 @@ for entry in /sys/class/power_supply/*; do
             ;;
         Discharging)
             stsym="-"
+            ;;
+        Full)
+            stsym="!"
             ;;
         *)
             stsym="?"
