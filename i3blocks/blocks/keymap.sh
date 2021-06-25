@@ -3,7 +3,6 @@
 source $HOME/.config/i3blocks/colors.sh
 source $HOME/.config/i3blocks/common.sh
 
-icon=
 layout=$(setxkbmap -query | grep layout | sed --regexp-extended 's/layout: +([a-zA-Z]+)/\1/')
 case $layout in
 us)
