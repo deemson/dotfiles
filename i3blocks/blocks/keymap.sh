@@ -9,13 +9,13 @@ case $layout in
 us)
     text=EN
     ;;
-ru)
+ru*)
     text=RU
     ;;
-ua)
+ua*)
     text=UA
     ;;
-de)
+de*)
     text=DE
     ;;
 esac

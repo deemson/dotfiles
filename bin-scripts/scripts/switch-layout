@@ -2,4 +2,11 @@
 
 LAYOUT="$1"
 LAYOUT=${LAYOUT:-us}
+case $LAYOUT in
+us)
+    LAYOUT=us
+    ;;
+*)
+    LAYOUT=$LAYOUT,us
+esac
 setxkbmap -layout $LAYOUT && pkill -SIGRTMIN+1 i3blocks
