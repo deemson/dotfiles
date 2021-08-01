@@ -1,0 +1,10 @@
+{
+    "editor.fontSize": 13,
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.renderWhitespace": "all",
+    "window.zoomLevel": 1,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "explorer.compactFolders": false,
+    "update.mode": "manual"
+}
