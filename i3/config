@@ -137,7 +137,7 @@ client.background #1d2021
 # finds out, if available)
 bar {
     position bottom
-    status_command i3status-rs
+    status_command i3blocks
     # colors for i3bar
     # start-i3bar-colors
     colors {
