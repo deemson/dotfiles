@@ -12,6 +12,8 @@ floating_modifier $mod
 
 # start terminal
 bindsym $mod+t exec kitty
+# start file manager
+bindsym $mod+g exec pcmanfm
 # start program launcher
 bindsym $mod+r exec rofi -show run
 # use to search for a window
