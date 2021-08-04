@@ -1,8 +1,8 @@
 separator=false
 markup=pango
 
-[networkmanager]
-command=blocks/networkmanager.sh
+[iwd]
+command=blocks/iwd.sh
 interval=10
 signal=3
 

@@ -11,7 +11,7 @@ dbus-monitor --system --profile | while read -r line; do
     interface=${parts[6]}
     member=${parts[7]}
     case $path in
-    *NetworkManager*)
+    *iwd*)
         pkill -SIGRTMIN+3 i3blocks
         ;;
     *UPower*)
