@@ -1,4 +1,4 @@
-font pango:Terminus 12
+font pango:Iosevka 13
 
 # Use Win-key as mod key
 set $mod Mod4
