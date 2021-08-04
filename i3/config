@@ -1,4 +1,4 @@
-font pango:Source Code Pro for Powerline 10
+font pango:Terminus 12
 
 # Use Win-key as mod key
 set $mod Mod4
