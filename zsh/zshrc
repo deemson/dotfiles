@@ -1,0 +1,64 @@
+# retain colors even in console terminal
+export TERM="xterm-256color"
+# default editor
+export EDITOR=nvim
+# set up history
+HISTSIZE=$(( 1024 * 256)) # size
+SAVEHIST=$HISTSIZE # persistent size
+HISTFILE=~/.zsh_history
+setopt hist_ignore_all_dups hist_expire_dups_first hist_find_no_dups
+
+autoload -Uz compinit promptinit vcs_info
+compinit
+promptinit
+
+# group completion by category
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-dirs-first true
+# use menu completion and add colors
+zstyle ':completion:*' menu select yes
+zstyle ':completion:*:default' list-colors ''
+# enable git in zsh vcs_info module
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' formats '%F{blue}%s%f%B%F{black}[%f%%b%F{yellow}%b%f%B%F{black}]%f%%b%u%c'
+zstyle ':vcs_info:*' stagedstr '%{%F{green}%B%}+%{%b%f%}'
+zstyle ':vcs_info:*' unstagedstr '%{%F{red}%B%}-%{%b%f%}'
+precmd () { vcs_info }
+
+# only letters are considered "word characters" in order
+# for word motions to work nicely (Alt+BSp, Alt+{F,B} etc.)
+WORDCHARS=''
+
+setopt prompt_subst
+# nice PROMPT
+prompt_vcs='${vcs_info_msg_0_}'
+prompt_path='%B%F{black}[ %f%b%F{green}%(6~|%-2~/.../%2~|%5~)%f%B%F{black} ]%f%b'
+prompt_code='%B%F{black}%(?..%? )%f%b'
+PROMPT=$prompt_path$' '$prompt_vcs$'\n'$prompt_code$'%F{black}%B> %b%f'
+# RPROMPT="%F{magenta}[%f%F{${1:-green}}%~%f%F{magenta}]%f"
+
+export PATH=$HOME/.bin:$PATH
+# deal with Java Swing issue on non-reparenting WMs
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+# color scheme
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[default]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[command]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[function]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[path]='fg=green'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=green,bold'
+
+# fuzzy search on Ctrl+{P,N}
+bindkey -e
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
