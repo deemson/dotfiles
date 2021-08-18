@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-set -x
+# set -x
 
-while read url path; do
+$HOME/.dotfiles/zsh/repos.py | while read -r url path; do
     git clone $url ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/$path
-done <<<$($HOME/.dotfiles/zsh/repos.py)
+done
