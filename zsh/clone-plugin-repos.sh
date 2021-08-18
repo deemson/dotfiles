@@ -1,9 +1,7 @@
+#!/usr/bin/env sh
+
 set -x
 
-ZSH_PLUGINS="git@github.com:zsh-users/zsh-syntax-highlighting.git git@github.com:zsh-users/zsh-autosuggestions.git git@github.com:zsh-users/zsh-history-substring-search.git"
-
-mkdir -p $HOME/.zsh/plugins
-cd $HOME/.zsh/plugins
-for PLUGIN in $ZSH_PLUGINS; do
-    git clone $PLUGIN
-done
+while read url path; do
+    git clone $url ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/$path
+done <<<$($HOME/.dotfiles/zsh/repos.py)

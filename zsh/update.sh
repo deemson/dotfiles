@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 
 set -x
-cp -r $HOME/.zshrc ./zshrc
+cp $HOME/.zshrc ./zshrc
+cp $HOME/.p10k.zsh ./p10k.zsh

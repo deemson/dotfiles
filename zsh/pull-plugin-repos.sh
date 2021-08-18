@@ -1,5 +1,6 @@
 set -x
-for PLUGIN in $HOME/.zsh/plugins/*; do
-    cd $PLUGIN
+
+while read url path; do
+    cd ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/$path
     git pull
-done
+done <<<$($HOME/.dotfiles/zsh/repos.py)
