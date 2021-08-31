@@ -1,5 +1,4 @@
 configuration {
     font: "Iosevka 14";
     modi: "run,window";
-    theme: "gruvbox-dark-hard";
 }
