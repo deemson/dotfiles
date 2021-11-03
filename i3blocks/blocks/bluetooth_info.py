@@ -2,14 +2,14 @@
 import sys
 
 icons = {
-    'audio-card': 'A'
+    'audio-headphones': 'A'
 }
 
 color_enabled = sys.argv[1]
 color_disabled = sys.argv[2]
 is_shown_anyway = False
 is_connected = False
-icon = ''
+icon = '?'
 
 for line in sys.stdin:
     stripped_line = line.strip()
