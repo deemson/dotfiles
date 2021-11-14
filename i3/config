@@ -1,3 +1,7 @@
+gaps inner 6
+smart_gaps on
+smart_borders on
+
 font pango:Iosevka 13
 
 # Use Win-key as mod key
@@ -156,4 +160,3 @@ bar {
 }
 
 bindsym $mod+Print exec capture-region
-

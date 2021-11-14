@@ -2,7 +2,8 @@
 import sys
 
 icons = {
-    'audio-headphones': 'A'
+    'audio-headphones': 'H',
+    'audio-card': 'A'
 }
 
 color_enabled = sys.argv[1]
