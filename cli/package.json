@@ -1,0 +1,19 @@
+{
+  "name": "deemson-dotfiles-cli",
+  "version": "0.1.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.14.12"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "pino": "^9.3.1",
+    "pino-pretty": "^11.2.1"
+  }
+}
