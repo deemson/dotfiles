@@ -1,4 +1,5 @@
 require('config.base')
+require('config.vim')
 require('config.lazy')
 require('config.colorscheme')
 require('config.mason')
