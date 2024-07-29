@@ -2,8 +2,6 @@
 vim.wo.number = true
 -- display relative line numbers for easier navigation
 vim.wo.relativenumber = true
--- set space as <leader> key
-vim.g.mapleader = ' '
 
 -- show tabs/spaces/etc
 vim.opt.list = true
