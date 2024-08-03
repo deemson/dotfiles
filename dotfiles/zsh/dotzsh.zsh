@@ -1,4 +1,5 @@
 export LANG='en_US.UTF-8'
+export EDITOR=nvim
 
 # Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
