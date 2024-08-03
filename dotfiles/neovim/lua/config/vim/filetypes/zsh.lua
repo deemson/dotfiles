@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'nu',
+  pattern = 'zsh',
   callback = function()
     vim.opt_local.expandtab = true
     vim.opt_local.tabstop = 4

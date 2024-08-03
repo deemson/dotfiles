@@ -14,6 +14,14 @@ require('formatter').setup({
           stdin = true
         }
       end
+    },
+    python = {
+      function()
+        return { exe = vim.fn.stdpath('data') .. '/mason/bin/black', args = { '--line-length=79' }, sdtin = true }
+      end
     }
   }
 })
+
+vim.keymap.set('n', '<leader>f', ':Format<CR>', { silent = true, noremap = true })
+vim.keymap.set('v', '<leader>f', ':Format<CR>', { silent = true, noremap = true })

@@ -13,6 +13,8 @@ export const neovimCommands = () => {
 
   neovim.command('save')
     .action(async () => {
+      logger.info({ dir: repoDir }, 'cleaning')
+      await fs.rm(repoDir, { recursive: true, force: true })
       logger.info({ from: systemDir, to: repoDir }, 'saving')
       const systemLuaDir = path.join(systemDir, 'lua')
       const repoLuaDir = path.join(repoDir, 'lua')

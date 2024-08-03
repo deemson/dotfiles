@@ -129,12 +129,19 @@ untracked = '[?](bright-black)'
 stashed = '[.](yellow)'
 modified = '[!](yellow)'
 staged = '[+](green)'
+renamed = '[»](yellow)'
+deleted = '[](red)'
 
 [golang]
 format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
 symbol = ''
 style = 'fg:cyan'
 not_capable_style = 'fg:red'
+
+[python]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ $virtualenv](bright-black)[ ](bright-black)'
+symbol = '󰌠'
+style = 'fg:yellow'
 
 [status]
 disabled = false

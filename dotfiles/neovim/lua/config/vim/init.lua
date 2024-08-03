@@ -1,2 +1,2 @@
-require('config.vim.filetypeformatting')
+require('config.vim.filetypes')
 require('config.vim.keymaps')
