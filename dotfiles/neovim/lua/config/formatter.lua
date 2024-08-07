@@ -19,6 +19,11 @@ require('formatter').setup({
       function()
         return { exe = vim.fn.stdpath('data') .. '/mason/bin/black', args = { '--line-length=79' }, sdtin = true }
       end
+    },
+    ['*'] = {
+      function()
+        vim.lsp.buf.format()
+      end
     }
   }
 })

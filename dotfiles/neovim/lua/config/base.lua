@@ -8,6 +8,9 @@ vim.opt.list = true
 -- set display symbols for them
 vim.opt.listchars = { tab = '→ ', space = '·', trail = '·', extends = '▶', precedes = '◀' }
 
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- disable word wrap
 vim.opt.wrap = false
 
