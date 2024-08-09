@@ -1,8 +1,8 @@
 vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<A-S-,>', '<Cmd>BufferMovePrevious<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-S-.>', '<Cmd>BufferMoveNext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-C-,>', '<Cmd>BufferMovePrevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-C-.>', '<Cmd>BufferMoveNext<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', { noremap = true, silent = true })
