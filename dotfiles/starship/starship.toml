@@ -1,0 +1,156 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+
+command_timeout = 2000
+
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$os\
+$container\
+$shell\
+$character"""
+
+right_format='''
+$time
+'''
+
+[aws]
+disabled = true
+
+[buf]
+disabled = true
+
+[cmd_duration]
+disabled = true
+min_time = 0
+show_milliseconds = true
+format = '[ ](bright-black)[$duration](yellow)[ ](bright-black)'
+
+[directory]
+truncation_symbol = '…/'
+format = '[ ](bright-black)[$path]($style)[$read_only]($read_only_style)[ ](bright-black)'
+style = 'blue'
+read_only = ''
+read_only_style = 'yellow'
+
+[gcloud]
+disabled = true
+
+[git_branch]
+format = '[ ](bright-black)[$symbol ](bright-black)[$branch](fg:purple)[ ](bright-black)'
+symbol = ''
+
+[git_status]
+format = '[ ](bright-black)[$all_status$ahead_behind]($style)[ ](bright-black)'
+up_to_date = '[](green)'
+untracked = '[?](bright-black)'
+stashed = '[.](yellow)'
+modified = '[!](yellow)'
+staged = '[+](green)'
+renamed = '[»](yellow)'
+deleted = '[](red)'
+
+[golang]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
+symbol = ''
+style = 'fg:cyan'
+not_capable_style = 'fg:red'
+
+[python]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ $virtualenv](bright-black)[ ](bright-black)'
+symbol = '󰌠'
+style = 'fg:yellow'
+
+[status]
+disabled = false
+symbol = ''
+format = '[$symbol$status]($style) '
+style = 'red'
+
+[time]
+disabled = false
+format = '[ ](bright-black)[ ](bright-black)$time[ ](bright-black)'
