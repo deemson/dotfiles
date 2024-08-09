@@ -1,5 +1,0 @@
-configuration {
-    font: "Iosevka 14";
-    modi: "run,window";
-}
-@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
