@@ -140,6 +140,11 @@ symbol = ''
 style = 'fg:cyan'
 not_capable_style = 'fg:red'
 
+[lua]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
+symbol = ''
+style = 'fg:bright-blue'
+
 [python]
 format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ $virtualenv](bright-black)[ ](bright-black)'
 symbol = '󰌠'
