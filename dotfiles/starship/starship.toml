@@ -117,15 +117,23 @@ style = 'blue'
 read_only = ''
 read_only_style = 'yellow'
 
+[docker_context]
+disabled = true
+
 [gcloud]
 disabled = true
 
 [git_branch]
-format = '[ ](bright-black)[$symbol ](bright-black)[$branch](fg:purple)[ ](bright-black)'
+format = '[ ](bright-black)[$symbol ](bright-black)[$branch](fg:purple)'
 symbol = ''
 
+[git_commit]
+format = '([|](bright-black)[$tag](fg:green))'
+tag_disabled = false
+tag_symbol = ''
+
 [git_status]
-format = '[ ](bright-black)[$all_status$ahead_behind]($style)[ ](bright-black)'
+format = '([|](bright-black)[$all_status$ahead_behind]($style))[ ](bright-black)'
 up_to_date = '[](green)'
 untracked = '[?](bright-black)'
 stashed = '[.](yellow)'
