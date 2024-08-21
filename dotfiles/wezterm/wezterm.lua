@@ -16,6 +16,7 @@ wezterm.on('format-tab-title', function(tab)
 end)
 
 return {
+  disable_default_key_bindings = true,
   color_scheme = color_schema_name,
 
   font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight = 'Medium' }),
@@ -24,7 +25,7 @@ return {
   keys = {
     { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
     { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
-    { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
+    -- { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
     { key = '!', mods = 'CTRL', action = act.ActivateTab(0) },
     { key = '!', mods = 'SHIFT|CTRL', action = act.ActivateTab(0) },
     { key = '\"', mods = 'ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
