@@ -132,6 +132,9 @@ format = '([|](bright-black)[$tag](fg:green))'
 tag_disabled = false
 tag_symbol = ''
 
+[git_state]
+format = '([|](bright-black)[$state\[$progress_current/$progress_total\]](fg:yellow))'
+
 [git_status]
 format = '([|](bright-black)[$all_status$ahead_behind]($style))[ ](bright-black)'
 up_to_date = '[](green)'
