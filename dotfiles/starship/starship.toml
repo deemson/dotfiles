@@ -144,6 +144,9 @@ modified = '[!](yellow)'
 staged = '[+](green)'
 renamed = '[»](yellow)'
 deleted = '[](red)'
+ahead = '[⇡](yellow)'
+behind = '[⇣](yellow)'
+diverged = '[⇕](red)'
 
 [golang]
 format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
