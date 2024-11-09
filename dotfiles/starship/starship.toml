@@ -104,6 +104,11 @@ disabled = true
 [buf]
 disabled = true
 
+[c]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version $name]($style)[ ](bright-black)'
+style = 'bright-blue'
+symbol = ''
+
 [cmd_duration]
 disabled = true
 min_time = 0
