@@ -8,6 +8,10 @@ import { copyDirContents } from '../lib/fsutils.js'
 export const zshCommands = () => {
   const repoDir = path.join(dotfilesDir, 'zsh')
   const homeDir = path.join(process.env['HOME'])
+  const systemDotZshDir = path.join(homeDir, '.zsh')
+  const repoDotZshDir = path.join(repoDir, 'dotzsh')
+  const systemDotZshRC = path.join(homeDir, '.zshrc')
+  const repoDotZshRC = path.join(repoDir, 'dotzsh.zsh')
 
   const zsh = program.command('zsh')
 
@@ -16,10 +20,6 @@ export const zshCommands = () => {
       logger.info({ dir: repoDir }, 'cleaning')
       await fs.rm(repoDir, { recursive: true, force: true })
       logger.info({}, 'saving')
-      const systemDotZshDir = path.join(homeDir, '.zsh')
-      const repoDotZshDir = path.join(repoDir, 'dotzsh')
-      const systemDotZshRC = path.join(homeDir, '.zshrc')
-      const repoDotZshRC = path.join(repoDir, 'dotzsh.zsh')
       await copyDirContents(systemDotZshDir, repoDotZshDir)
       await fs.copyFile(systemDotZshRC, repoDotZshRC)
       logger.info({}, 'done')
@@ -27,5 +27,11 @@ export const zshCommands = () => {
 
   zsh.command('load')
     .action(async () => {
+      logger.info({ dir: systemDotZshDir }, 'cleaning')
+      await fs.rm(systemDotZshDir, { recursive: true, force: true })
+      logger.info({}, 'loading')
+      await copyDirContents(repoDotZshDir, systemDotZshDir)
+      await fs.copyFile(repoDotZshRC, systemDotZshRC)
+      logger.info({}, 'done')
     })
 }

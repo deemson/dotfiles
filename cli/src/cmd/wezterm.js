@@ -22,5 +22,8 @@ export const weztermCommands = () => {
 
   wezterm.command('load')
     .action(async () => {
+      logger.info({ from: repoConfig, to: systemConfig }, 'loading')
+      await fs.copyFile(repoConfig, systemConfig)
+      logger.info({ from: repoConfig, to: systemConfig }, 'done')
     })
 }
