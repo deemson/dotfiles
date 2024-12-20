@@ -1,13 +1,13 @@
 import { program } from 'commander'
-import { dotfilesDir } from '../lib/paths.js'
+import { dotfilesDir, homeDir } from '../lib/paths.ts'
 import path from 'node:path'
 import fs from 'node:fs/promises'
-import { logger } from '../lib/logging.js'
-import { copyDirContents } from '../lib/fsutils.js'
+import { logger } from '../lib/logging.ts'
+import { copyDirContents } from '../lib/fsutils.ts'
 
 export const neovimCommands = () => {
   const repoDir = path.join(dotfilesDir, 'neovim')
-  const systemDir = path.join(process.env['HOME'], '.config', 'nvim')
+  const systemDir = path.join(homeDir, '.config', 'nvim')
   const systemLuaDir = path.join(systemDir, 'lua')
   const repoLuaDir = path.join(repoDir, 'lua')
   const systemInitLua = path.join(systemDir, 'init.lua')

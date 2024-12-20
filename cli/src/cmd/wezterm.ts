@@ -1,17 +1,17 @@
-import path from 'node:path'
-import { dotfilesDir } from '../lib/paths.js'
 import { program } from 'commander'
-import { logger } from '../lib/logging.js'
+import { dotfilesDir, homeDir } from '../lib/paths.ts'
+import path from 'node:path'
 import fs from 'node:fs/promises'
+import { logger } from '../lib/logging.ts'
 
-export const starshipCommands = () => {
-  const repoDir = path.join(dotfilesDir, 'starship')
-  const repoConfig = path.join(repoDir, 'starship.toml')
-  const systemConfig = path.join(process.env['HOME'], '.config', 'starship.toml')
+export const weztermCommands = () => {
+  const repoDir = path.join(dotfilesDir, 'wezterm')
+  const repoConfig = path.join(repoDir, 'wezterm.lua')
+  const systemConfig = path.join(homeDir, '.wezterm.lua')
 
-  const starship = program.command('starship')
+  const wezterm = program.command('wezterm')
 
-  starship.command('save')
+  wezterm.command('save')
     .action(async () => {
       logger.info({ from: systemConfig, to: repoConfig }, 'saving')
       await fs.mkdir(repoDir, { recursive: true })
@@ -19,7 +19,7 @@ export const starshipCommands = () => {
       logger.info({ from: systemConfig, to: repoConfig }, 'done')
     })
 
-  starship.command('load')
+  wezterm.command('load')
     .action(async () => {
       logger.info({ from: repoConfig, to: systemConfig }, 'loading')
       await fs.copyFile(repoConfig, systemConfig)

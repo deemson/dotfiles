@@ -1,13 +1,12 @@
 import { program } from 'commander'
-import { dotfilesDir } from '../lib/paths.js'
+import { dotfilesDir, homeDir } from '../lib/paths.ts'
 import path from 'node:path'
 import fs from 'node:fs/promises'
-import { logger } from '../lib/logging.js'
-import { copyDirContents } from '../lib/fsutils.js'
+import { logger } from '../lib/logging.ts'
+import { copyDirContents } from '../lib/fsutils.ts'
 
 export const zshCommands = () => {
   const repoDir = path.join(dotfilesDir, 'zsh')
-  const homeDir = path.join(process.env['HOME'])
   const systemDotZshDir = path.join(homeDir, '.zsh')
   const repoDotZshDir = path.join(repoDir, 'dotzsh')
   const systemDotZshRC = path.join(homeDir, '.zshrc')
