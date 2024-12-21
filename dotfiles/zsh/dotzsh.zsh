@@ -20,6 +20,7 @@ source $HOME/.zsh/plugins/syntax-highlight.zsh
 source $HOME/.zsh/plugins/history-substring-search.zsh
 # external
 source $HOME/.zsh/external/pyenv.zsh
+source $HOME/.zsh/external/bun.zsh
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
@@ -32,3 +33,4 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 eval "$(starship init zsh)"
+
