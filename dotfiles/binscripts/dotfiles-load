@@ -4,3 +4,4 @@ dotfiles binscripts load
 dotfiles neovim load
 dotfiles starship load
 dotfiles zsh load
+dotfiles ghostty load

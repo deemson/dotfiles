@@ -1,0 +1,3 @@
+theme = GruvboxDark
+font-size = 14
+keybind = global:cmd+shift+§=toggle_visibility
