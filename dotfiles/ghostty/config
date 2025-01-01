@@ -1,3 +1,4 @@
-theme = GruvboxDark
+theme = GruvboxDarkHard
 font-size = 14
+macos-option-as-alt = true
 keybind = global:cmd+shift+§=toggle_visibility
