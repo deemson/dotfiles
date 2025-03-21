@@ -185,6 +185,11 @@ symbol = ''
 format = '[$symbol$status]($style) '
 style = 'red'
 
+[terraform]
+format = '[ ](bright-black)[$symbol ](bright-black)[$workspace](fg:bright-blue)[ $version](fg:blue)[ ](bright-black)'
+symbol = ''
+
+
 [time]
 disabled = false
 format = '[ ](bright-black)[ ](bright-black)$time[ ](bright-black)'

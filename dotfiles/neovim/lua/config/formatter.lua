@@ -20,11 +20,8 @@ require('formatter').setup({
         return { exe = vim.fn.stdpath('data') .. '/mason/bin/black', args = { '--line-length=79' }, sdtin = true }
       end
     },
-    ['*'] = {
-      function()
-        vim.lsp.buf.format()
-      end
-    }
+    terraform = { function() return { exe = vim.fn.stdpath('data') .. '/mason/bin/terraform-ls', stdin = true } end },
+    ['*'] = { function() vim.lsp.buf.format() end }
   }
 })
 
