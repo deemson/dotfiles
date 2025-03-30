@@ -1,2 +1,3 @@
+require('config.vim.base')
 require('config.vim.filetypes')
-require('config.vim.keymaps')
+require('config.vim.keymap')

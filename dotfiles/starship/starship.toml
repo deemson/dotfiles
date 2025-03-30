@@ -189,6 +189,10 @@ style = 'red'
 format = '[ ](bright-black)[$symbol ](bright-black)[$workspace](fg:bright-blue)[ $version](fg:blue)[ ](bright-black)'
 symbol = ''
 
+[zig]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
+style = 'bold yellow'
+symbol = ''
 
 [time]
 disabled = false
