@@ -1,3 +1,4 @@
+-- barbar manages buffers as tabs
 return {
   'romgrk/barbar.nvim',
   dependencies = {

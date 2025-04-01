@@ -1,3 +1,4 @@
+-- blink-cmp is an auto-completion engine like nvim-cmp, but way faster
 return {
   'saghen/blink.cmp',
   version = '1.*',
