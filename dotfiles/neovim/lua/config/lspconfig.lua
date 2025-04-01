@@ -15,7 +15,8 @@ local configs = {
   pylsp = {},
   ols = {},
   clangd = {},
-  terraformls = {}
+  terraformls = {},
+  gopls = {}
 }
 
 for name, config in pairs(configs) do
