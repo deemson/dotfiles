@@ -25,5 +25,5 @@ require('formatter').setup({
   }
 })
 
-vim.keymap.set('n', '<leader>f', ':Format<CR>', { silent = true, noremap = true })
-vim.keymap.set('v', '<leader>f', ':Format<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', '<A-f>', ':Format<CR>', { silent = true, noremap = true })
+vim.keymap.set('v', '<A-f>', ':Format<CR>', { silent = true, noremap = true })
