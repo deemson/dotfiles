@@ -1,4 +1,3 @@
-require('config.plugins.barbar')
 require('config.plugins.colorscheme')
 require('config.plugins.mason')
 require('config.plugins.mason-lspconfig')
