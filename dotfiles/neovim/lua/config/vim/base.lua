@@ -20,3 +20,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- enable 24-bit colour
 vim.opt.termguicolors = true
+
+-- split on the right (vim does this on the left by default)
+vim.opt.splitright = true

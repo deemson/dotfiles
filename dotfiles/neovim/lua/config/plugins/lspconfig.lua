@@ -16,7 +16,16 @@ local configs = {
   ols = {},
   clangd = {},
   terraformls = {},
-  gopls = {}
+  gopls = {
+    settings = {
+      gopls = {
+        -- completes the stuff that hasn't been imported yet
+        completeUnimported = true,
+        -- put argument placeholders when importing functions
+        usePlaceholders = true
+      }
+    }
+  }
 }
 
 for name, config in pairs(configs) do
