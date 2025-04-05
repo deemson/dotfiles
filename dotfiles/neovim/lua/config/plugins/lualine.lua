@@ -21,7 +21,7 @@ end
 require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = 'gruvbox_dark',
+    theme = 'gruvbox-material',
     component_separators = { left = '', right = '' },
     -- component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
@@ -49,14 +49,21 @@ require('lualine').setup({
     lualine_y = {},
     lualine_z = {}
   },
-  winbar = { lualine_a = { winbar_path }, lualine_b = {}, lualine_c = {}, lualine_x = {}, lualine_y = {}, lualine_z = {} },
+  winbar = {
+    lualine_a = { winbar_path },
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = { {'filetype', icon_only = true} },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
+  },
   inactive_winbar = {
     lualine_a = { winbar_path },
     lualine_b = {},
     lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {}
+    lualine_x = { {'filetype', icon_only = true} },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   tabline = {}
 })
