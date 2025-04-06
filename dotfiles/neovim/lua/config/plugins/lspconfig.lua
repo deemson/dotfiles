@@ -25,7 +25,9 @@ local configs = {
         usePlaceholders = true
       }
     }
-  }
+  },
+  ts_ls = {},
+  astro = {}
 }
 
 for name, config in pairs(configs) do
