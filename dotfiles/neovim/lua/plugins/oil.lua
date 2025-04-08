@@ -1,3 +1,4 @@
+-- oil allows working with files in a regular buffer with motions and all of that
 return {
   'stevearc/oil.nvim',
   ---@module 'oil'

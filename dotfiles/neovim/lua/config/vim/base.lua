@@ -23,3 +23,7 @@ vim.opt.termguicolors = true
 
 -- split on the right (vim does this on the left by default)
 vim.opt.splitright = true
+
+vim.diagnostic.config({
+  virtual_text = true
+})

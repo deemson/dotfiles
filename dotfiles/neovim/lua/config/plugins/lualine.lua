@@ -20,10 +20,8 @@ end
 
 local function winbar_macro_rec()
   local reg = vim.fn.reg_recording()
-  if reg ~= "" then
-    return " " .. reg
-  end
-  return ""
+  if reg ~= '' then return ' ' .. reg end
+  return ''
 end
 
 require('lualine').setup({
@@ -34,7 +32,7 @@ require('lualine').setup({
     -- component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     -- section_separators = { left = '', right = '' },
-    disabled_filetypes = { statusline = { 'oil' }, winbar = {} },
+    disabled_filetypes = { statusline = { 'oil', 'neotest-summary' }, winbar = { 'neotest-summary' } },
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,
@@ -61,7 +59,7 @@ require('lualine').setup({
     lualine_a = { winbar_path },
     lualine_b = { winbar_macro_rec },
     lualine_c = {},
-    lualine_x = { {'filetype', icon_only = true} },
+    lualine_x = { { 'filetype', icon_only = true } },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
   },
@@ -69,7 +67,7 @@ require('lualine').setup({
     lualine_a = { winbar_path },
     lualine_b = {},
     lualine_c = {},
-    lualine_x = { {'filetype', icon_only = true} },
+    lualine_x = { { 'filetype', icon_only = true } },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
   },

@@ -1,3 +1,4 @@
+-- neotest is a neovim test runner
 return {
   'nvim-neotest/neotest',
   dependencies = {
