@@ -12,7 +12,7 @@ local configs = {
       }
     }
   },
-  pylsp = {},
+  pyright = {},
   ols = {},
   clangd = {},
   terraformls = {},
