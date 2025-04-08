@@ -1,4 +1,4 @@
-local winbar_path = require('lualine.components.filename'):extend()
+local winbar_path = require("lualine.components.filename"):extend()
 
 function winbar_path:init(options)
   options.path = 1
@@ -6,70 +6,74 @@ function winbar_path:init(options)
 end
 
 function winbar_path:update_status()
-  if vim.bo.filetype == 'oil' then
-    local ok, oil = pcall(require, 'oil')
+  if vim.bo.filetype == "oil" then
+    local ok, oil = pcall(require, "oil")
     if ok and oil.get_current_dir then
-      local result = vim.fn.fnamemodify(oil.get_current_dir(), ':~:.')
-      if result == '' then return '.' end
+      local result = vim.fn.fnamemodify(oil.get_current_dir(), ":~:.")
+      if result == "" then
+        return "."
+      end
       return result
     end
-    return '?'
+    return "?"
   end
   return winbar_path.super.update_status(self)
 end
 
 local function winbar_macro_rec()
   local reg = vim.fn.reg_recording()
-  if reg ~= '' then return ' ' .. reg end
-  return ''
+  if reg ~= "" then
+    return " " .. reg
+  end
+  return ""
 end
 
-require('lualine').setup({
+require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = 'gruvbox-material',
-    component_separators = { left = '', right = '' },
+    theme = "gruvbox-material",
+    component_separators = { left = "", right = "" },
     -- component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
+    section_separators = { left = "", right = "" },
     -- section_separators = { left = '', right = '' },
-    disabled_filetypes = { statusline = { 'oil', 'neotest-summary' }, winbar = { 'neotest-summary' } },
+    disabled_filetypes = { statusline = { "oil", "neotest-summary" }, winbar = { "neotest-summary" } },
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,
     globalstatus = false,
-    refresh = { statusline = 100, tabline = 100, winbar = 100 }
+    refresh = { statusline = 100, tabline = 100, winbar = 100 },
   },
   sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_a = { "mode" },
+    lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = {},
-    lualine_x = { 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
+    lualine_x = { "filetype" },
+    lualine_y = { "progress" },
+    lualine_z = { "location" },
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {},
-    lualine_x = { 'location' },
+    lualine_x = { "location" },
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {},
   },
   winbar = {
     lualine_a = { winbar_path },
     lualine_b = { winbar_macro_rec },
     lualine_c = {},
-    lualine_x = { { 'filetype', icon_only = true } },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
+    lualine_x = { { "filetype", icon_only = true } },
+    lualine_y = { "progress" },
+    lualine_z = { "location" },
   },
   inactive_winbar = {
     lualine_a = { winbar_path },
     lualine_b = {},
     lualine_c = {},
-    lualine_x = { { 'filetype', icon_only = true } },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
+    lualine_x = { { "filetype", icon_only = true } },
+    lualine_y = { "progress" },
+    lualine_z = { "location" },
   },
-  tabline = {}
+  tabline = {},
 })
