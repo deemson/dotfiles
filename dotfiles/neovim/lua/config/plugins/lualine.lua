@@ -18,6 +18,14 @@ function winbar_path:update_status()
   return winbar_path.super.update_status(self)
 end
 
+local function winbar_macro_rec()
+  local reg = vim.fn.reg_recording()
+  if reg ~= "" then
+    return " " .. reg
+  end
+  return ""
+end
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
@@ -51,7 +59,7 @@ require('lualine').setup({
   },
   winbar = {
     lualine_a = { winbar_path },
-    lualine_b = {},
+    lualine_b = { winbar_macro_rec },
     lualine_c = {},
     lualine_x = { {'filetype', icon_only = true} },
     lualine_y = { 'progress' },

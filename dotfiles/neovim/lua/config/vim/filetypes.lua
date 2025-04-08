@@ -1,3 +1,9 @@
+local js_cb = function()
+  vim.opt_local.expandtab = true
+  vim.opt_local.tabstop = 2
+  vim.opt_local.shiftwidth = 2
+end
+
 local filetypes = {
   {
     pattern = 'lua',
@@ -22,6 +28,11 @@ local filetypes = {
       -- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, { buffer = 0 })
     end
   },
+  { pattern = 'javascript', callback = js_cb },
+  { pattern = 'javascriptreact', callback = js_cb },
+  { pattern = 'typescript', callback = js_cb },
+  { pattern = 'typescriptreact', callback = js_cb },
+  { pattern = 'astro', callback = js_cb },
   {
     pattern = 'terraform',
     callback = function()
@@ -32,6 +43,4 @@ local filetypes = {
   }
 }
 
-for _, c in ipairs(filetypes) do
-  vim.api.nvim_create_autocmd('FileType', c)
-end
+for _, c in ipairs(filetypes) do vim.api.nvim_create_autocmd('FileType', c) end

@@ -1,3 +1,5 @@
+local function prettierd() return { exe = 'prettierd', args = { vim.api.nvim_buf_get_name(0) }, stdin = true } end
+
 require('formatter').setup({
   filetype = {
     lua = {
@@ -20,6 +22,9 @@ require('formatter').setup({
         return { exe = vim.fn.stdpath('data') .. '/mason/bin/black', args = { '--line-length=79' }, sdtin = true }
       end
     },
+    javascript = { prettierd },
+    typescript = { prettierd },
+    astro = { prettierd },
     terraform = { function() return { exe = vim.fn.stdpath('data') .. '/mason/bin/terraform-ls', stdin = true } end },
     ['*'] = { function() vim.lsp.buf.format() end }
   }
