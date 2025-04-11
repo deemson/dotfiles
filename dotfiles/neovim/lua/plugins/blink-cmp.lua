@@ -21,5 +21,10 @@ return {
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
       ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
     },
+    cmdline = {
+      keymap = {
+        preset = "inherit",
+      },
+    },
   },
 }
