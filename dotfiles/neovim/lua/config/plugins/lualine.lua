@@ -36,7 +36,10 @@ require("lualine").setup({
     -- component_separators = { left = '', right = '' },
     section_separators = { left = "", right = "" },
     -- section_separators = { left = '', right = '' },
-    disabled_filetypes = { statusline = { "oil", "neotest-summary" }, winbar = { "neotest-summary" } },
+    disabled_filetypes = {
+      statusline = { "oil", "neotest-summary", "trouble" },
+      winbar = { "neotest-summary", "trouble" },
+    },
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,

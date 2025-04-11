@@ -12,6 +12,7 @@ local configs = {
       }
     }
   },
+  jsonls = {},
   pyright = {},
   ols = {},
   clangd = {},
