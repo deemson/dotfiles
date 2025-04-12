@@ -2,6 +2,5 @@
 
 - [neovim](https://neovim.io/) - text editor
 - [zsh](https://www.zsh.org/) - shell
-- [ghostty](http://ghostty.org/) - super sleek terminal emulator, currently my preference
+- [ghostty](http://ghostty.org/) - super sleek terminal emulator
 - [starship](https://starship.rs/) - pretty terminal prompt
-- [wezterm](https://wezfurlong.org/wezterm/) - terminal emulator configured in lua, I'm no longer using this
