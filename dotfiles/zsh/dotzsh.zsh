@@ -18,8 +18,6 @@ select-word-style bash
 # plugins
 source $HOME/.zsh/plugins/syntax-highlight.zsh
 source $HOME/.zsh/plugins/history-substring-search.zsh
-# external
-source $HOME/.zsh/external/bun.zsh
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
@@ -33,3 +31,8 @@ export PATH="$HOME/.bin:$PATH"
 
 eval "$(starship init zsh)"
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
