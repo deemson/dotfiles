@@ -32,10 +32,12 @@ require("lualine").setup({
   options = {
     icons_enabled = true,
     theme = "gruvbox-material",
-    component_separators = { left = "", right = "" },
+    -- component_separators = { left = "", right = "" },
     -- component_separators = { left = '', right = '' },
-    section_separators = { left = "", right = "" },
+    component_separators = { left = "", right = "" },
+    -- section_separators = { left = "", right = "" },
     -- section_separators = { left = '', right = '' },
+    section_separators = { left = "", right = "" },
     disabled_filetypes = {
       statusline = { "oil", "neotest-summary", "trouble" },
       winbar = { "neotest-summary", "trouble" },
@@ -63,12 +65,12 @@ require("lualine").setup({
     lualine_z = {},
   },
   winbar = {
-    lualine_a = { winbar_path },
+    lualine_a = { { winbar_path, separator = { right = "" } } },
     lualine_b = { winbar_macro_rec },
     lualine_c = {},
     lualine_x = { { "filetype", icon_only = true } },
-    lualine_y = { "progress" },
-    lualine_z = { "location" },
+    lualine_y = { { "progress", separator = { left = "" } } },
+    lualine_z = { { "location", separator = { left = "" } } },
   },
   inactive_winbar = {
     lualine_a = { winbar_path },
