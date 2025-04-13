@@ -1,7 +1,7 @@
 local neotest = require("neotest")
 
 neotest.setup({
-  icons = { passed = "o", failed = "x", running = ">", skipped = "-", unknown = "?" },
+  -- icons = { passed = "o", failed = "x", running = ">", skipped = "-", unknown = "?" },
   adapters = { require("neotest-golang")({ runner = "gotestsum", go_test_args = {} }) },
 })
 
