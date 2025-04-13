@@ -5,17 +5,30 @@ neotest.setup({
   adapters = { require("neotest-golang")({ runner = "gotestsum", go_test_args = {} }) },
 })
 
+local function neotest_summary()
+  neotest.summary.toggle()
+end
+
 local function neotest_output()
   neotest.output.open({ enter = true, auto_close = true })
 end
 
-vim.keymap.set("n", "<leader>ts", function()
-  neotest.summary.toggle()
-end, { desc = "summary" })
-vim.keymap.set("n", "<leader>to", neotest_output, { desc = "output" })
-vim.keymap.set("n", "<leader>tt", function()
-  neotest.run.run()
-end, { desc = "nearest" })
-vim.keymap.set("n", "<leader>te", function()
+local function neotest_run_everything()
   neotest.run.run(vim.fn.getcwd())
-end, { desc = "everything in CWD" })
+end
+
+local function neotest_run_nearest()
+  neotest.run.run()
+end
+
+local neotest_group_key = "n"
+local keymap = {
+  { "n", neotest_run_nearest, "nearest" },
+  { "e", neotest_run_everything, "everything in CWD" },
+  { "o", neotest_output, "output" },
+  { "s", neotest_summary, "summary" },
+}
+
+for _, k in ipairs(keymap) do
+  vim.keymap.set("n", "<leader>" .. neotest_group_key .. k[1], k[2], { desc = k[3] })
+end

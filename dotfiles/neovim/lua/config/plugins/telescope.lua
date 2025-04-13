@@ -1,6 +1,15 @@
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+local telescope_group_key = "t"
+local keymap = {
+  { "f", builtin.find_files, "Find Files" },
+  { "e", builtin.live_grep, "Live Grep" },
+  { "b", builtin.buffers, "Buffers" },
+  { "?", builtin.help_tags, "Help Tags" },
+
+  { "gs", builtin.git_status, "Status" },
+}
+
+for _, k in ipairs(keymap) do
+  vim.keymap.set("n", "<leader>" .. telescope_group_key .. k[1], k[2], { desc = k[3] })
+end
