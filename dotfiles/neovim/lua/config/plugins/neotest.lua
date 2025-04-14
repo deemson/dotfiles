@@ -22,8 +22,16 @@ local function neotest_run_everything()
   neotest.run.run(vim.fn.getcwd())
 end
 
+local function neotest_run_file()
+  neotest.run.run(vim.fn.expand("%"))
+end
+
 local function neotest_run_nearest()
   neotest.run.run()
+end
+
+local function neotest_stop()
+  neotest.run.stop()
 end
 
 local function neotest_debug_nearest()
@@ -34,8 +42,10 @@ local neotest_group_key = "n"
 local keymap = {
   { "n", neotest_run_nearest, "nearest" },
   { "e", neotest_run_everything, "everything in CWD" },
+  { "f", neotest_run_file, "file" },
   { "o", neotest_output, "output" },
-  { "s", neotest_summary, "summary" },
+  { "m", neotest_summary, "summary" },
+  { "s", neotest_stop, "stop" },
 
   { "dn", neotest_debug_nearest, "nearest" },
 }

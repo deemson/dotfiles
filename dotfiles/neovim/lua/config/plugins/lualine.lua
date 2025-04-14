@@ -37,8 +37,8 @@ local dapui_filetypes = {
   "dapui_console",
 }
 local disabled_filetypes = {
-  statusline = { "oil", "neotest-summary", "trouble" },
-  winbar = { "neotest-summary", "trouble" },
+  statusline = { "oil", "neotest-summary", "trouble", "gitsigns-blame" },
+  winbar = { "neotest-summary", "trouble", "gitsigns-blame" },
 }
 for _, dapui_filetype in ipairs(dapui_filetypes) do
   table.insert(disabled_filetypes.statusline, dapui_filetype)
