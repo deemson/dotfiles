@@ -26,12 +26,18 @@ local function neotest_run_nearest()
   neotest.run.run()
 end
 
+local function neotest_debug_nearest()
+  neotest.run.run({ strategy = "dap" })
+end
+
 local neotest_group_key = "n"
 local keymap = {
   { "n", neotest_run_nearest, "nearest" },
   { "e", neotest_run_everything, "everything in CWD" },
   { "o", neotest_output, "output" },
   { "s", neotest_summary, "summary" },
+
+  { "dn", neotest_debug_nearest, "nearest" },
 }
 
 for _, k in ipairs(keymap) do

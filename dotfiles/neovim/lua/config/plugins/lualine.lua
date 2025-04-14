@@ -28,6 +28,23 @@ local function winbar_macro_rec()
   return ""
 end
 
+local dapui_filetypes = {
+  "dapui_watches",
+  "dapui_stacks",
+  "dapui_breakpoints",
+  "dapui_scopes",
+  "dap-repl",
+  "dapui_console",
+}
+local disabled_filetypes = {
+  statusline = { "oil", "neotest-summary", "trouble" },
+  winbar = { "neotest-summary", "trouble" },
+}
+for _, dapui_filetype in ipairs(dapui_filetypes) do
+  table.insert(disabled_filetypes.statusline, dapui_filetype)
+  table.insert(disabled_filetypes.winbar, dapui_filetype)
+end
+
 require("lualine").setup({
   options = {
     icons_enabled = true,
@@ -38,11 +55,7 @@ require("lualine").setup({
     -- section_separators = { left = "", right = "" },
     -- section_separators = { left = '', right = '' },
     section_separators = { left = "", right = "" },
-    disabled_filetypes = {
-      statusline = { "oil", "neotest-summary", "trouble" },
-      winbar = { "neotest-summary", "trouble" },
-    },
-    ignore_focus = {},
+    disabled_filetypes = disabled_filetypes,
     always_divide_middle = true,
     always_show_tabline = true,
     globalstatus = false,
