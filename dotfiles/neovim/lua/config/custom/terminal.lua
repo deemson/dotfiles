@@ -13,6 +13,8 @@ local function open(dir)
   vim.api.nvim_win_set_buf(0, buf)
   local shell = os.getenv("SHELL") or "/bin/sh"
 
+  vim.bo[buf].filetype = "terminal"
+
   vim.fn.termopen(shell, {
     cwd = dir,
     on_exit = function()
