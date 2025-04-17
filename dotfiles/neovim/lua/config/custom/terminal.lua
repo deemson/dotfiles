@@ -9,24 +9,10 @@ local function get_current_dir()
 end
 
 local function open(dir)
-  local buf = vim.api.nvim_create_buf(false, true)
-  vim.api.nvim_win_set_buf(0, buf)
   local shell = os.getenv("SHELL") or "/bin/sh"
-
-  vim.bo[buf].filetype = "terminal"
-
-  vim.fn.termopen(shell, {
-    cwd = dir,
-    on_exit = function()
-      vim.schedule(function()
-        -- Close the buffer and its window after terminal exits
-        if vim.api.nvim_buf_is_valid(buf) then
-          vim.api.nvim_buf_delete(buf, { force = true })
-        end
-      end)
-    end,
-  })
-
+  vim.cmd("lcd " .. dir)
+  vim.cmd("terminal")
+  vim.cmd("setfiletype terminal")
   vim.cmd("startinsert")
 end
 

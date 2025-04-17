@@ -10,6 +10,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank into system bu
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line into system buffer" })
 
 local window_management = {
+  ["<A-c>"] = "<C-W>c",
   ["<A-j>"] = "<C-W>j",
   ["<A-k>"] = "<C-W>k",
   ["<A-h>"] = "<C-W>h",
@@ -23,3 +24,5 @@ local window_management = {
 for k, v in pairs(window_management) do
   vim.keymap.set("n", k, v)
 end
+
+vim.keymap.set("n", "<A-m>", "<cmd>messages<CR>", { desc = "Messages" })

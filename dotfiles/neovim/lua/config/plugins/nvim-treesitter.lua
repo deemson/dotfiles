@@ -6,4 +6,15 @@ require("nvim-treesitter.configs").setup({
   auto_install = true,
   ignore_install = {},
   modules = {},
+  textobjects = {
+    move = {
+      enable = true,
+      set_jumps = true,
+    },
+  },
 })
+
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo.foldlevel = 99
+vim.wo.foldenable = false

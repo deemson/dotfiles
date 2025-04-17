@@ -28,6 +28,10 @@ local function winbar_macro_rec()
   return ""
 end
 
+local neotest_filetypes = {
+  "neotest-summary",
+  "neotest-output-panel",
+}
 local dapui_filetypes = {
   "dapui_watches",
   "dapui_stacks",
@@ -40,6 +44,10 @@ local disabled_filetypes = {
   statusline = { "terminal", "oil", "neotest-summary", "trouble", "gitsigns-blame" },
   winbar = { "terminal", "neotest-summary", "trouble", "gitsigns-blame" },
 }
+for _, neotest_filetype in ipairs(neotest_filetypes) do
+  table.insert(disabled_filetypes.statusline, neotest_filetype)
+  table.insert(disabled_filetypes.winbar, neotest_filetype)
+end
 for _, dapui_filetype in ipairs(dapui_filetypes) do
   table.insert(disabled_filetypes.statusline, dapui_filetype)
   table.insert(disabled_filetypes.winbar, dapui_filetype)

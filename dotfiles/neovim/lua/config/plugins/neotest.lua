@@ -1,5 +1,6 @@
 local neotest = require("neotest")
 
+---@diagnostic disable-next-line: missing-fields
 neotest.setup({
   icons = {
     -- stylua: ignore start
@@ -7,11 +8,21 @@ neotest.setup({
     running_animated = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
     -- stylua: ignore end
   },
-  adapters = { require("neotest-golang")({ runner = "gotestsum", go_test_args = {} }) },
+  adapters = {
+    require("neotest-golang")({
+      runner = "gotestsum", -- go/gotestsum
+      go_test_args = { "-v" },
+      gotestsum_args = { "--format=standard-verbose" },
+    }),
+  },
 })
 
 local function neotest_summary()
   neotest.summary.toggle()
+end
+
+local function neotest_output_panel()
+  neotest.output_panel.toggle()
 end
 
 local function neotest_output()
@@ -35,19 +46,32 @@ local function neotest_stop()
 end
 
 local function neotest_debug_nearest()
+  ---@diagnostic disable-next-line: missing-fields
   neotest.run.run({ strategy = "dap" })
+end
+
+local function neotest_run_last()
+  neotest.run.run_last()
+end
+
+local function neotest_debug_last()
+  ---@diagnostic disable-next-line: missing-fields
+  neotest.run.run_last({ strategy = "dap" })
 end
 
 local neotest_group_key = "n"
 local keymap = {
   { "n", neotest_run_nearest, "nearest" },
+  { "l", neotest_run_last, "last" },
   { "e", neotest_run_everything, "everything in CWD" },
   { "f", neotest_run_file, "file" },
   { "o", neotest_output, "output" },
   { "m", neotest_summary, "summary" },
   { "s", neotest_stop, "stop" },
+  { "p", neotest_output_panel, "output panel" },
 
   { "dn", neotest_debug_nearest, "nearest" },
+  { "dl", neotest_debug_last, "last" },
 }
 
 for _, k in ipairs(keymap) do
