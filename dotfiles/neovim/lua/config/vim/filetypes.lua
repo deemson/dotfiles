@@ -28,6 +28,9 @@ local filetypes = {
       -- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, { buffer = 0 })
     end,
   },
+  { pattern = "html", callback = js_cb },
+  { pattern = "css", callback = js_cb },
+  { pattern = "json", callback = js_cb },
   { pattern = "javascript", callback = js_cb },
   { pattern = "javascriptreact", callback = js_cb },
   { pattern = "typescript", callback = js_cb },

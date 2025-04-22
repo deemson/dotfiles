@@ -11,6 +11,8 @@ local configs = {
       },
     },
   },
+  html = {},
+  cssls = {},
   jsonls = {},
   pyright = {},
   ols = {},

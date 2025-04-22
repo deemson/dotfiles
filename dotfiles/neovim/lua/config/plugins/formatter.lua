@@ -24,6 +24,8 @@ require("formatter").setup({
     },
     javascript = { prettierd },
     typescript = { prettierd },
+    javascriptreact = { prettierd },
+    typescriptreact = { prettierd },
     astro = { prettierd },
     terraform = {
       function()

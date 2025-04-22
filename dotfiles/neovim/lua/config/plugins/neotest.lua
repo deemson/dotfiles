@@ -1,5 +1,19 @@
 local neotest = require("neotest")
 
+local cwd = vim.fn.getcwd()
+
+local adapters = {
+  require("neotest-vitest"),
+}
+
+if vim.fn.filereadable(cwd .. "/go.mod") then
+  adapters[#adapters + 1] = require("neotest-golang")({
+    runner = "gotestsum", -- go/gotestsum
+    go_test_args = { "-v" },
+    gotestsum_args = { "--format=standard-verbose" },
+  })
+end
+
 ---@diagnostic disable-next-line: missing-fields
 neotest.setup({
   icons = {
@@ -8,13 +22,7 @@ neotest.setup({
     running_animated = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
     -- stylua: ignore end
   },
-  adapters = {
-    require("neotest-golang")({
-      runner = "gotestsum", -- go/gotestsum
-      go_test_args = { "-v" },
-      gotestsum_args = { "--format=standard-verbose" },
-    }),
-  },
+  adapters = adapters,
 })
 
 local function neotest_summary()

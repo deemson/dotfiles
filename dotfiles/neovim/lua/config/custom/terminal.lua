@@ -9,7 +9,6 @@ local function get_current_dir()
 end
 
 local function open(dir)
-  local shell = os.getenv("SHELL") or "/bin/sh"
   vim.cmd("lcd " .. dir)
   vim.cmd("terminal")
   vim.cmd("setfiletype terminal")
@@ -21,7 +20,7 @@ local function open_cur_dir()
 end
 
 local function open_work_dir()
-  open(nil)
+  open(vim.fn.getcwd())
 end
 
 vim.keymap.set("n", "<A-t>", open_cur_dir, { desc = "Terminal (Current Dir)" })

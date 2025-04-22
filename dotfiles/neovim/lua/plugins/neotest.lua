@@ -7,6 +7,7 @@ return {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
     -- adapters dependencies
+    "marilari88/neotest-vitest",
     "fredrikaverpil/neotest-golang",
   },
 }
