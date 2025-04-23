@@ -1,7 +1,7 @@
 require("config.plugins.mason")
 require("config.plugins.mason-lspconfig")
 require("config.plugins.lspconfig")
-require("config.plugins.formatter")
+require("config.plugins.conform-nvim")
 require("config.plugins.nvim-notify")
 require("config.plugins.nvim-treesitter")
 require("config.plugins.oil")
