@@ -2,7 +2,16 @@ local dap = require("dap")
 local dapui = require("dapui")
 
 require("dap-python").setup("python")
-require('dap-go').setup()
+require("dap-go").setup()
+require("dap").adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    args = { vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}" },
+  },
+}
 
 local dap_group_key = "d"
 local keymap = {

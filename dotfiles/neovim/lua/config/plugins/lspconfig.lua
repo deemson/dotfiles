@@ -24,7 +24,7 @@ local configs = {
         -- completes the stuff that hasn't been imported yet
         completeUnimported = true,
         -- put argument placeholders when importing functions
-        usePlaceholders = true,
+        -- usePlaceholders = true,
       },
     },
   },
