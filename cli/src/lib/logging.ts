@@ -1,12 +1,13 @@
-import { pino } from 'pino'
+import { pino } from "pino";
 
 export const logger = pino({
   transport: {
-    target: 'pino-pretty',
+    target: "pino-pretty",
     options: {
       singleLine: true,
-      ignore: 'pid,hostname'
-    }
-  }
-})
-logger.level = 'debug'
+      ignore: "pid,hostname",
+    },
+  },
+});
+logger.level = "debug";
+
