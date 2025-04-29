@@ -32,4 +32,3 @@ export const zshCommands = () => {
     logger.info({}, "done");
   });
 };
-

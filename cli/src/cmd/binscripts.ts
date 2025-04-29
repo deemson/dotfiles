@@ -7,12 +7,10 @@ import { dotfilesDir, homeDir } from "../lib/paths.ts";
 export const binscriptsCommands = () => {
   const repoDir = path.join(dotfilesDir, "binscripts");
   const systemDir = path.join(homeDir, ".bin");
-  const filePaths = ["dotfiles", "dotfiles-save", "dotfiles-load"].map(
-    (fileName) => ({
-      repo: path.join(repoDir, fileName),
-      system: path.join(systemDir, fileName),
-    }),
-  );
+  const filePaths = ["dotfiles", "dotfiles-save", "dotfiles-load"].map((fileName) => ({
+    repo: path.join(repoDir, fileName),
+    system: path.join(systemDir, fileName),
+  }));
 
   const binScripts = program.command("binscripts");
 
@@ -36,4 +34,3 @@ export const binscriptsCommands = () => {
     logger.info({ from: repoDir, to: systemDir }, "done");
   });
 };
-

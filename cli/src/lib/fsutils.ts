@@ -17,4 +17,3 @@ export const copyDirContents = async (srcDir: string, dstDir: string) => {
     }
   }
 };
-

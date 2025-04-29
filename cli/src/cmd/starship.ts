@@ -24,4 +24,3 @@ export const starshipCommands = () => {
     logger.info({ from: repoConfig, to: systemConfig }, "done");
   });
 };
-

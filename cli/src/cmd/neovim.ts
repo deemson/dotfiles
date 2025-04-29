@@ -32,4 +32,3 @@ export const neovimCommands = () => {
     logger.info({ from: repoDir, to: systemDir }, "done");
   });
 };
-
