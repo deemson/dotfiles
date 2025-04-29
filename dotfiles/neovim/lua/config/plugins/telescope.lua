@@ -1,4 +1,18 @@
+local telescope = require("telescope")
+local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
+
+telescope.setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+        ["<C-u>"] = false,
+        ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+      },
+    },
+  },
+})
 
 local telescope_group_key = "t"
 local keymap = {
