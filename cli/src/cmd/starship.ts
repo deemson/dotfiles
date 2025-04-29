@@ -12,15 +12,13 @@ export const starshipCommands = () => {
   const starship = program.command("starship");
 
   starship.command("save").action(async () => {
-    logger.info({ from: systemConfig, to: repoConfig }, "saving");
+    logger.info({ from: systemConfig, to: repoConfig }, "saving starship config");
     await fs.mkdir(repoDir, { recursive: true });
     await fs.copyFile(systemConfig, repoConfig);
-    logger.info({ from: systemConfig, to: repoConfig }, "done");
   });
 
   starship.command("load").action(async () => {
-    logger.info({ from: repoConfig, to: systemConfig }, "loading");
+    logger.info({ from: repoConfig, to: systemConfig }, "loading starship config");
     await fs.copyFile(repoConfig, systemConfig);
-    logger.info({ from: repoConfig, to: systemConfig }, "done");
   });
 };

@@ -15,22 +15,20 @@ export const binscriptsCommands = () => {
   const binScripts = program.command("binscripts");
 
   binScripts.command("save").action(async () => {
-    logger.info({ dir: repoDir }, "cleaning");
+    logger.info({ dir: repoDir }, "cleaning repo binscripts dir");
     await fs.rm(repoDir, { recursive: true, force: true });
     await fs.mkdir(repoDir, { recursive: true });
     for (const filePath of filePaths) {
-      logger.info({ from: filePath.system, to: filePath.repo }, "saving");
+      logger.info({ from: filePath.system, to: filePath.repo }, "saving binscript");
       await fs.copyFile(filePath.system, filePath.repo);
     }
-    logger.info({ from: systemDir, to: repoDir }, "done");
   });
 
   binScripts.command("load").action(async () => {
     await fs.mkdir(systemDir, { recursive: true });
     for (const filePath of filePaths) {
-      logger.info({ from: filePath.repo, to: filePath.system }, "loading");
+      logger.info({ from: filePath.repo, to: filePath.system }, "loading binscripts");
       await fs.copyFile(filePath.repo, filePath.system);
     }
-    logger.info({ from: repoDir, to: systemDir }, "done");
   });
 };

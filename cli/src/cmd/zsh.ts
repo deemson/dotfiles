@@ -15,20 +15,20 @@ export const zshCommands = () => {
   const zsh = program.command("zsh");
 
   zsh.command("save").action(async () => {
-    logger.info({ dir: repoDir }, "cleaning");
+    logger.info({ dir: repoDir }, "cleaning zsh repo dir");
     await fs.rm(repoDir, { recursive: true, force: true });
-    logger.info({}, "saving");
+    logger.info({ from: systemDotZshDir, to: repoDotZshDir }, "saving .zsh/");
     await copyDirContents(systemDotZshDir, repoDotZshDir);
+    logger.info({ from: systemDotZshRC, to: repoDotZshRC }, "saving .zshrc");
     await fs.copyFile(systemDotZshRC, repoDotZshRC);
-    logger.info({}, "done");
   });
 
   zsh.command("load").action(async () => {
-    logger.info({ dir: systemDotZshDir }, "cleaning");
+    logger.info({ dir: systemDotZshDir }, "cleaning zsh system dir");
     await fs.rm(systemDotZshDir, { recursive: true, force: true });
-    logger.info({}, "loading");
+    logger.info({ from: repoDotZshDir, to: systemDotZshDir }, "loading .zsh/");
     await copyDirContents(repoDotZshDir, systemDotZshDir);
+    logger.info({ from: repoDotZshRC, to: systemDotZshRC }, "loading .zshrc");
     await fs.copyFile(repoDotZshRC, systemDotZshRC);
-    logger.info({}, "done");
   });
 };

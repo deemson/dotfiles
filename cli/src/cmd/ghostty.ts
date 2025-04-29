@@ -13,16 +13,14 @@ export const ghosttyCommands = () => {
   const ghostty = program.command("ghostty");
 
   ghostty.command("save").action(async () => {
-    logger.info({ from: systemConfig, to: repoConfig }, "saving");
+    logger.info({ from: systemConfig, to: repoConfig }, "saving ghostty config");
     await fs.mkdir(repoDir, { recursive: true });
     await fs.copyFile(systemConfig, repoConfig);
-    logger.info({ from: systemConfig, to: repoConfig }, "done");
   });
 
   ghostty.command("load").action(async () => {
-    logger.info({ from: repoConfig, to: systemConfig }, "loading");
+    logger.info({ from: repoConfig, to: systemConfig }, "loading ghostty config");
     await fs.mkdir(systemDir, { recursive: true });
     await fs.copyFile(repoConfig, systemConfig);
-    logger.info({ from: repoConfig, to: systemConfig }, "done");
   });
 };
