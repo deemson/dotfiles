@@ -10,6 +10,7 @@ conform.setup({
     javascriptreact = prettier,
     typescriptreact = prettier,
     go = { "gofmt" },
+    python = { "ruff_format" },
   },
   formatters = {
     stylua = {
