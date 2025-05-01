@@ -27,7 +27,7 @@ export const binscriptsCommands = () => {
   binScripts.command("load").action(async () => {
     await fs.mkdir(systemDir, { recursive: true });
     for (const filePath of filePaths) {
-      logger.info({ from: filePath.repo, to: filePath.system }, "loading binscripts");
+      logger.info({ from: filePath.repo, to: filePath.system }, "loading binscript");
       await fs.copyFile(filePath.repo, filePath.system);
     }
   });
