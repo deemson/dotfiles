@@ -1,14 +1,15 @@
 local conform = require("conform")
 
-local prettier = { "prettier", stop_after_first = true }
+local js_formatter = { "biome", stop_after_first = true }
 
 conform.setup({
   formatters_by_ft = {
     lua = { "stylua" },
-    javascript = prettier,
-    typescript = prettier,
-    javascriptreact = prettier,
-    typescriptreact = prettier,
+    javascript = js_formatter,
+    typescript = js_formatter,
+    javascriptreact = js_formatter,
+    typescriptreact = js_formatter,
+    json = js_formatter,
     go = { "gofmt" },
     python = { "ruff_format" },
   },
