@@ -9,7 +9,7 @@ function winbar_path:update_status()
   if vim.bo.filetype == "oil" then
     local ok, oil = pcall(require, "oil")
     if ok and oil.get_current_dir then
-      local result = vim.fn.fnamemodify(oil.get_current_dir(), ":~:.")
+      local result = vim.fn.fnamemodify(oil.get_current_dir() or "", ":~:.")
       if result == "" then
         return "."
       end

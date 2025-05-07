@@ -1,4 +1,9 @@
+---@diagnostic disable-next-line: missing-fields
 require("noice").setup({
+  messages = {
+    enabled = true,
+    view = "messages",
+  },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {

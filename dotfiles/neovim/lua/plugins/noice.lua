@@ -1,4 +1,4 @@
--- noice is a prettified vim command terminal
+-- noice is a prettified neovim UI overhaul
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
