@@ -84,3 +84,4 @@ bindsym $mod+c layout toggle split
 bindsym $mod+Shift+f floating toggle
 # use mouse+$mod to drag floating windows
 floating_modifier $mod
+bindsym $mod+Shift+Return fullscreen toggle
