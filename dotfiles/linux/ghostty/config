@@ -1,0 +1,4 @@
+theme = GruvboxDarkHard
+font-size = 12
+font-family = "JetBrainsMono Nerd Font"
+keybind = unconsumed:ctrl+enter=ignore

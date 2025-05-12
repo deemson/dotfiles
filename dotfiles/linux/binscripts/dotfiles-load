@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-dotfiles macos binscripts load
+dotfiles linux binscripts load
 dotfiles shared neovim load
 dotfiles shared starship load
 dotfiles shared zsh load
-dotfiles macos ghostty load
+dotfiles linux ghostty load

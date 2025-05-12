@@ -1,18 +1,19 @@
-import { program } from "commander";
-import { dotfilesDir, homeDir } from "../lib/paths.ts";
+import { dotfilesDir, homeDir } from "@/lib/paths";
 import path from "node:path";
 import fs from "node:fs/promises";
-import { logger } from "../lib/logging.ts";
-import { copyDirContents } from "../lib/fsutils.ts";
+import { logger } from "@/lib/logging";
+import { copyDirContents } from "@/lib/fsutils";
 
-export const zshCommands = () => {
-  const repoDir = path.join(dotfilesDir, "zsh");
+import type { CommandsPerEnvironment, MakeEnvironmentCommandsFunc } from "@/lib/environment";
+
+export const makeZshCommands: MakeEnvironmentCommandsFunc = (commandsPerEnvironment: CommandsPerEnvironment) => {
+  const repoDir = path.join(dotfilesDir, "shared", "zsh");
   const systemDotZshDir = path.join(homeDir, ".zsh");
   const repoDotZshDir = path.join(repoDir, "dotzsh");
   const systemDotZshRC = path.join(homeDir, ".zshrc");
   const repoDotZshRC = path.join(repoDir, "dotzsh.zsh");
 
-  const zsh = program.command("zsh");
+  const zsh = commandsPerEnvironment["shared"].command("zsh");
 
   zsh.command("save").action(async () => {
     logger.info({ dir: repoDir }, "cleaning zsh repo dir");

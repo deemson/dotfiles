@@ -1,15 +1,15 @@
 import path from "node:path";
-import { dotfilesDir, homeDir } from "../lib/paths.ts";
-import { program } from "commander";
-import { logger } from "../lib/logging.ts";
+import { dotfilesDir, homeDir } from "@/lib/paths";
+import { logger } from "@/lib/logging";
 import fs from "node:fs/promises";
+import type { CommandsPerEnvironment, MakeEnvironmentCommandsFunc } from "@/lib/environment";
 
-export const starshipCommands = () => {
-  const repoDir = path.join(dotfilesDir, "starship");
+export const makeStarshipCommands: MakeEnvironmentCommandsFunc = (commandsPerEnvironment: CommandsPerEnvironment) => {
+  const repoDir = path.join(dotfilesDir, "shared", "starship");
   const repoConfig = path.join(repoDir, "starship.toml");
   const systemConfig = path.join(homeDir, ".config", "starship.toml");
 
-  const starship = program.command("starship");
+  const starship = commandsPerEnvironment["shared"].command("starship");
 
   starship.command("save").action(async () => {
     logger.info({ from: systemConfig, to: repoConfig }, "saving starship config");

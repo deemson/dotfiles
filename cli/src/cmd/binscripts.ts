@@ -1,34 +1,53 @@
-import { program } from "commander";
-import { logger } from "../lib/logging.ts";
+import { logger } from "@/lib/logging";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { dotfilesDir, homeDir } from "../lib/paths.ts";
+import { dotfilesDir, homeDir } from "@/lib/paths";
+import type { Environment, MakeEnvironmentCommandsFunc, CommandsPerEnvironment } from "@/lib/environment";
 
-export const binscriptsCommands = () => {
-  const repoDir = path.join(dotfilesDir, "binscripts");
+export const makeBinscriptsCommands: MakeEnvironmentCommandsFunc = (commandsPerEnvironment: CommandsPerEnvironment) => {
   const systemDir = path.join(homeDir, ".bin");
-  const filePaths = ["dotfiles", "dotfiles-save", "dotfiles-load"].map((fileName) => ({
-    repo: path.join(repoDir, fileName),
+  const validEnvs: Environment[] = ["macos", "linux"];
+  const repoSharedDir = path.join(dotfilesDir, "shared", "binscripts");
+  const sharedFilePaths = ["dotfiles"].map((fileName) => ({
+    repo: path.join(repoSharedDir, fileName),
     system: path.join(systemDir, fileName),
   }));
 
-  const binScripts = program.command("binscripts");
+  for (const env of validEnvs) {
+    const binScripts = commandsPerEnvironment[env].command("binscripts");
+    const repoEnvDir = path.join(dotfilesDir, env, "binscripts");
+    const envFilePaths = ["dotfiles-save", "dotfiles-load"].map((fileName) => ({
+      repo: path.join(repoEnvDir, fileName),
+      system: path.join(systemDir, fileName),
+    }));
 
-  binScripts.command("save").action(async () => {
-    logger.info({ dir: repoDir }, "cleaning repo binscripts dir");
-    await fs.rm(repoDir, { recursive: true, force: true });
-    await fs.mkdir(repoDir, { recursive: true });
-    for (const filePath of filePaths) {
-      logger.info({ from: filePath.system, to: filePath.repo }, "saving binscript");
-      await fs.copyFile(filePath.system, filePath.repo);
-    }
-  });
+    binScripts.command("save").action(async () => {
+      logger.info({ dir: repoSharedDir }, "cleaning repo shared binscripts dir");
+      await fs.rm(repoSharedDir, { recursive: true, force: true });
+      await fs.mkdir(repoSharedDir, { recursive: true });
+      for (const filePath of sharedFilePaths) {
+        logger.info({ from: filePath.system, to: filePath.repo }, "saving shared binscript");
+        await fs.copyFile(filePath.system, filePath.repo);
+      }
+      logger.info({ dir: repoEnvDir }, "cleaning repo env binscripts dir");
+      await fs.rm(repoEnvDir, { recursive: true, force: true });
+      await fs.mkdir(repoEnvDir, { recursive: true });
+      for (const filePath of envFilePaths) {
+        logger.info({ from: filePath.system, to: filePath.repo }, "saving env binscript");
+        await fs.copyFile(filePath.system, filePath.repo);
+      }
+    });
 
-  binScripts.command("load").action(async () => {
-    await fs.mkdir(systemDir, { recursive: true });
-    for (const filePath of filePaths) {
-      logger.info({ from: filePath.repo, to: filePath.system }, "loading binscript");
-      await fs.copyFile(filePath.repo, filePath.system);
-    }
-  });
+    binScripts.command("load").action(async () => {
+      await fs.mkdir(systemDir, { recursive: true });
+      for (const filePath of sharedFilePaths) {
+        logger.info({ from: filePath.repo, to: filePath.system }, "loading shared binscript");
+        await fs.copyFile(filePath.repo, filePath.system);
+      }
+      for (const filePath of envFilePaths) {
+        logger.info({ from: filePath.repo, to: filePath.system }, "loading env binscript");
+        await fs.copyFile(filePath.repo, filePath.system);
+      }
+    });
+  }
 };

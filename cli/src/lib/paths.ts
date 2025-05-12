@@ -1,6 +1,6 @@
 import path from "node:path";
 
-let tempHomeDir = process.env["HOME"];
+const tempHomeDir = process.env["HOME"];
 if (tempHomeDir === undefined || tempHomeDir === null || tempHomeDir === "") {
   throw new Error("$HOME env var is empty");
 }

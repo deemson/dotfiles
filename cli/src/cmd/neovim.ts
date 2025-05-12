@@ -1,19 +1,19 @@
-import { program } from "commander";
-import { dotfilesDir, homeDir } from "../lib/paths.ts";
+import { dotfilesDir, homeDir } from "@/lib/paths";
 import path from "node:path";
 import fs from "node:fs/promises";
-import { logger } from "../lib/logging.ts";
-import { copyDirContents } from "../lib/fsutils.ts";
+import { logger } from "@/lib/logging";
+import { copyDirContents } from "@/lib/fsutils";
+import type { CommandsPerEnvironment, MakeEnvironmentCommandsFunc } from "@/lib/environment";
 
-export const neovimCommands = () => {
-  const repoDir = path.join(dotfilesDir, "neovim");
+export const makeNeovimCommands: MakeEnvironmentCommandsFunc = (commandsPerEnvironment: CommandsPerEnvironment) => {
+  const repoDir = path.join(dotfilesDir, "shared", "neovim");
   const systemDir = path.join(homeDir, ".config", "nvim");
   const systemLuaDir = path.join(systemDir, "lua");
   const repoLuaDir = path.join(repoDir, "lua");
   const systemInitLua = path.join(systemDir, "init.lua");
   const repoInitLua = path.join(repoDir, "init.lua");
 
-  const neovim = program.command("neovim");
+  const neovim = commandsPerEnvironment["shared"].command("neovim");
 
   neovim.command("save").action(async () => {
     logger.info({ dir: repoDir }, "cleaning neovim repo dir");

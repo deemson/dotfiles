@@ -1,13 +1,27 @@
 import { program } from "commander";
-import { binscriptsCommands } from "./cmd/binscripts.ts";
-import { neovimCommands } from "./cmd/neovim.ts";
-import { starshipCommands } from "./cmd/starship.ts";
-import { zshCommands } from "./cmd/zsh.ts";
-import { ghosttyCommands } from "./cmd/ghostty.ts";
+import type { MakeEnvironmentCommandsFunc, CommandsPerEnvironment, Environment } from "@/lib/environment";
+import { allEnvironments } from "@/lib/environment";
+import { makeBinscriptsCommands } from "@/cmd/binscripts";
+import { makeGhosttyCommands } from "@/cmd/ghostty";
+import { makeStarshipCommands } from "@/cmd/starship";
+import { makeNeovimCommands } from "@/cmd/neovim";
+import { makeZshCommands } from "@/cmd/zsh";
 
-binscriptsCommands();
-neovimCommands();
-starshipCommands();
-zshCommands();
-ghosttyCommands();
+const commandMakers: MakeEnvironmentCommandsFunc[] = [
+  makeBinscriptsCommands,
+  makeGhosttyCommands,
+  makeStarshipCommands,
+  makeNeovimCommands,
+  makeZshCommands,
+];
+const commandsPerEnvironment = Object.fromEntries(
+  allEnvironments.map((environment: Environment) => {
+    const command = program.command(environment);
+    return [environment, command];
+  }),
+) as CommandsPerEnvironment;
+for (const commandMaker of commandMakers) {
+  commandMaker(commandsPerEnvironment);
+}
+
 program.parse();

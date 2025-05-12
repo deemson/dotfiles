@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-dotfiles macos binscripts save
+dotfiles linux binscripts save
 dotfiles shared neovim save
 dotfiles shared starship save
 dotfiles shared zsh save
-dotfiles macos ghostty save
+dotfiles linux ghostty save
