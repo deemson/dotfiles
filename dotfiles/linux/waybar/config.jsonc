@@ -1,0 +1,21 @@
+// vim: set filetype=jsonc :
+{
+  // stay above everything else
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 1,
+  "modules-left": ["sway/workspaces"],
+  "modules-right": ["network", "upower", "clock"],
+  "network": {
+    "format-icons": {
+      "wifi": ""
+    },
+    "format-wifi": "{icon}  {essid}"
+  },
+  "upower": {
+    "icon-size": 14
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}"
+  }
+}

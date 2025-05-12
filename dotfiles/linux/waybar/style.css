@@ -1,0 +1,111 @@
+/* vim: set filetype=less : */
+
+@define-color bg #282828;
+@define-color red1 #cc241d;
+@define-color green1 #98971a;
+@define-color yellow1 #d79921;
+@define-color blue1 #458588;
+@define-color purple1 #b16286;
+@define-color aqua1 #689d6a;
+@define-color gray1 #a89984;
+
+@define-color gray2 #928374;
+@define-color red2 #fb4934;
+@define-color green2 #b8bb26;
+@define-color yellow2 #fabd2f;
+@define-color blue2 #83a598;
+@define-color purple2 #d3869b;
+@define-color aqua2 #8ec07c;
+@define-color fg #ebdbb2;
+
+@define-color bg0_h #1d2021;
+@define-color bg0 #282828;
+@define-color bg1 #3c3836;
+@define-color bg2 #504945;
+@define-color bg3 #665c54;
+@define-color bg4 #7c6f64;
+@define-color orange1 #d65d0e;
+
+@define-color bg0_s #32302f;
+@define-color fg4 #a89984;
+@define-color fg3 #bdae93;
+@define-color fg2 #d5c4a1;
+@define-color fg1 #ebdbb2;
+@define-color fg0 #fbf1c7;
+@define-color orange2 #fe8019;
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+}
+
+window#waybar {
+  background: @bg0;
+  color: @fg0;
+}
+
+#workspaces button {
+  color: @fg3;
+  background: @bg0_h;
+  padding: 0 0.5em;
+  border: 1px solid @bg4;
+  border-radius: 4px;
+  margin-right: 0.2em;
+}
+
+#workspaces button.focused {
+  color: @fg0;
+  background: @blue1;
+  border: 1px solid @blue2;
+}
+
+#workspaces button.urgent {
+  color: @fg0;
+  background: @orange1;
+  border: 1px solid @orange2;
+}
+
+#network {
+  padding: 0 0.5em;
+  border: 1px solid @blue2;
+  background: @blue1;
+  margin-left: 0.2em;
+}
+
+#network.disconnected {
+  border: 1px solid @bg4;
+  background: @bg0_h;
+}
+
+#network.disabled {
+  border: 1px solid @red2;
+  background: @red1;
+}
+
+#upower {
+  padding: 0 0.5em;
+  border: 1px solid @bg4;
+  background: @bg1;
+  margin-left: 0.2em;
+}
+
+#upower.charging {
+  border: 1px solid @green2;
+  background: @green1;
+}
+
+#upower.discharging {
+  border: 1px solid @orange2;
+  background: @orange1;
+}
+
+#clock {
+  border: 1px solid @bg4;
+  background: @bg1;
+  padding: 0 0.5em;
+  margin-left: 0.2em;
+}

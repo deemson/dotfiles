@@ -5,3 +5,6 @@ dotfiles shared neovim save
 dotfiles shared starship save
 dotfiles shared zsh save
 dotfiles linux ghostty save
+dotfiles linux sway save
+dotfiles linux waybar save
+dotfiles linux wofi save

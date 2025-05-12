@@ -1,0 +1,7 @@
+set $mod Mod4
+set $alt Mod1
+set $term ghostty
+
+include $HOME/.config/sway/config.d/*
+
+exec waybar

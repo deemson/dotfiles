@@ -1,0 +1,80 @@
+# vim: set filetype=swayconfig :
+gaps inner 0
+# do not use gaps for a single window
+smart_gaps on
+# do nto use borders for a single window
+smart_borders on
+# this would also remove window titles
+default_border pixel 3
+
+font pango:JetBrainsMono Nerd Font 9
+
+# ---
+# gruvbox colors
+# ---
+set $col_bg #282828
+set $col_red1 #cc241d
+set $col_green1 #98971a
+set $col_yellow1 #d79921
+set $col_blue1 #458588
+set $col_purple1 #b16286
+set $col_aqua1 #689d6a
+set $col_gray1 #a89984
+
+set $col_gray2 #928374
+set $col_red2 #fb4934
+set $col_green2 #b8bb26
+set $col_yellow2 #fabd2f
+set $col_blue2 #83a598
+set $col_purple2 #d3869b
+set $col_aqua2 #8ec07c
+set $col_fg #ebdbb2
+
+set $col_bg0_h #1d2021
+set $col_bg0 #282828
+set $col_bg1 #3c3836
+set $col_bg2 #504945
+set $col_bg3 #665c54
+set $col_bg4 #7c6f64
+set $col_orange1 #d65d0e
+
+set $col_bg0_s #32302f
+set $col_fg4 #a89984
+set $col_fg3 #bdae93
+set $col_fg2 #d5c4a1
+set $col_fg1 #ebdbb2
+set $col_fg0 #fbf1c7
+set $col_orange2 #fe8019
+
+# ---
+# sway colors
+# ---
+
+set $focused_border $col_blue2
+set $focused_background $col_blue1
+set $focused_text $col_fg0
+set $focused_indicator $col_aqua2
+set $focused_child_border $col_blue1
+
+set $inactive_border $col_bg2
+set $inactive_background $col_bg1
+set $inactive_text $col_fg2
+set $inactive_indicator $col_bg3
+set $inactive_child_border $col_bg1
+
+set $urgent_border $col_orange2
+set $urgent_background $col_orange1
+set $urgent_text $col_fg0
+set $urgent_indicator $col_orange1
+set $urgent_child_border $col_orange1
+
+set $unfocused_border $col_bg1
+set $unfocused_background $col_bg0
+set $unfocused_text $col_fg4
+set $unfocused_indicator $col_bg2
+set $unfocused_child_border $col_bg1
+
+client.focused $focused_border $focused_background $focused_text $focused_indicator $focused_child_border
+client.focused_inactive $inactive_border $inactive_background $inactive_text $inactive_indicator $inactive_child_border
+client.unfocused $unfocused_border $unfocused_background $unfocused_text $unfocused_indicator $unfocused_child_border
+client.urgent $urgent_border $urgent_background $urgent_text $urgent_indicator $urgent_child_border

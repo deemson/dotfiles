@@ -5,3 +5,6 @@ dotfiles shared neovim load
 dotfiles shared starship load
 dotfiles shared zsh load
 dotfiles linux ghostty load
+dotfiles linux sway load
+dotfiles linux waybar load
+dotfiles linux wofi load
