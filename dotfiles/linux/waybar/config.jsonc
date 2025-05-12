@@ -5,12 +5,19 @@
   "position": "top",
   "margin-bottom": 1,
   "modules-left": ["sway/workspaces"],
-  "modules-right": ["network", "upower", "clock", "tray"],
+  "modules-right": ["network", "pulseaudio", "upower", "clock", "tray"],
   "network": {
     "format-icons": {
       "wifi": ""
     },
     "format-wifi": "{icon}  {essid}"
+  },
+  "pulseaudio": {
+    "format-icons": {
+      "default": [" ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+    "format": "{icon}",
+    "format-muted": "╳"
   },
   "upower": {
     "icon-size": 14
