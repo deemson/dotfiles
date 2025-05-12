@@ -1,7 +1,7 @@
 import * as path from "node:path";
 import * as fs from "node:fs/promises";
 
-const dotfilesDir = path.dirname(path.resolve(import.meta.dirname));
+const dotfilesDir = path.dirname(path.dirname(path.resolve(import.meta.dirname)));
 const colorsDir = path.join(dotfilesDir, "colors", "morhetz-gruvbox");
 const inPath = path.join(colorsDir, "gruvbox-for-md.json");
 const outPath = path.join(colorsDir, "gruvbox-transformed.json");
