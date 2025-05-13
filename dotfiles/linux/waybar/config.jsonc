@@ -14,10 +14,10 @@
   },
   "pulseaudio": {
     "format-icons": {
-      "default": [" ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "format": "{icon}",
-    "format-muted": "╳"
+    "format-muted": "󰸈"
   },
   "upower": {
     "icon-size": 14
