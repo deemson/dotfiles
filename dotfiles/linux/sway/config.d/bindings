@@ -85,3 +85,9 @@ bindsym $mod+Shift+f floating toggle
 # use mouse+$mod to drag floating windows
 floating_modifier $mod
 bindsym $mod+Shift+Return fullscreen toggle
+
+# ---
+# utility stuff
+# ---
+# weird 4 just mimic MacOS built-in screenshotting -- this is to avoid additional cognitive load
+bindsym Ctrl+Shift+$alt+4 exec grim -g "$(slurp)" - | wl-copy
