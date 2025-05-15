@@ -3,7 +3,15 @@ local function get_current_dir()
   return vim.fn.fnamemodify(buf_path, ":p:h")
 end
 
+local restricted_file_types = { "terminal", "neo-tree" }
+
 local function open(dir)
+  for _, ft in ipairs(restricted_file_types) do
+    if vim.bo.filetype == ft then
+      vim.notify("Can't open Terminal for file type '" .. ft .. "'", vim.log.levels.ERROR)
+      return
+    end
+  end
   vim.cmd("lcd " .. dir)
   vim.cmd("terminal")
   vim.cmd("setfiletype terminal")
