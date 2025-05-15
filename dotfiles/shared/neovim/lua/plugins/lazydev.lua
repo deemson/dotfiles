@@ -1,5 +1,6 @@
 return {
   "folke/lazydev.nvim",
+  lazy = false,
   ft = "lua", -- only load on lua files
   opts = {
     library = {
@@ -10,4 +11,7 @@ return {
       { path = "${3rd}/luv/library", words = { "vim%.uv" } },
     },
   },
+  config = function ()
+    require("lazydev").setup({})
+  end
 }

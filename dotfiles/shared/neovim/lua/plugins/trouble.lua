@@ -15,4 +15,7 @@ return {
     { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List" },
     { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
   },
+  config = function()
+    require("trouble").setup()
+  end,
 }

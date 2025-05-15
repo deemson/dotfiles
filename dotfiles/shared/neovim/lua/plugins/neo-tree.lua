@@ -8,9 +8,18 @@ return {
     -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   lazy = false, -- neo-tree will lazily load itself
-  ---@module "neo-tree"
-  ---@type neotree.Config?
-  opts = {
-    -- fill any relevant options here
-  },
+  config = function()
+    require("neo-tree").setup({
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          never_show = {},
+        },
+      },
+    })
+    vim.keymap.set("n", "<F2>", "<Cmd>Neotree toggle<CR>")
+    vim.keymap.set("n", "<F3>", "<Cmd>Neotree reveal=true<CR>")
+  end,
 }

@@ -1,4 +1,4 @@
 require("config.vim")
 require("config.lazy")
-require("config.plugins")
+require("config.lsp")
 require("config.custom")

@@ -10,7 +10,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank into system bu
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line into system buffer" })
 
 local window_management = {
-  ["<A-c>"] = "<C-W>c",
+  ["<A-C>"] = "<C-W>c",
   ["<A-j>"] = "<C-W>j",
   ["<A-k>"] = "<C-W>k",
   ["<A-h>"] = "<C-W>h",

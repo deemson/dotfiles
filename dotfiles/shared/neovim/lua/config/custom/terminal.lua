@@ -1,9 +1,4 @@
-local oil = require("oil")
-
 local function get_current_dir()
-  if vim.bo.filetype == "oil" then
-    return oil.get_current_dir()
-  end
   local buf_path = vim.api.nvim_buf_get_name(0)
   return vim.fn.fnamemodify(buf_path, ":p:h")
 end

@@ -8,7 +8,7 @@ return {
     fuzzy = { implementation = "rust" },
     sources = {
       -- add lazydev to your completion providers
-      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+      default = { "lsp", "path", "snippets", "buffer" },
       providers = {
         lazydev = {
           name = "LazyDev",
