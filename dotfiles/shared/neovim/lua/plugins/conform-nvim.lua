@@ -7,6 +7,8 @@ return {
     local js_formatter = { "biome", stop_after_first = true }
 
     conform.setup({
+      format_on_save = nil,
+      format_after_save = nil,
       formatters_by_ft = {
         lua = { "stylua" },
         javascript = js_formatter,

@@ -25,7 +25,7 @@ return {
       { "A-c", "BufferClose" },
     }
     for _, k in ipairs(keys) do
-      vim.keymap.set("n", "<" .. k[1] .. ">", "<Cmd>" .. k[2] .. "<CR>", { noremap = true, silent = false })
+      vim.keymap.set({"n", "t"}, "<" .. k[1] .. ">", "<Cmd>" .. k[2] .. "<CR>", { noremap = true, silent = false })
     end
   end,
   opts = {
