@@ -16,7 +16,9 @@ local configs = {
   jsonls = {},
   pyright = {},
   ols = {},
-  clangd = {},
+  clangd = {
+    filetypes = { "c", "cpp" },
+  },
   terraformls = {},
   gopls = {
     settings = {
@@ -28,6 +30,7 @@ local configs = {
       },
     },
   },
+  buf_ls = {},
   ts_ls = {},
   astro = {},
   tailwindcss = {},
