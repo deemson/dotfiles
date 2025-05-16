@@ -1,3 +1,4 @@
+-- harpoon provides functionality including UI to manage a set of pinned files for quick access
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",

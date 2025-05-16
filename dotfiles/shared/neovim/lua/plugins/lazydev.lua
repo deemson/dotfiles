@@ -1,3 +1,4 @@
+-- lazydev improves loading times for Lua LSP
 return {
   "folke/lazydev.nvim",
   lazy = false,

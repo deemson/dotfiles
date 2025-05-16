@@ -1,3 +1,4 @@
+-- neo-tree is a tree-like file explorer
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",

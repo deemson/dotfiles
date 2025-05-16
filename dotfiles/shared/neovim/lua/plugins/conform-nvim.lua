@@ -1,3 +1,4 @@
+-- conform-nvim is a code formatting plugin
 return {
   "stevearc/conform.nvim",
   config = function()
