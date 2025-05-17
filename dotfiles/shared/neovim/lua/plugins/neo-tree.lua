@@ -16,7 +16,8 @@ return {
           visible = true,
           hide_dotfiles = false,
           hide_gitignored = false,
-          never_show = {},
+          never_show = { "__pycache__" },
+          never_show_by_pattern = { "*.egg-info" },
         },
       },
     })

@@ -37,6 +37,9 @@ local configs = {
 }
 
 for name, config in pairs(configs) do
-  config.capabilities = blinkcmp.get_lsp_capabilities(config.capabilities)
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  -- enable file watching explicitly as it's disabled on Linux by default
+  capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+  config.capabilities = blinkcmp.get_lsp_capabilities(capabilities)
   lspconfig[name].setup(config)
 end
