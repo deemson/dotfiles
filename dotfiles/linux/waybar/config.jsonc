@@ -5,7 +5,7 @@
   "position": "top",
   "margin-bottom": 1,
   "modules-left": ["sway/workspaces"],
-  "modules-right": ["network", "pulseaudio", "upower", "clock", "tray"],
+  "modules-right": ["network", "pulseaudio", "upower", "sway/language", "clock", "tray"],
   "network": {
     "format-icons": {
       "wifi": ""
