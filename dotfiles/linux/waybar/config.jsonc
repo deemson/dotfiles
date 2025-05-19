@@ -10,7 +10,7 @@
     "format-icons": {
       "wifi": ""
     },
-    "format-wifi": "{icon}  {essid}"
+    "format-wifi": "{icon}"
   },
   "pulseaudio": {
     "format-icons": {
