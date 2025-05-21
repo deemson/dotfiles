@@ -22,11 +22,22 @@ return {
       { "A-8", "BufferGoto 8" },
       { "A-9", "BufferGoto 9" },
       { "A-0", "BufferLast" },
-      { "A-c", "BufferClose" },
     }
     for _, k in ipairs(keys) do
-      vim.keymap.set({"n", "t"}, "<" .. k[1] .. ">", "<Cmd>" .. k[2] .. "<CR>", { noremap = true, silent = false })
+      vim.keymap.set({ "n", "t" }, "<" .. k[1] .. ">", "<Cmd>" .. k[2] .. "<CR>", { noremap = true, silent = false })
     end
+
+    local filetypes_not_to_close = { "neo-tree", "toggleterm" }
+
+    vim.keymap.set({ "n", "t" }, "<A-c>", function()
+      for _, ft in ipairs(filetypes_not_to_close) do
+        if vim.bo.filetype == ft then
+          vim.notify("cannot close buffer for '" .. ft .. "'", vim.log.levels.ERROR)
+          return
+        end
+      end
+      vim.cmd("BufferClose")
+    end, { noremap = true, silent = false })
   end,
   opts = {
     -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
