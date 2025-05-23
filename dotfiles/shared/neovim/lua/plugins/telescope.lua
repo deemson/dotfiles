@@ -7,6 +7,15 @@ return {
     local actions = require("telescope.actions")
     local builtin = require("telescope.builtin")
 
+    local live_grep = function(...)
+      return builtin.live_grep({
+        ...,
+        additional_args = function()
+          return { "--max-filesize", "500K" }
+        end,
+      })
+    end
+
     telescope.setup({
       defaults = {
         mappings = {
@@ -22,7 +31,7 @@ return {
     local telescope_group_key = "t"
     local keymap = {
       { "f", builtin.find_files, "Find Files" },
-      { "e", builtin.live_grep, "Live Grep" },
+      { "e", live_grep, "Live Grep" },
       { "b", builtin.buffers, "Buffers" },
       { "?", builtin.help_tags, "Help Tags" },
 
