@@ -26,3 +26,4 @@ for k, v in pairs(window_management) do
 end
 
 vim.keymap.set("n", "<A-m>", "<cmd>messages<CR>", { desc = "Messages" })
+vim.keymap.set("n", "<A-i>", vim.lsp.buf.hover, { desc = "LSP Hover" })
