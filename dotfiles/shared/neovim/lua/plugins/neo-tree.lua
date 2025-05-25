@@ -19,6 +19,7 @@ return {
           never_show = { "__pycache__" },
           never_show_by_pattern = { "*.egg-info" },
         },
+        use_libuv_file_watcher = true
       },
     })
     vim.keymap.set("n", "<F2>", "<Cmd>Neotree toggle<CR>")
