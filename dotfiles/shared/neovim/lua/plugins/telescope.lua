@@ -11,7 +11,12 @@ return {
       return builtin.live_grep({
         ...,
         additional_args = function()
-          return { "--max-filesize", "500K" }
+          return {
+            "--no-ignore",
+            "--hidden",
+            "--max-filesize",
+            "500K",
+          }
         end,
       })
     end
