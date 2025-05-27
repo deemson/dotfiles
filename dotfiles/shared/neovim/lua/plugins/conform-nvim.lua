@@ -3,8 +3,9 @@ return {
   "stevearc/conform.nvim",
   config = function()
     local conform = require("conform")
+    local util = require("conform.util")
 
-    local js_formatter = { "biome", stop_after_first = true }
+    local js_formatter = { "biome", "prettierd" }
 
     conform.setup({
       format_on_save = nil,
@@ -23,6 +24,16 @@ return {
         python = { "ruff_format" },
       },
       formatters = {
+        biome = {
+          inherit = true,
+          cwd = util.root_file({ "biome.json" }),
+          require_cwd = true
+        },
+        -- prettierd = {
+        --   inherit = true,
+        --   cwd = util.root_file({ "prettier.config.mjs" }),
+        --   require_cwd = true
+        -- },
         stylua = {
           prepend_args = {
             "--indent-type=Spaces",
