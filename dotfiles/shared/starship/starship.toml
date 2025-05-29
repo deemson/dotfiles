@@ -156,8 +156,14 @@ diverged = '[⇕](red)'
 [golang]
 format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
 symbol = ''
-style = 'fg:cyan'
+style = 'fg:blue'
 not_capable_style = 'fg:red'
+
+[java]
+format = '[ ](bright-black)[$symbol](bright-black)[ $version]($style)[ ](bright-black)'
+symbol = ''
+style = 'fg:yellow'
+
 
 [lua]
 format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
@@ -166,7 +172,6 @@ style = 'fg:bright-blue'
 
 [nodejs]
 format = '[ ](bright-black)[$symbol](bright-black)[$version]($style)[ ](bright-black)'
-
 
 [package]
 format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
