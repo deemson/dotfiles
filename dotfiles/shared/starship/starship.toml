@@ -109,6 +109,10 @@ format = '[ ](bright-black)[$symbol ](bright-black)[$version $name]($style)[ 
 style = 'bright-blue'
 symbol = ''
 
+[cmake]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
+symbol = ''
+
 [cmd_duration]
 disabled = true
 min_time = 0
