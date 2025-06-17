@@ -1,3 +1,4 @@
+-- bigfile improves handling of large files
 return {
   "LunarVim/bigfile.nvim",
   config = function()

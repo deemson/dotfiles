@@ -1,3 +1,4 @@
+-- toggleterm allows toggling terminal on/off, possibly with a custom command e.g. lazygit
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
