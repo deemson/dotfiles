@@ -20,6 +20,7 @@ return {
         jsonc = js_formatter,
         css = js_formatter,
         less = js_formatter,
+        yaml = { "prettierd" },
         go = { "gofmt" },
         python = { "ruff_format" },
       },
@@ -27,7 +28,7 @@ return {
         biome = {
           inherit = true,
           cwd = util.root_file({ "biome.json" }),
-          require_cwd = true
+          require_cwd = true,
         },
         -- prettierd = {
         --   inherit = true,
