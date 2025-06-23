@@ -41,6 +41,9 @@ return {
       { "?", builtin.help_tags, "Help Tags" },
 
       { "gs", builtin.git_status, "Status" },
+
+      { "lr", builtin.lsp_references, "References" },
+      { "li", builtin.lsp_implementations, "Implementations" },
     }
 
     for _, k in ipairs(keymap) do
