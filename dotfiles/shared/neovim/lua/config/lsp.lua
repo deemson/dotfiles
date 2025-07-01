@@ -19,6 +19,7 @@ local configs = {
   clangd = {
     filetypes = { "c", "cpp" },
   },
+  dockerls = {},
   terraformls = {},
   gopls = {
     settings = {
