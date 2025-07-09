@@ -23,6 +23,7 @@ return {
         yaml = { "prettierd" },
         go = { "gofmt" },
         python = { "ruff_format" },
+        nix = { "nixfmt" },
       },
       formatters = {
         biome = {

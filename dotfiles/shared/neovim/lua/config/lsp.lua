@@ -11,6 +11,7 @@ local configs = {
       },
     },
   },
+  nixd = {},
   html = {},
   cssls = {},
   jsonls = {},
