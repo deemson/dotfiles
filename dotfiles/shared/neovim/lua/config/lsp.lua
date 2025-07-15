@@ -32,6 +32,7 @@ local configs = {
       },
     },
   },
+  zls = {},
   buf_ls = {},
   ts_ls = {},
   astro = {},
