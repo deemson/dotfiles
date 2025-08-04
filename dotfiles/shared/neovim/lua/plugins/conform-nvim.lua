@@ -22,6 +22,7 @@ return {
         less = js_formatter,
         yaml = { "prettierd" },
         go = { "gofmt" },
+        zig = { "zigfmt" },
         python = { "ruff_format" },
         nix = { "nixfmt" },
       },
