@@ -12,8 +12,8 @@ return {
     end
 
     local disabled_filetypes = {
-      statusline = { "terminal", "trouble", "gitsigns-blame", "neo-tree" },
-      winbar = { "terminal", "trouble", "gitsigns-blame", "neo-tree" },
+      statusline = { "terminal", "trouble", "gitsigns-blame", "neo-tree", "aerial" },
+      winbar = { "terminal", "trouble", "gitsigns-blame", "neo-tree", "aerial" },
     }
 
     require("lualine").setup({

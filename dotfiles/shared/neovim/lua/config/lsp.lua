@@ -37,6 +37,7 @@ local configs = {
   ts_ls = {},
   astro = {},
   tailwindcss = {},
+  glsl_analyzer = {},
 }
 
 for name, config in pairs(configs) do
