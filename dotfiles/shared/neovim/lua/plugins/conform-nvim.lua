@@ -20,6 +20,7 @@ return {
         jsonc = js_formatter,
         css = js_formatter,
         less = js_formatter,
+        astro = js_formatter,
         yaml = { "prettierd" },
         go = { "gofmt" },
         zig = { "zigfmt" },
