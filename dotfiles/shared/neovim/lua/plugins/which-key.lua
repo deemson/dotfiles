@@ -11,6 +11,7 @@ return {
       { "<leader>tl", group = "LSP" },
       { "<leader>x", group = "Trouble" },
       { "<leader>h", group = "Harpoon" },
+      { "<leader>a", group = "Aerial" },
     })
   end,
 }
