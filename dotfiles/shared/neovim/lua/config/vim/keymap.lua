@@ -27,3 +27,4 @@ end
 
 vim.keymap.set("n", "<A-m>", "<cmd>messages<CR>", { desc = "Messages" })
 vim.keymap.set("n", "<A-i>", vim.lsp.buf.hover, { desc = "LSP Hover" })
+vim.keymap.set("n", "<A-s>", "<cmd>nohl<CR>", { desc = "No Highlight" })
