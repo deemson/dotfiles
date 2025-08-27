@@ -10,7 +10,12 @@ return {
   },
   lazy = false, -- neo-tree will lazily load itself
   config = function()
+    local defaultConfig = require("neo-tree.defaults")
+    defaultConfig.window.mappings["<space>"] = nil
     require("neo-tree").setup({
+      window = {
+        mappings = defaultConfig.window.mappings,
+      },
       filesystem = {
         filtered_items = {
           visible = true,
@@ -19,7 +24,7 @@ return {
           never_show = { "__pycache__" },
           never_show_by_pattern = { "*.egg-info" },
         },
-        use_libuv_file_watcher = true
+        use_libuv_file_watcher = true,
       },
     })
     vim.keymap.set("n", "<F2>", "<Cmd>Neotree toggle<CR>")
