@@ -11,7 +11,9 @@ return {
   lazy = false, -- neo-tree will lazily load itself
   config = function()
     local defaultConfig = require("neo-tree.defaults")
+    defaultConfig.window.mappings["t"] = nil
     defaultConfig.window.mappings["<space>"] = nil
+    defaultConfig.window.mappings["te"] = "telescope_grep"
     require("neo-tree").setup({
       window = {
         mappings = defaultConfig.window.mappings,
@@ -25,6 +27,15 @@ return {
           never_show_by_pattern = { "*.egg-info" },
         },
         use_libuv_file_watcher = true,
+      },
+      commands = {
+        telescope_grep = function(state)
+          local node = state.tree:get_node()
+          local path = node:get_id()
+          require("telescope.builtin").live_grep({
+            search_dirs = { path },
+          })
+        end,
       },
     })
     vim.keymap.set("n", "<F2>", "<Cmd>Neotree toggle<CR>")
