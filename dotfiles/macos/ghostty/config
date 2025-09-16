@@ -1,4 +1,4 @@
-theme = GruvboxDarkHard
+theme = "Gruvbox Dark Hard"
 font-size = 14
 font-family = "JetBrainsMono Nerd Font"
 macos-option-as-alt = true
