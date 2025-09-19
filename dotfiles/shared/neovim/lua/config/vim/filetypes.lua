@@ -28,6 +28,14 @@ local filetypes = {
       -- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, { buffer = 0 })
     end,
   },
+  {
+    pattern = "sql",
+    callback = function()
+      vim.opt_local.expandtab = true
+      vim.opt_local.tabstop = 4
+      vim.opt_local.shiftwidth = 4
+    end,
+  },
   { pattern = "html", callback = js_cb },
   { pattern = "css", callback = js_cb },
   { pattern = "less", callback = js_cb },

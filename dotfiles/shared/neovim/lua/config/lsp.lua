@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local blinkcmp = require("blink.cmp")
 
 local configs = {
@@ -45,5 +44,6 @@ for name, config in pairs(configs) do
   -- enable file watching explicitly as it's disabled on Linux by default
   capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
   config.capabilities = blinkcmp.get_lsp_capabilities(capabilities)
-  lspconfig[name].setup(config)
+  vim.lsp.enable(name)
+  vim.lsp.config(name, config)
 end
