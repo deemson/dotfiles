@@ -163,6 +163,11 @@ symbol = ''
 style = 'fg:blue'
 not_capable_style = 'fg:red'
 
+[helm]
+format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
+symbol = '⎈'
+style='fg:bright-blue'
+
 [java]
 format = '[ ](bright-black)[$symbol](bright-black)[ $version]($style)[ ](bright-black)'
 symbol = ''
