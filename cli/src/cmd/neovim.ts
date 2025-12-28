@@ -3,15 +3,22 @@ import path from "node:path";
 import fs from "node:fs/promises";
 import { logger } from "@/lib/logging";
 import { copyDirContents } from "@/lib/fsutils";
-import type { CommandsPerEnvironment, MakeEnvironmentCommandsFunc } from "@/lib/environment";
+import type {
+  CommandsPerEnvironment,
+  MakeEnvironmentCommandsFunc,
+} from "@/lib/environment";
 
-export const makeNeovimCommands: MakeEnvironmentCommandsFunc = (commandsPerEnvironment: CommandsPerEnvironment) => {
+export const makeNeovimCommands: MakeEnvironmentCommandsFunc = (
+  commandsPerEnvironment: CommandsPerEnvironment,
+) => {
   const repoDir = path.join(dotfilesDir, "shared", "neovim");
   const systemDir = path.join(homeDir, ".config", "nvim");
   const systemLuaDir = path.join(systemDir, "lua");
   const repoLuaDir = path.join(repoDir, "lua");
   const systemInitLua = path.join(systemDir, "init.lua");
   const repoInitLua = path.join(repoDir, "init.lua");
+  const systemLazyLock = path.join(systemDir, "lazy-lock.json");
+  const repoLazyLock = path.join(repoDir, "lazy-lock.json");
 
   const neovim = commandsPerEnvironment["shared"].command("neovim");
 
@@ -20,8 +27,16 @@ export const makeNeovimCommands: MakeEnvironmentCommandsFunc = (commandsPerEnvir
     await fs.rm(repoDir, { recursive: true, force: true });
     logger.info({ from: systemLuaDir, to: repoLuaDir }, "saving neovim lua/");
     await copyDirContents(systemLuaDir, repoLuaDir);
-    logger.info({ from: systemInitLua, to: repoInitLua }, "saving neovim init.lua");
+    logger.info(
+      { from: systemInitLua, to: repoInitLua },
+      "saving neovim init.lua",
+    );
     await fs.copyFile(systemInitLua, repoInitLua);
+    logger.info(
+      { from: systemLazyLock, to: repoLazyLock },
+      "saving neovim lazy-lock.json",
+    );
+    await fs.copyFile(systemLazyLock, repoLazyLock);
   });
 
   neovim.command("load").action(async () => {
@@ -29,7 +44,15 @@ export const makeNeovimCommands: MakeEnvironmentCommandsFunc = (commandsPerEnvir
     await fs.rm(systemLuaDir, { recursive: true, force: true });
     logger.info({ from: repoLuaDir, to: systemLuaDir }, "loading neovim lua/");
     await copyDirContents(repoLuaDir, systemLuaDir);
-    logger.info({ from: repoInitLua, to: systemInitLua }, "loading neovim init.lua");
+    logger.info(
+      { from: repoInitLua, to: systemInitLua },
+      "loading neovim init.lua",
+    );
     await fs.copyFile(repoInitLua, systemInitLua);
+    logger.info(
+      { from: repoLazyLock, to: systemLazyLock },
+      "loading neovim lazy-lock.json",
+    );
+    await fs.copyFile(repoLazyLock, systemLazyLock);
   });
 };
