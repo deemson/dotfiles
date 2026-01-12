@@ -15,7 +15,7 @@ return {
     }
 
     require("bigfile").setup({
-      filesize = 0.5, -- size of the file in MiB, the plugin round file sizes to the closest MiB
+      filesize = 2, -- size of the file in MiB, the plugin round file sizes to the closest MiB
       pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
       features = { -- features to disable
         ---@diagnostic disable-next-line: assign-type-mismatch
