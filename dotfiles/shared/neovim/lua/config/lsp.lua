@@ -37,6 +37,7 @@ local configs = {
   astro = {},
   tailwindcss = {},
   glsl_analyzer = {},
+  ansiblels = {},
 }
 
 for name, config in pairs(configs) do
