@@ -1,3 +1,14 @@
+vim.filetype.add({
+  extension = {
+    hlsl = "hlsl",
+  },
+})
+vim.filetype.add({
+  extension = {
+    slang = "slang",
+  },
+})
+
 local js_cb = function()
   vim.opt_local.expandtab = true
   vim.opt_local.tabstop = 2
@@ -60,6 +71,22 @@ local filetypes = {
       vim.opt_local.expandtab = true
       vim.opt_local.tabstop = 2
       vim.opt_local.shiftwidth = 2
+    end,
+  },
+  {
+    pattern = "hlsl",
+    callback = function()
+      vim.opt_local.expandtab = true
+      vim.opt_local.tabstop = 4
+      vim.opt_local.shiftwidth = 4
+    end,
+  },
+  {
+    pattern = "slang",
+    callback = function()
+      vim.opt_local.expandtab = true
+      vim.opt_local.tabstop = 4
+      vim.opt_local.shiftwidth = 4
     end,
   },
 }

@@ -38,6 +38,7 @@ local configs = {
   tailwindcss = {},
   glsl_analyzer = {},
   ansiblels = {},
+  slangd = {},
 }
 
 for name, config in pairs(configs) do
