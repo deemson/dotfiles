@@ -26,6 +26,7 @@ return {
         zig = { "zigfmt" },
         python = { "ruff_format" },
         nix = { "nixfmt" },
+        gdscript = { "gdformat" },
       },
       formatters = {
         biome = {
@@ -44,9 +45,6 @@ return {
             "--indent-width=2",
           },
         },
-        -- sqruff = {
-        --   args = {},
-        -- },
       },
     })
 

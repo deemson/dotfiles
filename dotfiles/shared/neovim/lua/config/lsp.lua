@@ -28,6 +28,9 @@ local configs = {
         completeUnimported = true,
         -- put argument placeholders when importing functions
         -- usePlaceholders = true,
+        analyses = {
+          unsafeptr = false,
+        },
       },
     },
   },
@@ -39,6 +42,11 @@ local configs = {
   glsl_analyzer = {},
   ansiblels = {},
   slangd = {},
+  gdscript = {
+    cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
+    filetypes = { "gd", "gdscript", "gdscript3" },
+    root_markers = { "project.godot", ".git" },
+  },
 }
 
 for name, config in pairs(configs) do
