@@ -15,6 +15,8 @@ export const makeNeovimCommands: MakeEnvironmentCommandsFunc = (
   const systemDir = path.join(homeDir, ".config", "nvim");
   const systemLuaDir = path.join(systemDir, "lua");
   const repoLuaDir = path.join(repoDir, "lua");
+  const systemLspDir = path.join(systemDir, "lsp");
+  const repoLspDir = path.join(repoDir, "lsp");
   const systemInitLua = path.join(systemDir, "init.lua");
   const repoInitLua = path.join(repoDir, "init.lua");
   const systemLazyLock = path.join(systemDir, "lazy-lock.json");
@@ -25,13 +27,19 @@ export const makeNeovimCommands: MakeEnvironmentCommandsFunc = (
   neovim.command("save").action(async () => {
     logger.info({ dir: repoDir }, "cleaning neovim repo dir");
     await fs.rm(repoDir, { recursive: true, force: true });
+
+    logger.info({ from: systemLspDir, to: repoLspDir }, "saving neovim lsp/");
+    await copyDirContents(systemLspDir, repoLspDir);
+
     logger.info({ from: systemLuaDir, to: repoLuaDir }, "saving neovim lua/");
     await copyDirContents(systemLuaDir, repoLuaDir);
+
     logger.info(
       { from: systemInitLua, to: repoInitLua },
       "saving neovim init.lua",
     );
     await fs.copyFile(systemInitLua, repoInitLua);
+
     logger.info(
       { from: systemLazyLock, to: repoLazyLock },
       "saving neovim lazy-lock.json",

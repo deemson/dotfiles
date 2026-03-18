@@ -6,18 +6,6 @@ return {
   ---@type blink.cmp.Config
   opts = {
     fuzzy = { implementation = "rust" },
-    sources = {
-      -- add lazydev to your completion providers
-      default = { "lsp", "path", "snippets", "buffer" },
-      providers = {
-        lazydev = {
-          name = "LazyDev",
-          module = "lazydev.integrations.blink",
-          -- make lazydev completions top priority (see `:h blink.cmp`)
-          score_offset = 100,
-        },
-      },
-    },
     keymap = {
       preset = "none",
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
@@ -34,10 +22,8 @@ return {
       ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
     },
     cmdline = {
-      keymap = {
-        preset = "inherit",
-      },
+      keymap = { preset = "inherit" },
+      completion = { menu = { auto_show = true } },
     },
   },
-  opts_extend = { "sources.default" },
 }

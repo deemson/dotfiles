@@ -5,4 +5,6 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },
+  -- see comment for branch in nvim-treesitter
+  branch = "master",
 }

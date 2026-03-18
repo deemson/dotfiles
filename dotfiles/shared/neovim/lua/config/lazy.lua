@@ -1,5 +1,9 @@
-require("lazy").setup({
+---@type LazyConfig
+local config = {
   spec = { { import = "plugins" } },
-  install = { colorscheme = { "habamax" } },
   checker = { enabled = false, notify = false },
-})
+  rocks = {
+    enabled = false,
+  },
+}
+require("lazy").setup(config)
