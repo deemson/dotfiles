@@ -3,4 +3,5 @@ vim.lsp.enable({
   "tombi",
   "gopls",
   "typescript_language_server",
+  "vscode_json_language_server",
 })

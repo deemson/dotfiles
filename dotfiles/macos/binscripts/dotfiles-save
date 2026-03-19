@@ -3,5 +3,6 @@
 dotfiles macos binscripts save
 dotfiles shared neovim save
 dotfiles shared starship save
+dotfiles shared mise save
 dotfiles shared zsh save
 dotfiles macos ghostty save

@@ -9,6 +9,7 @@ import { makeWofiCommands } from "@/cmd/linux/wofi"
 import { makeBinscriptsCommands } from "@/cmd/binscripts";
 import { makeGhosttyCommands } from "@/cmd/ghostty";
 import { makeStarshipCommands } from "@/cmd/starship";
+import { makeMiseCommands } from "@/cmd/mise";
 import { makeNeovimCommands } from "@/cmd/neovim";
 import { makeZshCommands } from "@/cmd/zsh";
 
@@ -21,6 +22,7 @@ const commandMakers: MakeEnvironmentCommandsFunc[] = [
   makeBinscriptsCommands,
   makeGhosttyCommands,
   makeStarshipCommands,
+  makeMiseCommands,
   makeNeovimCommands,
   makeZshCommands,
   ...linuxCommandMakers,

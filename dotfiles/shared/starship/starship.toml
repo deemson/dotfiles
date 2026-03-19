@@ -1,4 +1,4 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 add_newline = true
 
 command_timeout = 2000
@@ -94,7 +94,7 @@ $container\
 $shell\
 $character"""
 
-right_format='''
+right_format = '''
 $time
 '''
 
@@ -105,26 +105,26 @@ disabled = true
 disabled = true
 
 [c]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version $name]($style)[ ](bright-black)'
-style = 'bright-blue'
-symbol = ''
+format = "[ ](bright-black)[$symbol ](bright-black)[$version $name]($style)[ ](bright-black)"
+style = "bright-blue"
+symbol = ""
 
 [cmake]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
-symbol = ''
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+symbol = ""
 
 [cmd_duration]
 disabled = true
 min_time = 0
 show_milliseconds = true
-format = '[ ](bright-black)[$duration](yellow)[ ](bright-black)'
+format = "[ ](bright-black)[$duration](yellow)[ ](bright-black)"
 
 [directory]
-truncation_symbol = '…/'
-format = '[ ](bright-black)[$path]($style)[$read_only]($read_only_style)[ ](bright-black)'
-style = 'blue'
-read_only = ''
-read_only_style = 'yellow'
+truncation_symbol = "…/"
+format = "[ ](bright-black)[$path]($style)[$read_only]($read_only_style)[ ](bright-black)"
+style = "blue"
+read_only = ""
+read_only_style = "yellow"
 
 [docker_context]
 disabled = true
@@ -133,81 +133,79 @@ disabled = true
 disabled = true
 
 [git_branch]
-format = '[ ](bright-black)[$symbol ](bright-black)[$branch](fg:purple)'
-symbol = ''
+format = "[ ](bright-black)[$symbol ](bright-black)[$branch](fg:purple)"
+symbol = ""
 
 [git_commit]
-format = '([|](bright-black)[$tag](fg:green))'
+format = "([|](bright-black)[$tag](fg:green))"
 tag_disabled = false
-tag_symbol = ''
+tag_symbol = ""
 
 [git_state]
 format = '([|](bright-black)[$state\[$progress_current/$progress_total\]](fg:yellow))'
 
 [git_status]
-format = '([|](bright-black)[$all_status$ahead_behind]($style))[ ](bright-black)'
-up_to_date = '[](green)'
-untracked = '[?](bright-black)'
-stashed = '[.](yellow)'
-modified = '[!](yellow)'
-staged = '[+](green)'
-renamed = '[»](yellow)'
-deleted = '[](red)'
-ahead = '[⇡](yellow)'
-behind = '[⇣](yellow)'
-diverged = '[⇕](red)'
+format = "([|](bright-black)[$all_status$ahead_behind]($style))[ ](bright-black)"
+up_to_date = "[](green)"
+untracked = "[?](bright-black)"
+stashed = "[.](yellow)"
+modified = "[!](yellow)"
+staged = "[+](green)"
+renamed = "[»](yellow)"
+deleted = "[](red)"
+ahead = "[⇡](yellow)"
+behind = "[⇣](yellow)"
+diverged = "[⇕](red)"
 
 [golang]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
-symbol = ''
-style = 'fg:blue'
-not_capable_style = 'fg:red'
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+symbol = ""
+style = "fg:blue"
+not_capable_style = "fg:red"
 
 [helm]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
-symbol = '⎈'
-style='fg:bright-blue'
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+symbol = "⎈"
+style = "fg:bright-blue"
 
 [java]
-format = '[ ](bright-black)[$symbol](bright-black)[ $version]($style)[ ](bright-black)'
-symbol = ''
-style = 'fg:yellow'
-
+format = "[ ](bright-black)[$symbol](bright-black)[ $version]($style)[ ](bright-black)"
+symbol = ""
+style = "fg:yellow"
 
 [lua]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
-symbol = ''
-style = 'fg:bright-blue'
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+symbol = ""
+style = "fg:bright-blue"
 
 [nodejs]
-format = '[ ](bright-black)[$symbol](bright-black)[$version]($style)[ ](bright-black)'
+format = "[ ](bright-black)[$symbol](bright-black)[$version]($style)[ ](bright-black)"
 
 [package]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
-symbol = ''
-style = 'fg:bright-yellow'
-
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+symbol = ""
+style = "fg:bright-yellow"
 
 [python]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ $virtualenv](bright-black)[ ](bright-black)'
-symbol = '󰌠'
-style = 'fg:yellow'
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ $virtualenv](bright-black)[ ](bright-black)"
+symbol = "󰌠"
+style = "fg:yellow"
 
 [status]
 disabled = false
-symbol = ''
-format = '[$symbol$status]($style) '
-style = 'red'
+symbol = ""
+format = "[$symbol$status]($style) "
+style = "red"
 
 [terraform]
-format = '[ ](bright-black)[$symbol ](bright-black)[$workspace](fg:bright-blue)[ $version](fg:blue)[ ](bright-black)'
-symbol = ''
+format = "[ ](bright-black)[$symbol ](bright-black)[$workspace](fg:bright-blue)[ $version](fg:blue)[ ](bright-black)"
+symbol = ""
 
 [zig]
-format = '[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)'
-style = 'bold yellow'
-symbol = ''
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+style = "bold yellow"
+symbol = ""
 
 [time]
 disabled = false
-format = '[ ](bright-black)[ ](bright-black)$time[ ](bright-black)'
+format = "[ ](bright-black)[ ](bright-black)$time[ ](bright-black)"
