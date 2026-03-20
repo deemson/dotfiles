@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=schema.json
+inherit:
+  - posix
+apps:
+  - name: ghostty
+    paths:
+      - system: $HOME/.config/ghostty/config
+        repo: config
+  - name: sway
+    paths:
+      - system: $HOME/.config/sway/config.d
+        repo: config.d
+      - system: $HOME/.config/sway/config
+        repo: config
+  - name: waybar
+    paths:
+      - system: $HOME/.config/waybar/config.jsonc
+        repo: config.jsonc
+      - system: $HOME/.config/waybar/style.css
+        repo: style.css
+      - system: $HOME/.config/waybar/biome.json
+        repo: biome.json
+  - name: wofi
+    paths:
+      - system: $HOME/.config/wofi/style.css
+        repo: style.css

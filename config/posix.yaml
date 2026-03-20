@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=schema.json
+abstract: true
+apps:
+  - name: neovim
+    paths:
+      - system: $HOME/.config/nvim/init.lua
+        repo: init.lua
+      - system: $HOME/.config/nvim/lsp
+        repo: lsp
+      - system: $HOME/.config/nvim/lua
+        repo: lua
+      - system: $HOME/.config/nvim/lazy-lock.json
+        repo: lazy-lock.json
+  - name: zsh
+    paths:
+      - system: $HOME/.zshrc
+        repo: dotzsh.zsh
+      - system: $HOME/.zsh
+        repo: dotzsh
+  - name: mise
+    paths:
+      - system: $HOME/.config/mise/config.toml
+        repo: config.toml
+  - name: starship
+    paths:
+      - system: $HOME/.config/starship.toml
+        repo: starship.toml

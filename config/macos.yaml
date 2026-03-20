@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=schema.json
+inherit:
+  - posix
+apps:
+  - name: ghostty
+    paths:
+      - system: $HOME/.config/ghostty/config
+        repo: config
