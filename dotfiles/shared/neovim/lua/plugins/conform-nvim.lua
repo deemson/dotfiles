@@ -18,6 +18,9 @@ return {
         typescript = js_formatter,
         javascriptreact = js_formatter,
         typescriptreact = js_formatter,
+        json = js_formatter,
+        jsonc = js_formatter,
+        yaml = { "yamlfmt" },
       },
       formatters = {
         stylua = {
