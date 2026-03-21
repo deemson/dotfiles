@@ -1,10 +1,18 @@
 vim.lsp.enable({
   "lua_language_server",
+  -- TOML
   "tombi",
+  -- Go
   "gopls",
+  -- TypeScript
   "vtsls",
+  -- JSON/HTML/CSS
   "vscode_json_language_server",
+  -- YAML
   "yaml_language_server",
+  -- Python
+  "basedpyright",
+  "ruff",
 })
 
 vim.api.nvim_create_user_command("LspRestart", function()
