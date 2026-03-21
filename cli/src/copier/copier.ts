@@ -20,31 +20,17 @@ class PathCopier {
   async save(dry: boolean): Promise<PathReport> {
     let name = this.config.system;
     let copy: CopyReport | undefined = undefined;
-    const [systemStatus, repoStatus] = await getPathStatuses(this.systemPath, this.repoPath);
-    console.log(this.repoPath, repoStatus);
+    const systemStatus = await getPathStatus(this.systemPath);
     if (systemStatus === "absent") {
       return new PathReport("error", name, "does not exist", undefined);
     }
-    if (systemStatus === "directory" && repoStatus === "file") {
-      return new PathReport("error", name, `is a directory and ${this.config.repo} is a file`, copy);
-    }
-    if (systemStatus === "file" && repoStatus === "directory") {
-      return new PathReport("error", name, `is a file and ${this.config.repo} is a directory`, copy);
-    }
-    let description = "copying";
-    if (repoStatus === "directory") {
-      name += "/";
-      description = "cleaning & copying";
-      if (!dry) {
-        await fs.rm(this.repoPath, { recursive: true, force: true });
-      }
-    }
     if (systemStatus === "directory") {
+      name += "/";
       copy = await copyDir(this.systemPath, this.repoPath, dry);
     } else if (systemStatus === "file") {
       copy = await copyFile(this.systemPath, this.repoPath, dry);
     }
-    return new PathReport("ok", name, description, copy);
+    return new PathReport("ok", name, "copying", copy);
   }
 
   async load(dry: boolean): Promise<PathReport> {
@@ -62,13 +48,13 @@ class PathCopier {
     }
     let description = "copying";
     if (systemStatus === "directory") {
-      name += "/";
       description = "cleaning & copying";
       if (!dry) {
         await fs.rm(this.systemPath, { recursive: true, force: true });
       }
     }
     if (repoStatus === "directory") {
+      name += "/";
       copy = await copyDir(this.repoPath, this.systemPath, dry);
     } else if (repoStatus === "file") {
       if (!dry) {

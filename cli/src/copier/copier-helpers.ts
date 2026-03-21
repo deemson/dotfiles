@@ -18,8 +18,10 @@ export const getPathStatus = async (p: string): Promise<PathStatus> => {
     const stat = await fs.stat(p);
     return stat.isDirectory() ? "directory" : "file";
   } catch (e) {
-    console.log(e);
-    return "absent";
+    if (e instanceof Error && (e as NodeJS.ErrnoException).code === "ENOENT") {
+      return "absent";
+    }
+    throw e;
   }
 };
 

@@ -1,6 +1,10 @@
 # yaml-language-server: $schema=schema.json
 abstract: true
 apps:
+  - name: dotfiles
+    paths:
+      - system: $HOME/.bin/dotfiles
+        repo: dotfiles
   - name: neovim
     paths:
       - system: $HOME/.config/nvim/init.lua
