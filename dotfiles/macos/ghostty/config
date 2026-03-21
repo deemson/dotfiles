@@ -1,0 +1,6 @@
+theme = "Gruvbox Dark Hard"
+font-size = 14
+font-family = "JetBrainsMono Nerd Font"
+macos-option-as-alt = true
+quit-after-last-window-closed = true
+keybind = global:cmd+§=toggle_visibility

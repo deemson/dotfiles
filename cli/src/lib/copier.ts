@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { Profile, App as ProfileApp, Path as ProfilePath } from "@/lib/config";
+// import { Profile, App as ProfileApp, Path as ProfilePath } from "@/lib/config";
 import { homeDir, dotfilesDir } from "@/lib/paths";
 
 const copy = async (srcPath: string, dstPath: string, isDryRun: boolean) => {

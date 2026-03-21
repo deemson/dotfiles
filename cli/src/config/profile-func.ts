@@ -1,66 +1,10 @@
-import fs from "node:fs/promises";
-import path from "node:path";
-import { parse as parseYaml } from "yaml";
-import z from "zod";
-import { configDir } from "@/lib/paths";
+import { Config } from "@/config/config-types";
+import { Profile, ProfileApp } from "@/config/profile-types";
+import { loadConfigs } from "@/config/config-func";
 
-const pathSchema = z.strictObject({
-  system: z.string().min(1),
-  repo: z.string().min(1),
-});
-
-const appSchema = z.strictObject({
-  name: z.string().min(1),
-  paths: z.array(pathSchema).min(1),
-});
-
-const tempConfigSchema = z.strictObject({
-  inherit: z.array(z.string().min(1)).min(1).optional(),
-  abstract: z.boolean().optional(),
-  apps: z.array(appSchema).min(1),
-});
-
-export const configJsonSchema = tempConfigSchema.toJSONSchema({ target: "draft-2020-12" });
-
-export const configSchema = tempConfigSchema.transform((v) => {
-  return {
-    ...v,
-    abstract: !!v.abstract,
-    inherit: v.inherit || [],
-  };
-});
-
-export type Config = { name: string } & z.output<typeof configSchema>;
-
-export const loadConfigs = async (): Promise<Config[]> => {
-  const configDirItems = await fs.readdir(configDir);
-  const configFiles = configDirItems.filter((v) => v.endsWith(".yaml"));
-  const configs = await Promise.all(
-    configFiles.map(async (configFile) => {
-      const name = path.basename(configFile, ".yaml");
-      const content = await fs.readFile(path.join(configDir, configFile), "utf-8");
-      try {
-        const config = configSchema.parse(parseYaml(content));
-        return { ...config, name };
-      } catch (err) {
-        throw new Error(`Failed to load profile "${name}": ${err}`);
-      }
-    }),
-  );
-  return configs;
-};
-
-export type App = { config: string } & Config["apps"][number];
-export type Path = App["paths"][number];
-
-export interface Profile {
-  name: string;
-  apps: App[];
-}
-
-const mergeApps = (...appLists: App[][]): App[] => {
+const mergeApps = (...appLists: ProfileApp[][]): ProfileApp[] => {
   const appIndexes = new Map<string, number>();
-  const apps: App[] = [];
+  const apps: ProfileApp[] = [];
   for (const appList of appLists) {
     for (const app of appList) {
       const appIndex = appIndexes.get(app.name);
