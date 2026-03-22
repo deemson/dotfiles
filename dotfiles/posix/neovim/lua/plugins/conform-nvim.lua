@@ -21,6 +21,7 @@ return {
         json = js_formatter,
         jsonc = js_formatter,
         yaml = { "yamlfmt" },
+        python = { "ruff_format" },
       },
       formatters = {
         stylua = {
