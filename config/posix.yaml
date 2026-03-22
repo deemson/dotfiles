@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=schema.json
 abstract: true
 apps:
-  - name: dotfiles
+  - name: dotbin
     paths:
       - system: $HOME/.bin/dotfiles
         repo: dotfiles
