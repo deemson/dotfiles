@@ -28,3 +28,8 @@ vim.opt.splitright = true
 vim.diagnostic.config({
   virtual_text = true,
 })
+
+-- auto-sources .nvim.lua in cwd
+vim.opt.exrc = true
+-- restricts dangerous commands in those files
+vim.opt.secure = true
