@@ -29,3 +29,7 @@ apps:
     paths:
       - system: $HOME/.config/starship.toml
         repo: starship.toml
+  - name: yamlfmt
+    paths:
+      - system: $HOME/.config/yamlfmt/yamlfmt.yaml
+        repo: yamlfmt.yaml
