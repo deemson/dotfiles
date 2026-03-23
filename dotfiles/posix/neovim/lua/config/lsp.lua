@@ -13,6 +13,8 @@ vim.lsp.enable({
   -- Python
   "basedpyright",
   "ruff",
+  -- GoDot
+  "godot",
 })
 
 vim.api.nvim_create_user_command("LspRestart", function()
