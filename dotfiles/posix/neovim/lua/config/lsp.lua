@@ -15,6 +15,8 @@ vim.lsp.enable({
   "ruff",
   -- GoDot
   "godot",
+  -- Protobuf
+  "buf",
 })
 
 vim.api.nvim_create_user_command("LspRestart", function()
