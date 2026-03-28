@@ -9,22 +9,31 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank into system bu
 -- same as above but for the entire line and only in normal mode
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line into system buffer" })
 
-local window_management = {
+local window_tab_management = {
+  -- close window
   ["<A-C>"] = "<C-W>c",
-  ["<A-j>"] = "<C-W>j",
-  ["<A-k>"] = "<C-W>k",
-  ["<A-h>"] = "<C-W>h",
-  ["<A-l>"] = "<C-W>l",
-  ["<A-J>"] = "<C-W>10<",
-  ["<A-K>"] = "<C-W>10>",
-  ["<A-H>"] = "<C-W>5-",
-  ["<A-L>"] = "<C-W>5+",
+  -- moving between windows
+  ["<A-s>"] = "<C-W>j",
+  ["<A-w>"] = "<C-W>k",
+  ["<A-a>"] = "<C-W>h",
+  ["<A-d>"] = "<C-W>l",
+  -- changing window size
+  ["<A-C-s>"] = "<C-W>10<",
+  ["<A-C-w>"] = "<C-W>10>",
+  ["<A-C-a>"] = "<C-W>5-",
+  ["<A-C-d>"] = "<C-W>5+",
+
+  -- close tab
+  ["<A-X>"] = "<cmd>tabclose<CR>",
+  -- moving between tabs
+  ["<A-,>"] = "<cmd>tabprevious<CR>",
+  ["<A-.>"] = "<cmd>tabnext<CR>",
 }
 
-for k, v in pairs(window_management) do
+for k, v in pairs(window_tab_management) do
   vim.keymap.set("n", k, v)
 end
 
 vim.keymap.set("n", "<A-m>", "<cmd>messages<CR>", { desc = "Messages" })
 vim.keymap.set("n", "<A-i>", vim.lsp.buf.hover, { desc = "LSP Hover" })
-vim.keymap.set("n", "<A-s>", "<cmd>nohl<CR>", { desc = "No Highlight" })
+vim.keymap.set("n", "<A-/>", "<cmd>nohl<CR>", { desc = "No Highlight" })

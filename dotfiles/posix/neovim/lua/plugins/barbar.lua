@@ -8,10 +8,10 @@ return {
   init = function()
     vim.g.barbar_auto_setup = false
     local keys = {
-      { "A-,", "BufferPrevious" },
-      { "A-.", "BufferNext" },
-      { "A-C-,", "BufferMovePrevious" },
-      { "A-C-.", "BufferMoveNext" },
+      { "A-q", "BufferPrevious" },
+      { "A-e", "BufferNext" },
+      { "A-Q", "BufferMovePrevious" },
+      { "A-E", "BufferMoveNext" },
       { "A-1", "BufferGoto 1" },
       { "A-2", "BufferGoto 2" },
       { "A-3", "BufferGoto 3" },
@@ -27,7 +27,7 @@ return {
       vim.keymap.set({ "n", "t" }, "<" .. k[1] .. ">", "<Cmd>" .. k[2] .. "<CR>", { noremap = true, silent = false })
     end
 
-    local filetypes_not_to_close = { "neo-tree", "toggleterm" }
+    local filetypes_not_to_close = { "neo-tree" }
 
     vim.keymap.set({ "n", "t" }, "<A-c>", function()
       for _, ft in ipairs(filetypes_not_to_close) do

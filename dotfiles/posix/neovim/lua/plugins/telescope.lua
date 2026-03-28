@@ -40,10 +40,15 @@ return {
       { "b", builtin.buffers, "Buffers" },
       { "?", builtin.help_tags, "Help Tags" },
 
+      { "t", builtin.treesitter, "Treesitter" },
+
       { "gs", builtin.git_status, "Status" },
 
+      { "ld", builtin.lsp_definitions, "Definitions" },
       { "lr", builtin.lsp_references, "References" },
       { "li", builtin.lsp_implementations, "Implementations" },
+      { "l,", builtin.lsp_incoming_calls, "Incoming Calls" },
+      { "l.", builtin.lsp_outgoing_calls, "Outgoing Calls" },
     }
 
     for _, k in ipairs(keymap) do
