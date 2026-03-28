@@ -6,3 +6,11 @@ apps:
     paths:
       - system: $HOME/.config/ghostty/config
         repo: config
+  - name: hammerspoon
+    paths:
+      - system: $HOME/.hammerspoon/init.lua
+        repo: init.lua
+      - system: $HOME/.hammerspoon/.luarc.json
+        repo: dotluarc.json
+      - system: $HOME/.hammerspoon/biome.json
+        repo: biome.json
