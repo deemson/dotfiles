@@ -2,20 +2,16 @@
 return {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
+  root_markers = {
+    ".emmyrc.json",
+    ".luarc.json",
+    ".luarc.jsonc",
+    ".stylua.toml",
+    "stylua.toml",
+    ".git",
+  },
   settings = {
     Lua = {
-      runtime = { version = "LuaJIT" },
-      workspace = {
-        checkThirdParty = false,
-        library = {
-          vim.env.VIMRUNTIME,
-          vim.fn.stdpath("config"),
-          vim.fn.stdpath("data") .. "/lazy",
-        },
-      },
-      diagnostics = {
-        globals = { "vim" },
-      },
       telemetry = { enable = false },
     },
   },
