@@ -9,7 +9,7 @@ const loadProfileCopier = async () => {
   return new ProfileCopier(profile);
 };
 
-export const saveCommand = new Command("save");
+export const saveCommand = new Command("save").description("save dotfiles to repo");
 
 const addOptions = (command: Command): Command => {
   return command.option("-d, --dry", "dry run").option("-v, --verbose", "verbose output");
@@ -23,7 +23,7 @@ addOptions(saveCommand).action(async () => {
   logger.info({}, "save report\n" + lines.join("\n"));
 });
 
-export const loadCommand = new Command("load");
+export const loadCommand = new Command("load").description("load dotfiles from repo");
 
 addOptions(loadCommand).action(async () => {
   const { dry, verbose }: { dry: boolean; verbose: boolean } = loadCommand.opts();

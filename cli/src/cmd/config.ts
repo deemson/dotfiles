@@ -5,7 +5,7 @@ import { Command } from "commander";
 import { configDir } from "@/lib/paths";
 import { logger } from "@/lib/logging";
 
-export const configCommand = new Command("config");
+export const configCommand = new Command("config").description("manage config");
 
 configCommand
   .command("schema")
