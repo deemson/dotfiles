@@ -7,6 +7,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
+plug "wintermi/zsh-mise"
 
 # completion
 autoload -Uz compinit
@@ -26,7 +27,6 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
-export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 eval "$(starship init zsh)"

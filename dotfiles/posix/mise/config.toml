@@ -1,6 +1,7 @@
 [tools]
 # generic
-tree-sitter = "0.26.7"
+tree-sitter = "0.26.7"  # An incremental parsing system for programming tools
+usage = "3.2.0"  # A specification for CLIs
 # lua
 lua-language-server = "3.17.1"
 stylua = "2.4.0"
