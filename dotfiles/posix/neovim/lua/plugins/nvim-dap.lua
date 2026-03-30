@@ -45,5 +45,7 @@ return {
     vim.keymap.set("n", "<leader>dd", dap.disconnect, { desc = "Disconnect" })
 
     telescope.load_extension("dap")
+    local telescopeDap = telescope.extensions.dap
+    vim.keymap.set("n", "<leader>db", telescopeDap.list_breakpoints, { desc = "Breakpoints" })
   end,
 }
