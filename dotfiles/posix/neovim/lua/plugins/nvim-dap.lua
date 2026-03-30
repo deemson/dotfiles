@@ -10,49 +10,21 @@ return {
     local dap = require("dap")
     local dapui = require("dapui")
     local telescope = require("telescope")
+    local neotreeCommand = require("neo-tree.command")
 
-    dap.adapters.go = {
-      type = "server",
-      port = "${port}",
-      executable = {
-        command = "dlv",
-        args = { "dap", "--listen", "127.0.0.1:${port}" },
-      },
-    }
-
-    dap.configurations.go = {
-      {
-        type = "go",
-        name = "Debug",
-        request = "launch",
-        program = "${file}",
-      },
-      {
-        type = "go",
-        name = "Debug package",
-        request = "launch",
-        program = "${workspaceFolder}",
-      },
-      {
-        type = "go",
-        name = "Attach",
-        request = "attach",
-        processId = require("dap.utils").pick_process,
-      },
-    }
-
-    -- UI setup
     dapui.setup()
 
-    -- Auto-open/close UI with session
     dap.listeners.after.event_initialized["dapui_config"] = function()
       dapui.open()
+      neotreeCommand.execute({ action = "close" })
     end
     dap.listeners.before.event_terminated["dapui_config"] = function()
       dapui.close()
+      neotreeCommand.execute({ action = "show" })
     end
     dap.listeners.before.event_exited["dapui_config"] = function()
       dapui.close()
+      neotreeCommand.execute({ action = "show" })
     end
 
     -- Keymaps
@@ -61,7 +33,16 @@ return {
     vim.keymap.set("n", "<F11>", dap.step_into)
     vim.keymap.set("n", "<F12>", dap.step_out)
     vim.keymap.set("n", "<A-b>", dap.toggle_breakpoint)
-    vim.keymap.set("n", "<leader>d", dapui.toggle)
+    vim.keymap.set("n", "<leader>dc", function()
+      dapui.close()
+      neotreeCommand.execute({ action = "show" })
+    end, { desc = "Close" })
+    vim.keymap.set("n", "<leader>do", function()
+      neotreeCommand.execute({ action = "close" })
+      dapui.open()
+    end, { desc = "Open" })
+    vim.keymap.set("n", "<leader>ds", dap.stop, { desc = "Stop" })
+    vim.keymap.set("n", "<leader>dd", dap.disconnect, { desc = "Disconnect" })
 
     telescope.load_extension("dap")
   end,

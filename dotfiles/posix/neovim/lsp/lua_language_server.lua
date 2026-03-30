@@ -15,4 +15,27 @@ return {
       telemetry = { enable = false },
     },
   },
+  on_attach = function(client, bufnr)
+    local buf_file_path = vim.api.nvim_buf_get_name(bufnr)
+    local is_inside_config = vim.startswith(buf_file_path, vim.fn.stdpath("config"))
+    local is_dot_nvim_lua = vim.endswith(buf_file_path, ".nvim.lua")
+    if is_inside_config or is_dot_nvim_lua then
+      client.settings = {
+        Lua = {
+          runtime = { version = "LuaJIT" },
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME,
+              vim.fn.stdpath("config"),
+              vim.fn.stdpath("data") .. "/lazy",
+            },
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+        },
+      }
+    end
+  end,
 }

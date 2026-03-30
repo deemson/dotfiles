@@ -12,6 +12,7 @@ return {
       { "<leader>x", group = "Trouble" },
       { "<leader>h", group = "Harpoon" },
       { "<leader>a", group = "Aerial" },
+      { "<leader>d", group = "DAP" },
     })
   end,
 }

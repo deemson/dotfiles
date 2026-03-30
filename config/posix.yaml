@@ -15,8 +15,6 @@ apps:
         repo: lua
       - system: $HOME/.config/nvim/lazy-lock.json
         repo: lazy-lock.json
-      - system: $HOME/.config/nvim/.nvim.lua
-        repo: dotnvim.lua
   - name: zsh
     paths:
       - system: $HOME/.zshrc
