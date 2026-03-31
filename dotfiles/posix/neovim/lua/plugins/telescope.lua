@@ -33,26 +33,28 @@ return {
       },
     })
 
-    local telescope_group_key = "t"
     local keymap = {
-      { "f", builtin.find_files, "Find Files" },
-      { "e", live_grep, "Live Grep" },
-      { "b", builtin.buffers, "Buffers" },
-      { "?", builtin.help_tags, "Help Tags" },
-
-      { "t", builtin.treesitter, "Treesitter" },
-
-      { "gs", builtin.git_status, "Status" },
-
-      { "ld", builtin.lsp_definitions, "Definitions" },
-      { "lr", builtin.lsp_references, "References" },
-      { "li", builtin.lsp_implementations, "Implementations" },
-      { "l,", builtin.lsp_incoming_calls, "Incoming Calls" },
-      { "l.", builtin.lsp_outgoing_calls, "Outgoing Calls" },
+      f = {
+        { "f", builtin.find_files, "Find Files" },
+        { "e", live_grep, "Live Grep" },
+        { "b", builtin.buffers, "Buffers" },
+        { "?", builtin.help_tags, "Help Tags" },
+        { "t", builtin.treesitter, "Treesitter" },
+      },
+      l = {
+        { "t", builtin.lsp_type_definitions, "Type Definitions" },
+        { "d", builtin.lsp_definitions, "Definitions" },
+        { "r", builtin.lsp_references, "References" },
+        { "i", builtin.lsp_implementations, "Implementations" },
+        { ",", builtin.lsp_incoming_calls, "Incoming Calls" },
+        { ".", builtin.lsp_outgoing_calls, "Outgoing Calls" },
+      },
     }
 
-    for _, k in ipairs(keymap) do
-      vim.keymap.set("n", "<leader>" .. telescope_group_key .. k[1], k[2], { desc = k[3] })
+    for group_key, group_keymap in pairs(keymap) do
+      for _, k in ipairs(group_keymap) do
+        vim.keymap.set("n", "<leader>" .. group_key .. k[1], k[2], { desc = k[3] })
+      end
     end
   end,
 }

@@ -9,7 +9,7 @@ return {
       render = "minimal",
       stages = "static",
     })
-    vim.keymap.set("n", "<leader>tn", "<Cmd>Telescope notify<CR>", { desc = "Notifications" })
+    vim.keymap.set("n", "<leader>fn", "<Cmd>Telescope notify<CR>", { desc = "Notifications" })
     vim.keymap.set("", "<A-`>", notify.dismiss, { desc = "Dismiss Notification" })
   end,
 }

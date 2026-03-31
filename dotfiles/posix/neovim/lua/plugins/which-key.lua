@@ -6,11 +6,9 @@ return {
     local wk = require("which-key")
 
     wk.add({
-      { "<leader>t", group = "Telescope" },
-      { "<leader>tg", group = "Git" },
-      { "<leader>tl", group = "LSP" },
+      { "<leader>f", group = "Find" },
+      { "<leader>l", group = "LSP" },
       { "<leader>x", group = "Trouble" },
-      { "<leader>h", group = "Harpoon" },
       { "<leader>a", group = "Aerial" },
       { "<leader>d", group = "DAP" },
     })
