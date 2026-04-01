@@ -21,9 +21,20 @@ return {
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
       ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
     },
+    completion = {
+      menu = {
+        draw = {
+          columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+        },
+      },
+    },
     cmdline = {
       keymap = { preset = "inherit" },
-      completion = { menu = { auto_show = true } },
+      completion = {
+        menu = {
+          auto_show = true,
+        },
+      },
     },
   },
 }
