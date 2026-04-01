@@ -40,6 +40,7 @@ return {
         { "b", builtin.buffers, "Buffers" },
         { "?", builtin.help_tags, "Help Tags" },
         { "t", builtin.treesitter, "Treesitter" },
+        { "r", builtin.registers, "Registers" },
       },
       l = {
         { "t", builtin.lsp_type_definitions, "Type Definitions" },

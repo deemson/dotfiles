@@ -4,6 +4,10 @@ return {
   init = function()
     local readline = require("readline")
     local keymap = {
+      ["C-f"] = "<Right>",
+      ["C-b"] = "<Left>",
+      ["C-h"] = "<BS>",
+      ["C-d"] = "<Delete>",
       ["M-f"] = readline.forward_word,
       ["M-b"] = readline.backward_word,
       ["C-a"] = readline.dwim_beginning_of_line,

@@ -11,6 +11,7 @@ return {
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-c>"] = { "hide" },
       ["<C-CR>"] = { "select_and_accept" },
+      ["<C-j>"] = { "select_and_accept" },
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
       ["<C-p>"] = { "select_prev", "fallback_to_mappings" },

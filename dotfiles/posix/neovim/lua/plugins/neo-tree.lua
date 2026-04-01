@@ -11,9 +11,11 @@ return {
   lazy = false, -- neo-tree will lazily load itself
   config = function()
     local defaultConfig = require("neo-tree.defaults")
-    defaultConfig.window.mappings["t"] = nil
     defaultConfig.window.mappings["<space>"] = nil
-    defaultConfig.window.mappings["te"] = "telescope_grep"
+    defaultConfig.window.mappings["T"] = defaultConfig.window.mappings["t"]
+    defaultConfig.window.mappings["t"] = { "toggle_node", nowait = true }
+    defaultConfig.filesystem.window.mappings["f"] = nil
+    defaultConfig.window.mappings["fe"] = "telescope_grep"
     require("neo-tree").setup({
       window = {
         mappings = defaultConfig.window.mappings,

@@ -8,10 +8,10 @@ return {
   init = function()
     vim.g.barbar_auto_setup = false
     local keys = {
-      { "A-q", "BufferPrevious" },
-      { "A-e", "BufferNext" },
-      { "A-Q", "BufferMovePrevious" },
-      { "A-E", "BufferMoveNext" },
+      { "A-u", "BufferPrevious" },
+      { "A-i", "BufferNext" },
+      { "A-U", "BufferMovePrevious" },
+      { "A-I", "BufferMoveNext" },
       { "A-1", "BufferGoto 1" },
       { "A-2", "BufferGoto 2" },
       { "A-3", "BufferGoto 3" },
