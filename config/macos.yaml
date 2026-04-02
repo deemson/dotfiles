@@ -10,6 +10,8 @@ apps:
     paths:
       - system: $HOME/.hammerspoon/init.lua
         repo: init.lua
+      - system: $HOME/.hammerspoon/utils.lua
+        repo: utils.lua
       - system: $HOME/.hammerspoon/.luarc.json
         repo: dotluarc.json
       - system: $HOME/.hammerspoon/biome.json
