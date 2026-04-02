@@ -6,6 +6,8 @@ return {
     local keymap = {
       ["C-f"] = "<Right>",
       ["C-b"] = "<Left>",
+      ["C-p"] = "<Up>",
+      ["C-n"] = "<Down>",
       ["C-h"] = "<BS>",
       ["C-d"] = "<Delete>",
       ["M-f"] = readline.forward_word,
