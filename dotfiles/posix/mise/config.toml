@@ -29,3 +29,6 @@ ruff = "0.15.7"
 "pipx:basedpyright" = "1.38.3"
 # protobuf
 buf = "1.66.1"
+# zig
+zig = "0.15.2"
+zls = "0.15.1"

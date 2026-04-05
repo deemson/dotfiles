@@ -17,6 +17,8 @@ vim.lsp.enable({
   "godot",
   -- Protobuf
   "buf",
+  -- Zig
+  "zls",
 })
 
 vim.api.nvim_create_user_command("LspRestart", function()
