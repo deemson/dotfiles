@@ -2,6 +2,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
+  enabled = false,
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
