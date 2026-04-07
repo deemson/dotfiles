@@ -42,6 +42,7 @@ return {
     -- dashboard = { enabled = true },
     ---@class snacks.picker.Explorer
     explorer = {
+      finder = false,
       enabled = true,
     },
     -- indent = { enabled = true },
@@ -60,10 +61,18 @@ return {
       },
       sources = {
         explorer = {
+          hidden = true,
+          layout = {
+            auto_hide = { "input" },
+          },
           win = {
             list = {
               keys = {
                 ["<Esc>"] = false,
+                ["/"] = false,
+                ["."] = false,
+                ["<BS>"] = false,
+                ["<a-h>"] = false,
               },
             },
           },
