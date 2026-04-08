@@ -51,14 +51,23 @@ return {
       enabled = true,
     },
     -- indent = { enabled = true },
-    -- input = { enabled = true },
+    ---@class snacks.input.Config
+    input = {
+      enabled = true,
+      win = {
+        style = "input",
+        keys = {
+          -- ["<esc>"] = { "close", mode = { "n", "i" } },
+        },
+      },
+    },
     ---@class snacks.picker.Config
     picker = {
       enabled = true,
       win = {
         input = {
           keys = {
-            ["<Esc>"] = { "close", mode = { "n", "i" } },
+            ["<esc>"] = { "close", mode = { "n", "i" } },
             ["<c-a>"] = false,
             ["<a-f>"] = false,
           },
@@ -70,10 +79,23 @@ return {
           layout = {
             -- auto_hide = { "input" },
           },
+          actions = {
+            clear_input = function(picker)
+              picker.input:set("", "")
+              picker:find({
+                refresh = false,
+                on_done = function()
+                  picker:focus("list", { show = true })
+                end,
+              })
+            end,
+          },
           win = {
             input = {
               keys = {
-                ["<Esc>"] = false,
+                ---@diagnostic disable-next-line: assign-type-mismatch
+                ["<Esc>"] = { "clear_input", mode = { "n", "i" } },
+                ["<CR>"] = { "confirm", mode = { "n", "i" } },
               },
             },
             list = {
@@ -102,6 +124,13 @@ return {
     -- scroll = { enabled = true },
     -- statuscolumn = { enabled = true },
     -- words = { enabled = true },
+    styles = {
+      input = {
+        keys = {
+          i_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "i", expr = true },
+        },
+      },
+    },
   },
   keys = {
     -- File Explorer
