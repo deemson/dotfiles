@@ -1,6 +1,11 @@
-local toggleExplorer = function()
+local function toggleExplorer()
   Snacks.explorer()
 end
+
+local function toggleNotifierHistory()
+  Snacks.notifier.show_history()
+end
+
 local pickers = {
   file = function()
     Snacks.picker.files()
@@ -63,9 +68,14 @@ return {
         explorer = {
           hidden = true,
           layout = {
-            auto_hide = { "input" },
+            -- auto_hide = { "input" },
           },
           win = {
+            input = {
+              keys = {
+                ["<Esc>"] = false,
+              },
+            },
             list = {
               keys = {
                 ["<Esc>"] = false,
@@ -99,6 +109,7 @@ return {
     -- Find
     { "<leader>ff", pickers.file, desc = "Files" },
     { "<leader>fe", pickers.grep, desc = "Grep" },
+    { "<leader>fn", toggleNotifierHistory, desc = "Notifications" },
     -- LSP
     { "<leader>lt", pickers.lsp.typeDef, desc = "Type Definitions" },
     { "<leader>ld", pickers.lsp.def, desc = "Definitions" },
