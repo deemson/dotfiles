@@ -1,5 +1,6 @@
 [tools]
 # generic
+fd = "10.4.2"
 tree-sitter = "0.26.7"  # An incremental parsing system for programming tools
 usage = "3.2.0"  # A specification for CLIs
 # lua

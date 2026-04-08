@@ -43,22 +43,21 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    -- bigfile = { enabled = true },
-    -- dashboard = { enabled = true },
+    scope = {
+      enabled = false,
+    },
+    indent = {
+      enabled = false,
+    },
     ---@class snacks.picker.Explorer
     explorer = {
-      finder = false,
       enabled = true,
     },
-    -- indent = { enabled = true },
     ---@class snacks.input.Config
     input = {
       enabled = true,
       win = {
         style = "input",
-        keys = {
-          -- ["<esc>"] = { "close", mode = { "n", "i" } },
-        },
       },
     },
     ---@class snacks.picker.Config
@@ -76,23 +75,27 @@ return {
       sources = {
         explorer = {
           hidden = true,
-          layout = {
-            -- auto_hide = { "input" },
-          },
           actions = {
             clear_input = function(picker)
-              picker.input:set("", "")
-              picker:find({
-                refresh = false,
-                on_done = function()
-                  picker:focus("list", { show = true })
-                end,
-              })
+              if picker.input:get() ~= "" then
+                picker.input:set("", "")
+                picker:find({
+                  refresh = false,
+                  on_done = function()
+                    picker:focus("list", { show = true })
+                  end,
+                })
+              else
+                picker:focus("list", { show = true })
+              end
             end,
           },
           win = {
             input = {
               keys = {
+                -- default esc behavior is just like any other picker -- it closes
+                -- the explorer altogether
+                -- I'd like it to clear input and focus tree instead
                 ---@diagnostic disable-next-line: assign-type-mismatch
                 ["<Esc>"] = { "clear_input", mode = { "n", "i" } },
                 ["<CR>"] = { "confirm", mode = { "n", "i" } },
@@ -101,9 +104,11 @@ return {
             list = {
               keys = {
                 ["<Esc>"] = false,
+                -- disable stuff that messes with CWD
                 ["/"] = false,
                 ["."] = false,
                 ["<BS>"] = false,
+                -- don't really need the second hotkey to toggle hidden
                 ["<a-h>"] = false,
               },
             },
@@ -119,14 +124,12 @@ return {
       timeout = 2000,
       style = "minimal",
     },
-    -- quickfile = { enabled = true },
-    -- scope = { enabled = true },
-    -- scroll = { enabled = true },
-    -- statuscolumn = { enabled = true },
-    -- words = { enabled = true },
+    words = { enabled = false }, -- not sure if I want it
     styles = {
       input = {
         keys = {
+          -- remap esc to cancel in insert mode so that input is immediately closed
+          -- instead of sending back to normal first
           i_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "i", expr = true },
         },
       },
