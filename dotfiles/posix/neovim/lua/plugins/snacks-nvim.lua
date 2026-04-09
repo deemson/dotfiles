@@ -133,6 +133,11 @@ return {
           i_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "i", expr = true },
         },
       },
+      notification_history = {
+        keys = {
+          ["<esc>"] = "close",
+        },
+      },
     },
   },
   keys = {
