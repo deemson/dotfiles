@@ -110,6 +110,7 @@ return {
                 ["<BS>"] = false,
                 -- don't really need the second hotkey to toggle hidden
                 ["<a-h>"] = false,
+                q = false,
               },
             },
           },
