@@ -3,6 +3,8 @@
 fd = "10.4.2"
 tree-sitter = "0.26.7"  # An incremental parsing system for programming tools
 usage = "3.2.0"  # A specification for CLIs
+lazygit = "0.61.0"
+lazydocker = "0.25.0"
 # lua
 lua-language-server = "3.17.1"
 stylua = "2.4.0"
