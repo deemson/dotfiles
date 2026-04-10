@@ -22,6 +22,7 @@ return {
         jsonc = js_formatter,
         yaml = { "yamlfmt" },
         python = { "ruff_format" },
+        zig = { "zigfmt" },
       },
       formatters = {
         stylua = {
