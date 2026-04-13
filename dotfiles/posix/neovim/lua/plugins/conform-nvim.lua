@@ -5,7 +5,7 @@ return {
     local conform = require("conform")
     local util = require("conform.util")
 
-    local js_formatter = { "biome", "prettierd" }
+    local js_formatter = { "biome" }
 
     conform.setup({
       format_on_save = nil,
@@ -30,11 +30,6 @@ return {
             "--indent-type=Spaces",
             "--indent-width=2",
           },
-        },
-        biome = {
-          inherit = true,
-          cwd = util.root_file({ "biome.json" }),
-          require_cwd = true,
         },
       },
     })
