@@ -13,6 +13,9 @@ local pickers = {
   grep = function()
     Snacks.picker.grep()
   end,
+  treesitter = function()
+    Snacks.picker.treesitter()
+  end,
   lsp = {
     typeDef = function()
       Snacks.picker.lsp_type_definitions()
@@ -110,6 +113,8 @@ return {
                 ["<BS>"] = false,
                 -- don't really need the second hotkey to toggle hidden
                 ["<a-h>"] = false,
+                -- don't really need the second hotkey to toggle ignored
+                ["<a-i>"] = false,
                 q = false,
               },
             },
@@ -148,6 +153,7 @@ return {
     { "<leader>ff", pickers.file, desc = "Files" },
     { "<leader>fe", pickers.grep, desc = "Grep" },
     { "<leader>fn", toggleNotifierHistory, desc = "Notifications" },
+    { "<leader>ft", pickers.treesitter, desc = "Tree Sitter" },
     -- LSP
     { "<leader>lt", pickers.lsp.typeDef, desc = "Type Definitions" },
     { "<leader>ld", pickers.lsp.def, desc = "Definitions" },
