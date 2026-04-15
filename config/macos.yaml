@@ -14,5 +14,3 @@ apps:
         repo: utils.lua
       - system: $HOME/.hammerspoon/.luarc.json
         repo: dotluarc.json
-      - system: $HOME/.hammerspoon/biome.json
-        repo: biome.json
