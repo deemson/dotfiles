@@ -77,7 +77,7 @@ return {
       },
       sources = {
         explorer = {
-          hidden = true,
+          hidden = true, -- show hidden files
           actions = {
             clear_input = function(picker)
               if picker.input:get() ~= "" then
@@ -117,6 +117,11 @@ return {
                 ["<a-i>"] = false,
                 q = false,
               },
+            },
+          },
+          layout = {
+            layout = {
+              width = 30,
             },
           },
         },
