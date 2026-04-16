@@ -7,6 +7,7 @@ lazygit = "0.61.1"
 lazydocker = "0.25.0"
 fzf = "0.71.0"
 task = "3.50.0"
+just = "1.49.0"
 # lua
 lua-language-server = "3.18.2"
 stylua = "2.4.1"
