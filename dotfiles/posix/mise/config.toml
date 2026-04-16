@@ -1,26 +1,26 @@
 [tools]
 # generic
 fd = "10.4.2"
-tree-sitter = "0.26.7"  # An incremental parsing system for programming tools
+tree-sitter = "0.26.8"
 usage = "3.2.0"  # A specification for CLIs
-lazygit = "0.61.0"
+lazygit = "0.61.1"
 lazydocker = "0.25.0"
 fzf = "0.71.0"
 # lua
-lua-language-server = "3.17.1"
-stylua = "2.4.0"
+lua-language-server = "3.18.2"
+stylua = "2.4.1"
 # toml
 tombi = "0.9.7"
 # go
-go = "1.26.1"
+go = "1.26.2"
 "go:golang.org/x/tools/gopls" = "0.21.1"
 "go:gotest.tools/gotestsum" = "1.13.0"
 "go:github.com/go-delve/delve/cmd/dlv" = "1.26.1"
 # js/ts
 node = "25.8.1"
-bun = "1.3.11"
+bun = "1.3.12"
 "npm:@vtsls/language-server" = "0.3.0"
-"aqua:biomejs/biome" = "2.4.8"
+"aqua:biomejs/biome" = "2.4.12"
 # json/css/html
 "npm:vscode-langservers-extracted" = "4.10.0"
 # yaml
@@ -28,8 +28,8 @@ bun = "1.3.11"
 "go:github.com/google/yamlfmt/cmd/yamlfmt" = "0.21.0"
 # python
 "pipx:ipython" = "9.12.0"
-uv = "0.10.12"
-ruff = "0.15.7"
+uv = "0.11.7"
+ruff = "0.15.10"
 "pipx:basedpyright" = "1.38.3"
 # protobuf
 buf = "1.66.1"
