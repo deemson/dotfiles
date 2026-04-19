@@ -1,6 +1,11 @@
-local function toggleExplorer()
-  Snacks.explorer()
-end
+local explorer = {
+  toggle = function()
+    Snacks.explorer()
+  end,
+  reveal = function()
+    Snacks.explorer.reveal()
+  end,
+}
 
 local function toggleNotifierHistory()
   Snacks.notifier.show_history()
@@ -100,6 +105,10 @@ return {
                 picker:focus("list", { show = true })
               end
             end,
+            reset_working_dir = function(picker)
+              picker:set_cwd(vim.fn.getcwd())
+              picker:find()
+            end,
           },
           win = {
             input = {
@@ -115,10 +124,7 @@ return {
             list = {
               keys = {
                 ["<Esc>"] = false,
-                -- disable stuff that messes with CWD
-                ["/"] = false,
-                ["."] = false,
-                ["<BS>"] = false,
+                ["~"] = { "reset_working_dir" },
                 -- don't really need the second hotkey to toggle hidden
                 ["<a-h>"] = false,
                 -- don't really need the second hotkey to toggle ignored
@@ -161,7 +167,8 @@ return {
   },
   keys = {
     -- File Explorer
-    { "<F2>", toggleExplorer, desc = "File Explorer" },
+    { "<F2>", explorer.toggle, desc = "File Explorer" },
+    { "<F3>", explorer.reveal, desc = "Reveal in File Exporer" },
     -- Find
     { "<leader>ff", pickers.file, desc = "Files" },
     { "<leader>fe", pickers.grep, desc = "Grep" },
