@@ -54,7 +54,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 return {
-  "folke/snacks.nvim",
+  -- "folke/snacks.nvim",
+  -- switch to my fork with fixes
+  "deemson/snacks.nvim",
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
