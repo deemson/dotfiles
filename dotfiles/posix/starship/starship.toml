@@ -201,6 +201,11 @@ style = "red"
 format = "[ ](bright-black)[$symbol ](bright-black)[$workspace](fg:bright-blue)[ $version](fg:blue)[ ](bright-black)"
 symbol = ""
 
+[ruby]
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+style = "bold red"
+symbol = ""
+
 [zig]
 format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
 style = "bold yellow"
