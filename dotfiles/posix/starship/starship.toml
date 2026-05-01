@@ -206,6 +206,11 @@ format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](b
 style = "bold red"
 symbol = ""
 
+[rust]
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
+style = "bold yellow"
+symbol = ""
+
 [zig]
 format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](bright-black)"
 style = "bold yellow"
