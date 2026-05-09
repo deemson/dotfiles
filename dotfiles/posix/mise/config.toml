@@ -39,6 +39,7 @@ ruff = "0.15.10"
 # protobuf
 buf = "1.66.1"
 # zig
-zig = "0.15.1"
-zls = "0.15.1"
+zig = "0.16.0"
+zls = "0.16.0"
 # generic things that require something from above
+"npm:hunkdiff" = "0.10.0"
