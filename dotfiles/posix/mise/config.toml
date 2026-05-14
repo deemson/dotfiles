@@ -11,6 +11,7 @@ just = "1.49.0"
 jq = "1.8.1"
 yq = "4.53.2"
 bat = "0.26.1"
+fx = "39.2.0"
 # lua
 lua-language-server = "3.18.2"
 stylua = "2.4.1"
