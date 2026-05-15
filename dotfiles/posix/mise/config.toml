@@ -2,7 +2,7 @@
 # generic
 fd = "10.4.2"
 tree-sitter = "0.26.8"
-usage = "3.2.0"  # A specification for CLIs
+usage = "3.2.0"
 lazygit = "0.61.1"
 lazydocker = "0.25.0"
 fzf = "0.71.0"
@@ -42,5 +42,7 @@ buf = "1.66.1"
 # zig
 zig = "0.16.0"
 zls = "0.16.0"
+# rust
+rust = { version = "1.95.0", components="rust-analyzer" }
 # generic things that require something from above
 "npm:hunkdiff" = "0.10.0"

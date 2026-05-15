@@ -19,6 +19,8 @@ vim.lsp.enable({
   "buf",
   -- Zig
   "zls",
+  -- Rust
+  "rust_analyzer",
 })
 
 vim.api.nvim_create_user_command("LspRestart", function()
