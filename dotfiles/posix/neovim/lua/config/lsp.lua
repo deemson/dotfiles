@@ -36,3 +36,5 @@ end, { desc = "Restart LSP" })
 vim.api.nvim_create_user_command("LspLog", function()
   vim.cmd("edit " .. vim.lsp.get_log_path())
 end, { desc = "LSP Logs" })
+
+vim.lsp.set_log_level("debug")

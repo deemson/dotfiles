@@ -1,5 +1,6 @@
 [tools]
 # generic
+neovim = "0.11.7"
 fd = "10.4.2"
 tree-sitter = "0.26.8"
 usage = "3.2.0"
