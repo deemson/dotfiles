@@ -7,7 +7,6 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
-plug "wintermi/zsh-mise"
 
 # completion
 autoload -Uz compinit
@@ -20,6 +19,7 @@ select-word-style bash
 source $HOME/.zsh/plugins/syntax-highlight.zsh
 source $HOME/.zsh/plugins/history-substring-search.zsh
 # apps
+source $HOME/.zsh/apps/mise.zsh
 source $HOME/.zsh/apps/fzf.zsh
 
 HISTFILE="$HOME/.zsh_history"
