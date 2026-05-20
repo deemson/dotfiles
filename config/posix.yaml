@@ -9,6 +9,8 @@ apps:
     paths:
       - system: $HOME/.config/nvim/init.lua
         repo: init.lua
+      - system: $HOME/.config/nvim/filetype.lua
+        repo: filetype.lua
       - system: $HOME/.config/nvim/after
         repo: after
       - system: $HOME/.config/nvim/lsp
