@@ -17,6 +17,8 @@ apps:
         repo: lsp
       - system: $HOME/.config/nvim/lua
         repo: lua
+      - system: $HOME/.config/nvim/queries
+        repo: queries
       - system: $HOME/.config/nvim/lazy-lock.json
         repo: lazy-lock.json
   - name: zsh

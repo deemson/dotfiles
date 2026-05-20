@@ -13,7 +13,7 @@
 --   "class"       -> ac / ic  + ]c / [c (move)
 --   "loop"        -> al / il
 --   "conditional" -> ai / ii
---   "block"       -> ab / ib
+--   "block"       -> ab / ib  + ]b / [b (move)
 --   "call"        -> a. / i.
 --   "parameter"   -> a, / i,
 --   "assignment"  -> a= / i=  and  =[ / =]  (lhs / rhs)
@@ -45,6 +45,10 @@ local features = {
   },
   block = {
     select = { ["ab"] = "@block.outer", ["ib"] = "@block.inner" },
+    move = {
+      next_start = { ["]b"] = "@block.outer" },
+      prev_start = { ["[b"] = "@block.outer" },
+    },
   },
   call = {
     select = { ["a."] = "@call.outer", ["i."] = "@call.inner" },
