@@ -5,6 +5,8 @@ apps:
     paths:
       - system: $HOME/.bin/dotfiles
         repo: dotfiles
+      - system: $HOME/.bin/ai-setup
+        repo: ai-setup
   - name: neovim
     paths:
       - system: $HOME/.config/nvim/init.lua
