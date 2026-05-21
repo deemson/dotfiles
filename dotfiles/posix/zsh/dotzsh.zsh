@@ -15,13 +15,6 @@ compinit
 autoload -U select-word-style
 select-word-style bash
 
-# plugins
-source $HOME/.zsh/plugins/syntax-highlight.zsh
-source $HOME/.zsh/plugins/history-substring-search.zsh
-# apps
-source $HOME/.zsh/apps/mise.zsh
-source $HOME/.zsh/apps/fzf.zsh
-
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
@@ -31,10 +24,19 @@ setopt HIST_IGNORE_SPACE
 
 export PATH="$HOME/.bin:$PATH"
 
-eval "$(starship init zsh)"
+# mise
+eval "$(~/.local/bin/mise activate zsh)"
+
+# plugins
+for f in $HOME/.zsh/plugins/*.zsh(N); do
+  source "$f"
+done
+# apps
+for f in $HOME/.zsh/apps/*.zsh(N); do
+  source "$f"
+done
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# mise
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(starship init zsh)"
