@@ -1,0 +1,2 @@
+- system: $HOME/.config/yamlfmt/yamlfmt.yaml
+  repo: yamlfmt.yaml

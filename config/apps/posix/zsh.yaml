@@ -1,0 +1,4 @@
+- system: $HOME/.zshrc
+  repo: dotzsh.zsh
+- system: $HOME/.zsh
+  repo: dotzsh

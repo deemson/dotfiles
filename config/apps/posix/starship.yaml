@@ -1,0 +1,2 @@
+- system: $HOME/.config/starship.toml
+  repo: starship.toml

@@ -1,9 +1,9 @@
-import { ConfigPath } from "@/config/config-types";
+import { AppPath } from "@/config/config-types";
 
-export type ProfilePath = ConfigPath;
+export type ProfilePath = AppPath;
 
 export interface ProfileApp {
-  config: string;
+  repoPath: string;
   name: string;
   paths: ProfilePath[];
 }

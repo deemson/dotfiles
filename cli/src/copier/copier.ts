@@ -72,9 +72,9 @@ class AppCopier {
 
   constructor(private readonly config: ProfileApp) {
     this.paths = config.paths.map((pathConfig) => {
-      return new PathCopier(pathConfig, path.join(config.config, config.name));
+      return new PathCopier(pathConfig, config.repoPath);
     });
-    this.repoPath = path.resolve(path.join(dotfilesDir, config.config, config.name));
+    this.repoPath = path.resolve(path.join(dotfilesDir, config.repoPath));
   }
 
   async save(dry: boolean): Promise<AppReport> {

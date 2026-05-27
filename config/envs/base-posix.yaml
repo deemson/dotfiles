@@ -1,0 +1,7 @@
+abstract: true
+apps:
+  - posix/dotbin
+  - posix/neovim
+  - posix/starship
+  - posix/yamlfmt
+  - posix/zsh

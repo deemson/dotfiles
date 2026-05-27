@@ -5,23 +5,27 @@ const pathSchema = z.strictObject({
   repo: z.string().min(1),
 });
 
-const appSchema = z.strictObject({
-  name: z.string().min(1),
-  paths: z.array(pathSchema).min(1),
-});
+const appConfigPathSchema = z
+  .string()
+  .min(1)
+  .regex(/^[^/]+\/[^/]+$/);
 
-const tempConfigSchema = z.strictObject({
+const envConfigSchemaTemporary = z.strictObject({
   inherit: z.array(z.string().min(1)).min(1).optional(),
   abstract: z.boolean().optional(),
-  apps: z.array(appSchema).min(1),
+  apps: z.array(appConfigPathSchema).min(1).optional(),
 });
 
-export const configJsonSchema = tempConfigSchema.toJSONSchema({ target: "draft-2020-12" });
+export const envConfigJsonSchema = envConfigSchemaTemporary.toJSONSchema({ target: "draft-2020-12" });
 
-export const configSchema = tempConfigSchema.transform((v) => {
+export const envConfigSchema = envConfigSchemaTemporary.transform((v) => {
   return {
     ...v,
     abstract: !!v.abstract,
     inherit: v.inherit || [],
+    apps: v.apps || [],
   };
 });
+
+export const appConfigSchema = z.array(pathSchema).min(1);
+export const appConfigJsonSchema = appConfigSchema.toJSONSchema({ target: "draft-2020-12" });

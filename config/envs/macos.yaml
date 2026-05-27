@@ -1,0 +1,6 @@
+inherit:
+  - base-posix
+apps:
+  - posix/mise
+  - macos/ghostty
+  - macos/hammerspoon

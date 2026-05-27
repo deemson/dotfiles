@@ -1,15 +1,20 @@
-import { Config } from "@/config/config-types";
+import fs from "node:fs/promises";
+import path from "node:path";
+import { EnvConfig } from "@/config/config-types";
 import { Profile, ProfileApp } from "@/config/profile-types";
-import { loadConfigs } from "@/config/config-func";
+import { loadEnvConfigs } from "@/config/config-func";
+import { appConfigSchema } from "@/config/schema";
+import { configDir } from "@/lib/paths";
+import { parse as parseYaml } from "yaml";
 
 const mergeApps = (...appLists: ProfileApp[][]): ProfileApp[] => {
   const appIndexes = new Map<string, number>();
   const apps: ProfileApp[] = [];
   for (const appList of appLists) {
     for (const app of appList) {
-      const appIndex = appIndexes.get(app.name);
+      const appIndex = appIndexes.get(app.repoPath);
       if (appIndex === undefined) {
-        appIndexes.set(app.name, apps.length);
+        appIndexes.set(app.repoPath, apps.length);
         apps.push(app);
         continue;
       }
@@ -19,10 +24,25 @@ const mergeApps = (...appLists: ProfileApp[][]): ProfileApp[] => {
   return apps;
 };
 
+const loadProfileApp = async (appConfigPath: string): Promise<ProfileApp> => {
+  const appPath = path.join(configDir, "apps", `${appConfigPath}.yaml`);
+  const content = await fs.readFile(appPath, "utf-8");
+  try {
+    return {
+      repoPath: appConfigPath,
+      name: path.basename(appConfigPath),
+      paths: appConfigSchema.parse(parseYaml(content)),
+    };
+  } catch (err) {
+    throw new Error(`Failed to load app "${appConfigPath}": ${err}`);
+  }
+};
+
 const resolveProfile = (
   name: string,
   profileMap: Map<string, Profile>,
-  configMap: Map<string, Config>,
+  configMap: Map<string, EnvConfig>,
+  appMap: Map<string, ProfileApp>,
   visitingSet: Set<string>,
   visitingStack: string[],
 ): Profile => {
@@ -37,15 +57,21 @@ const resolveProfile = (
 
   const config = configMap.get(name);
   if (config === undefined) {
-    throw new Error(`Unknown config: "${name}"`);
+    throw new Error(`Unknown env config: "${name}"`);
   }
-  const profileApps = config.apps.map((a) => ({ ...a, config: config.name }));
+  const profileApps = config.apps.map((appConfigPath) => {
+    const app = appMap.get(appConfigPath);
+    if (app === undefined) {
+      throw new Error(`Unknown app: "${appConfigPath}"`);
+    }
+    return app;
+  });
 
   visitingSet.add(name);
   visitingStack.push(name);
   try {
     const parentConfigs = config.inherit.map((parentName) =>
-      resolveProfile(parentName, profileMap, configMap, visitingSet, visitingStack),
+      resolveProfile(parentName, profileMap, configMap, appMap, visitingSet, visitingStack),
     );
 
     const resolvedProfile: Profile = {
@@ -64,15 +90,21 @@ const resolveProfile = (
 };
 
 export const loadProfiles = async (): Promise<Profile[]> => {
-  const configs = await loadConfigs();
-  const configMap = new Map<string, Config>();
-  for (const config of configs) {
-    configMap.set(config.name, config);
+  const envConfigs = await loadEnvConfigs();
+  const envConfigMap = new Map<string, EnvConfig>();
+  const appMap = new Map<string, ProfileApp>();
+  for (const envConfig of envConfigs) {
+    envConfigMap.set(envConfig.name, envConfig);
+    for (const appConfigPath of envConfig.apps) {
+      if (!appMap.has(appConfigPath)) {
+        appMap.set(appConfigPath, await loadProfileApp(appConfigPath));
+      }
+    }
   }
   const profileMap = new Map<string, Profile>();
   const profiles: Profile[] = [];
-  for (const config of configs) {
-    const profile = resolveProfile(config.name, profileMap, configMap, new Set(), []);
+  for (const config of envConfigs) {
+    const profile = resolveProfile(config.name, profileMap, envConfigMap, appMap, new Set(), []);
     if (!config.abstract) {
       profiles.push(profile);
     }
@@ -93,5 +125,5 @@ export const loadCurrentProfile = async (): Promise<Profile> => {
     }
     knownProfileNames.push(profile.name);
   }
-  throw new Error(`Unkown profile name "${profileName}": choose from [${knownProfileNames.join(", ")}]`);
+  throw new Error(`Unknown profile name "${profileName}": choose from [${knownProfileNames.join(", ")}]`);
 };

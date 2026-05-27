@@ -1,0 +1,8 @@
+abstract: true
+inherit:
+  - base-posix
+apps:
+  - linux/ghostty
+  - linux/sway
+  - linux/waybar
+  - linux/wofi

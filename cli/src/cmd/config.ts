@@ -1,4 +1,4 @@
-import { configJsonSchema } from "@/config";
+import { envConfigJsonSchema } from "@/config";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { Command } from "commander";
@@ -11,7 +11,7 @@ configCommand
   .command("schema")
   .option("-w, --write", "write schema into config folder")
   .action(async (_, command: Command) => {
-    const data = JSON.stringify(configJsonSchema, null, 2);
+    const data = JSON.stringify(envConfigJsonSchema, null, 2);
     if (command.opts().write) {
       const schemaPath = path.join(configDir, "schema.json");
       fs.writeFile(schemaPath, data);

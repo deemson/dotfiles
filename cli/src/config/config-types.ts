@@ -1,6 +1,5 @@
-import { configSchema } from "@/config/schema";
+import { appConfigSchema, envConfigSchema } from "@/config/schema";
 import z from "zod";
 
-export type Config = { name: string } & z.output<typeof configSchema>;
-export type ConfigApp = Config["apps"][number];
-export type ConfigPath = ConfigApp["paths"][number];
+export type EnvConfig = { name: string } & z.output<typeof envConfigSchema>;
+export type AppPath = z.output<typeof appConfigSchema>[number];
