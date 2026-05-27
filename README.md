@@ -18,22 +18,25 @@ Both load and save support a dry-run mode to preview changes before applying the
 
 ## Configuration profiles
 
-Configs are organized into platform profiles that use inheritance:
+Configs are split into environment profiles and reusable app configs. Environment profiles use inheritance:
 
 ```
-posix  (base — macOS + Linux)
+base-posix  (abstract — macOS + Linux)
 ├── macos
-└── linux
+└── base-linux  (abstract)
+    └── nixos
 ```
 
-Each profile declares which applications it manages and where their config files live on disk. This makes it easy to share common config while keeping platform-specific overrides separate.
+Each environment profile declares the app configs it manages, such as `posix/zsh` or `macos/hammerspoon`. App configs live under `config/apps/` and define where each app's files live on disk. This keeps shared app definitions reusable while preserving platform-specific overrides.
 
 ## Repository layout
 
 ```
 .dotfiles/
 ├── cli/          # TypeScript CLI source
-├── config/       # Platform profile definitions (YAML)
+├── config/       # Environment profiles and app definitions (YAML)
+│   ├── envs/
+│   └── apps/
 ├── dotfiles/     # Actual config files, organized by platform
 │   ├── posix/
 │   ├── macos/
