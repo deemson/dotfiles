@@ -1,4 +1,6 @@
-theme = "Gruvbox Dark Hard"
+# theme = "Gruvbox Dark Hard"
+theme = "TokyoNight Night"
+# theme = "Catppuccin Mocha"
 font-size = 14
 font-family = "JetBrainsMono Nerd Font"
 macos-option-as-alt = true
