@@ -24,7 +24,7 @@ return {
       options = {
         globalstatus = true,
         icons_enabled = true,
-        theme = "gruvbox-material",
+        theme = "tokyonight-night",
         component_separators = { left = "▏", right = "▕" },
         section_separators = { left = "▏", right = "▕" },
         always_divide_middle = true,
