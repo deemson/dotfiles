@@ -1,38 +1,21 @@
 /* vim: set filetype=less : */
 
-@define-color bg #282828;
-@define-color red1 #cc241d;
-@define-color green1 #98971a;
-@define-color yellow1 #d79921;
-@define-color blue1 #458588;
-@define-color purple1 #b16286;
-@define-color aqua1 #689d6a;
-@define-color gray1 #a89984;
-
-@define-color gray2 #928374;
-@define-color red2 #fb4934;
-@define-color green2 #b8bb26;
-@define-color yellow2 #fabd2f;
-@define-color blue2 #83a598;
-@define-color purple2 #d3869b;
-@define-color aqua2 #8ec07c;
-@define-color fg #ebdbb2;
-
-@define-color bg0_h #1d2021;
-@define-color bg0 #282828;
-@define-color bg1 #3c3836;
-@define-color bg2 #504945;
-@define-color bg3 #665c54;
-@define-color bg4 #7c6f64;
-@define-color orange1 #d65d0e;
-
-@define-color bg0_s #32302f;
-@define-color fg4 #a89984;
-@define-color fg3 #bdae93;
-@define-color fg2 #d5c4a1;
-@define-color fg1 #ebdbb2;
-@define-color fg0 #fbf1c7;
-@define-color orange2 #fe8019;
+@define-color bg #16161e;
+@define-color bg-dark #11111a;
+@define-color surface #1f2335;
+@define-color surface2 #24283b;
+@define-color border #3b4261;
+@define-color border-muted #292e42;
+@define-color text #c0caf5;
+@define-color text-muted #9aa5ce;
+@define-color focus #7aa2f7;
+@define-color focus-dim #3d59a1;
+@define-color urgent #f7768e;
+@define-color urgent-dim #914c54;
+@define-color warning #e0af68;
+@define-color warning-dim #8f5e15;
+@define-color success #9ece6a;
+@define-color success-dim #587539;
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
@@ -44,97 +27,97 @@
 }
 
 window#waybar {
-  background: @bg0;
-  color: @fg0;
+  background: @bg;
+  color: @text;
 }
 
 #workspaces button {
-  color: @fg3;
-  background: @bg0_h;
+  color: @text-muted;
+  background: @bg-dark;
   padding: 0 0.5em;
-  border: 1px solid @bg4;
+  border: 1px solid @border-muted;
   border-radius: 4px;
   margin-right: 0.2em;
 }
 
 #workspaces button.focused {
-  color: @fg0;
-  background: @blue1;
-  border: 1px solid @blue2;
+  color: @text;
+  background: @surface2;
+  border: 1px solid @focus;
 }
 
 #workspaces button.urgent {
-  color: @fg0;
-  background: @orange1;
-  border: 1px solid @orange2;
+  color: @text;
+  background: @urgent-dim;
+  border: 1px solid @urgent;
 }
 
 #network {
   padding-left: 0.3em;
   padding-right: 0.9em;
-  border: 1px solid @blue2;
-  background: @blue1;
+  border: 1px solid @focus;
+  background: @surface2;
   margin-left: 0.2em;
 }
 
 #network.disconnected {
-  border: 1px solid @bg4;
-  background: @bg0_h;
+  border: 1px solid @border-muted;
+  background: @bg-dark;
 }
 
 #network.disabled {
-  border: 1px solid @red2;
-  background: @red1;
+  border: 1px solid @urgent;
+  background: @urgent-dim;
 }
 
 #pulseaudio {
   padding-left: 0.5em;
   padding-right: 0.5em;
-  border: 1px solid @bg4;
-  background: @bg1;
+  border: 1px solid @border;
+  background: @surface;
   margin-left: 0.2em;
 }
 
 #pulseaudio.muted {
-  background: @bg0_h;
-  color: @fg4;
+  background: @bg-dark;
+  color: @text-muted;
 }
 
 #upower {
   padding-left: 0.5em;
   padding-right: 0.7em;
-  border: 1px solid @bg4;
-  background: @bg1;
+  border: 1px solid @border;
+  background: @surface;
   margin-left: 0.2em;
 }
 
 #upower.charging {
-  border: 1px solid @green2;
-  background: @green1;
+  border: 1px solid @success;
+  background: @success-dim;
 }
 
 #upower.discharging {
-  border: 1px solid @orange2;
-  background: @orange1;
+  border: 1px solid @warning;
+  background: @warning-dim;
 }
 
 #language {
-  border: 1px solid @bg4;
-  background: @bg1;
+  border: 1px solid @border;
+  background: @surface;
   padding: 0 0.5em;
   margin-left: 0.2em;
 }
 
 #clock {
-  border: 1px solid @bg4;
-  background: @bg1;
+  border: 1px solid @border;
+  background: @surface;
   padding: 0 0.5em;
   margin-left: 0.2em;
 }
 
 #tray {
-  border: 1px solid @bg4;
-  background: @bg1;
+  border: 1px solid @border;
+  background: @surface;
   padding: 0 0.5em;
   margin-left: 0.2em;
 }
