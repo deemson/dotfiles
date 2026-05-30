@@ -1,4 +1,6 @@
 - system: $HOME/.zshrc
   repo: dotzsh.zsh
-- system: $HOME/.zsh
-  repo: dotzsh
+- system: $HOME/.zsh/plugins
+  repo: dotzsh/plugins
+- system: $HOME/.zsh/apps
+  repo: dotzsh/apps

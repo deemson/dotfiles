@@ -24,8 +24,10 @@ setopt HIST_IGNORE_SPACE
 
 export PATH="$HOME/.bin:$PATH"
 
-# mise
-# eval "$(~/.local/bin/mise activate zsh)"
+# os-specific
+for f in $HOME/.zsh/os/*.zsh(N); do
+  source "$f"
+done
 
 # plugins
 for f in $HOME/.zsh/plugins/*.zsh(N); do

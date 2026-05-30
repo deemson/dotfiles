@@ -1,0 +1,2 @@
+- system: $HOME/.zsh/os
+  repo: dotzsh/os
