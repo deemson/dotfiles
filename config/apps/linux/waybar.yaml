@@ -2,5 +2,3 @@
   repo: config.jsonc
 - system: $HOME/.config/waybar/style.css
   repo: style.css
-- system: $HOME/.config/waybar/biome.json
-  repo: biome.json
