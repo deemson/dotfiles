@@ -3,9 +3,9 @@ include /etc/sway/config.d/*
 set $mod Mod4
 set $alt Mod1
 set $term ghostty
-set $resize_width 50 px
-set $resize_height 50 px
+set $resize_width_slow 10 px
+set $resize_height_slow 10 px
+set $resize_width_fast 100 px
+set $resize_height_fast 100 px
 
 include $HOME/.config/sway/config.d/*
-
-exec waybar

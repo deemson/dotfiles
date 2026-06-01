@@ -1,0 +1,3 @@
+- system: $HOME/.config/systemd/user/waybar.service
+  repo: waybar.service
+

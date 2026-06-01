@@ -69,10 +69,14 @@ bindsym $mod+Shift+s move down
 bindsym $mod+Shift+w move up
 bindsym $mod+Shift+d move right
 # resize focused window
-bindsym $mod+Ctrl+w resize grow width $resize_width
-bindsym $mod+Ctrl+s resize shrink width $resize_width
-bindsym $mod+Ctrl+d resize grow height $resize_height
-bindsym $mod+Ctrl+a resize shrink height $resize_height
+bindsym $mod+Ctrl+w resize grow width $resize_width_fast
+bindsym $mod+Ctrl+s resize shrink width $resize_width_fast
+bindsym $mod+Ctrl+d resize grow height $resize_height_fast
+bindsym $mod+Ctrl+a resize shrink height $resize_height_fast
+bindsym $mod+Shift+Ctrl+w resize grow width $resize_width_slow
+bindsym $mod+Shift+Ctrl+s resize shrink width $resize_width_slow
+bindsym $mod+Shift+Ctrl+d resize grow height $resize_height_slow
+bindsym $mod+Shift+Ctrl+a resize shrink height $resize_height_slow
 # split in horizontal orientation (side by side)
 bindsym $mod+$alt+a split h
 bindsym $mod+$alt+d split h
