@@ -6,12 +6,13 @@
 @define-color bg-dark @gruvbox_dark0_hard;
 @define-color surface @gruvbox_dark1;
 @define-color surface2 @gruvbox_dark2;
+@define-color surface-focus @gruvbox_dark_aqua;
 @define-color border @gruvbox_dark2;
 @define-color border-muted @gruvbox_dark1;
 @define-color text @gruvbox_light1;
 @define-color text-muted @gruvbox_gray;
-@define-color focus @gruvbox_dark4;
-@define-color focus-dim @gruvbox_dark3;
+@define-color focus @gruvbox_neutral_aqua;
+@define-color focus-dim @gruvbox_dark_aqua_soft;
 @define-color urgent @gruvbox_bright_red;
 @define-color urgent-dim @gruvbox_dark_red;
 @define-color warning @gruvbox_bright_yellow;
@@ -44,7 +45,7 @@ window#waybar {
 
 #workspaces button.focused {
   color: @text;
-  background: @surface2;
+  background: @surface-focus;
   border: 1px solid @focus;
 }
 

@@ -18,12 +18,13 @@ set $col_bg $gruvbox_dark0
 set $col_bg_dark $gruvbox_dark0_hard
 set $col_surface $gruvbox_dark1
 set $col_surface2 $gruvbox_dark2
+set $col_focus_surface $gruvbox_dark_aqua
 set $col_border $gruvbox_dark3
 set $col_border_muted $gruvbox_dark1
 set $col_text $gruvbox_light1
 set $col_text_muted $gruvbox_gray
-set $col_focus $gruvbox_dark4
-set $col_focus_dim $gruvbox_dark3
+set $col_focus $gruvbox_neutral_aqua
+set $col_focus_dim $gruvbox_dark_aqua_soft
 set $col_indicator $gruvbox_neutral_yellow
 set $col_urgent $gruvbox_bright_red
 set $col_urgent_dim $gruvbox_dark_red
@@ -33,7 +34,7 @@ set $col_urgent_dim $gruvbox_dark_red
 # ---
 
 set $focused_border $col_focus
-set $focused_background $col_surface2
+set $focused_background $col_focus_surface
 set $focused_text $col_text
 set $focused_indicator $col_indicator
 set $focused_child_border $col_focus
