@@ -1,5 +1,5 @@
 # vim: set filetype=swayconfig :
-include $HOME/.config/sway/config.d/gruvbox
+include $HOME/.config/sway/themes/catppuccin-mocha
 
 gaps inner 5
 # do not use gaps for a single window
@@ -14,23 +14,22 @@ font pango:JetBrainsMono Nerd Font 9
 # ---
 # colors
 # ---
-set $col_bg $gruvbox_dark0
-set $col_bg_dark $gruvbox_dark0_hard
-set $col_surface $gruvbox_dark1
-set $col_surface2 $gruvbox_dark2
-set $col_focus_surface $gruvbox_dark_aqua
-set $col_border $gruvbox_dark3
-set $col_border_muted $gruvbox_dark1
-set $col_text $gruvbox_light1
-set $col_text_muted $gruvbox_gray
-set $col_focus $gruvbox_neutral_aqua
-set $col_focus_dim $gruvbox_dark_aqua_soft
-set $col_indicator $gruvbox_neutral_yellow
-set $col_urgent $gruvbox_bright_red
-set $col_urgent_dim $gruvbox_dark_red
-set $wallpaper_bg $col_bg_dark
+set $col_bg $base
+set $col_bg_dark $crust
+set $col_surface $surface0
+set $col_surface2 $surface1
+set $col_focus_surface $surface0
+set $col_border $overlay0
+set $col_border_muted $surface0
+set $col_text $text
+set $col_text_muted $subtext0
+set $col_focus $blue
+set $col_focus_dim $surface2
+set $col_indicator $peach
+set $col_urgent $red
+set $col_urgent_dim $maroon
 
-output * bg $wallpaper_bg solid_color
+output * bg $col_bg_dark solid_color
 
 # ---
 # sway colors

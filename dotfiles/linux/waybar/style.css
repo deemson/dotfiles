@@ -1,24 +1,24 @@
 /* vim: set filetype=gtkcss syntax=css : */
 
-@import "gruvbox.css";
+@import "themes/catppuccin-mocha.css";
 
-@define-color bg @gruvbox_dark0;
-@define-color bg-dark @gruvbox_dark0_hard;
-@define-color surface @gruvbox_dark1;
-@define-color surface2 @gruvbox_dark2;
-@define-color surface-focus @gruvbox_dark_aqua;
-@define-color border @gruvbox_dark2;
-@define-color border-muted @gruvbox_dark1;
-@define-color text @gruvbox_light1;
-@define-color text-muted @gruvbox_gray;
-@define-color focus @gruvbox_neutral_aqua;
-@define-color focus-dim @gruvbox_dark_aqua_soft;
-@define-color urgent @gruvbox_bright_red;
-@define-color urgent-dim @gruvbox_dark_red;
-@define-color warning @gruvbox_bright_yellow;
-@define-color warning-dim @gruvbox_faded_yellow;
-@define-color success @gruvbox_bright_green;
-@define-color success-dim @gruvbox_dark_green;
+@define-color bg @base;
+@define-color bg-dark @crust;
+@define-color surface @surface0;
+@define-color surface2 @surface1;
+@define-color surface-focus @surface0;
+@define-color border @overlay0;
+@define-color border-muted @surface0;
+@define-color text @text;
+@define-color text-muted @subtext0;
+@define-color focus @blue;
+@define-color focus-dim @surface2;
+@define-color urgent @red;
+@define-color urgent-dim @maroon;
+@define-color warning @yellow;
+@define-color warning-dim @peach;
+@define-color success @green;
+@define-color success-dim @teal;
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;

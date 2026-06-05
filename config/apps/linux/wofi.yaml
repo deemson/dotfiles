@@ -1,2 +1,6 @@
 - system: $HOME/.config/wofi/style.css
   repo: style.css
+- system: $HOME/.config/wofi/config
+  repo: config
+- system: $HOME/.config/wofi/themes
+  repo: themes

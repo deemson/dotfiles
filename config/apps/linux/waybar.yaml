@@ -2,3 +2,5 @@
   repo: config.jsonc
 - system: $HOME/.config/waybar/style.css
   repo: style.css
+- system: $HOME/.config/waybar/themes
+  repo: themes

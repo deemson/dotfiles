@@ -1,4 +1,6 @@
 - system: $HOME/.config/sway/config.d
   repo: config.d
+- system: $HOME/.config/sway/themes
+  repo: themes
 - system: $HOME/.config/sway/config
   repo: config
