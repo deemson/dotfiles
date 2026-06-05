@@ -25,7 +25,21 @@ return {
     completion = {
       menu = {
         draw = {
-          columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+          columns = {
+            { "label", "label_description", gap = 1 },
+            { "kind_icon", "kind" }
+          },
+          components = {
+            label_description = {
+              text = function(ctx)
+                local desc = ctx.label_description
+                if desc ~= nil and desc ~= "" then
+                  return desc
+                end
+                return ctx.item.detail or ""
+              end,
+            },
+          },
         },
       },
     },
