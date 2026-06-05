@@ -1,21 +1,23 @@
-/* vim: set filetype=less : */
+/* vim: set filetype=gtkcss syntax=css : */
 
-@define-color bg #16161e;
-@define-color bg-dark #11111a;
-@define-color surface #1f2335;
-@define-color surface2 #24283b;
-@define-color border #3b4261;
-@define-color border-muted #292e42;
-@define-color text #c0caf5;
-@define-color text-muted #9aa5ce;
-@define-color focus #7aa2f7;
-@define-color focus-dim #3d59a1;
-@define-color urgent #f7768e;
-@define-color urgent-dim #914c54;
-@define-color warning #e0af68;
-@define-color warning-dim #8f5e15;
-@define-color success #9ece6a;
-@define-color success-dim #587539;
+@import "gruvbox.css";
+
+@define-color bg @gruvbox_dark0;
+@define-color bg-dark @gruvbox_dark0_hard;
+@define-color surface @gruvbox_dark1;
+@define-color surface2 @gruvbox_dark2;
+@define-color border @gruvbox_dark2;
+@define-color border-muted @gruvbox_dark1;
+@define-color text @gruvbox_light1;
+@define-color text-muted @gruvbox_gray;
+@define-color focus @gruvbox_dark4;
+@define-color focus-dim @gruvbox_dark3;
+@define-color urgent @gruvbox_bright_red;
+@define-color urgent-dim @gruvbox_dark_red;
+@define-color warning @gruvbox_bright_yellow;
+@define-color warning-dim @gruvbox_faded_yellow;
+@define-color success @gruvbox_bright_green;
+@define-color success-dim @gruvbox_dark_green;
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
@@ -55,8 +57,8 @@ window#waybar {
 #network {
   padding-left: 0.3em;
   padding-right: 0.9em;
-  border: 1px solid @focus;
-  background: @surface2;
+  border: 1px solid @border;
+  background: @surface;
   margin-left: 0.2em;
 }
 

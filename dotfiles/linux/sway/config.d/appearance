@@ -1,4 +1,6 @@
 # vim: set filetype=swayconfig :
+include $HOME/.config/sway/config.d/gruvbox
+
 gaps inner 0
 # do not use gaps for a single window
 smart_gaps on
@@ -12,19 +14,19 @@ font pango:JetBrainsMono Nerd Font 9
 # ---
 # colors
 # ---
-set $col_bg #16161e
-set $col_bg_dark #11111a
-set $col_surface #1f2335
-set $col_surface2 #24283b
-set $col_border #3b4261
-set $col_border_muted #292e42
-set $col_text #c0caf5
-set $col_text_muted #9aa5ce
-set $col_focus #7aa2f7
-set $col_focus_dim #3d59a1
-set $col_indicator #e0af68
-set $col_urgent #f7768e
-set $col_urgent_dim #914c54
+set $col_bg $gruvbox_dark0
+set $col_bg_dark $gruvbox_dark0_hard
+set $col_surface $gruvbox_dark1
+set $col_surface2 $gruvbox_dark2
+set $col_border $gruvbox_dark3
+set $col_border_muted $gruvbox_dark1
+set $col_text $gruvbox_light1
+set $col_text_muted $gruvbox_gray
+set $col_focus $gruvbox_dark4
+set $col_focus_dim $gruvbox_dark3
+set $col_indicator $gruvbox_neutral_yellow
+set $col_urgent $gruvbox_bright_red
+set $col_urgent_dim $gruvbox_dark_red
 
 # ---
 # sway colors
