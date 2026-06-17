@@ -19,7 +19,7 @@ stylua = "2.4.1"
 # toml
 tombi = "0.9.7"
 # go
-go = "1.26.2"
+go = "1.26.4"
 "go:golang.org/x/tools/gopls" = "0.21.1"
 "go:gotest.tools/gotestsum" = "1.13.0"
 "go:github.com/go-delve/delve/cmd/dlv" = "1.26.1"
