@@ -86,11 +86,20 @@ return {
           keys = {
             ["<esc>"] = { "close", mode = { "n", "i" } },
             ["<c-a>"] = false,
+            ["<c-u>"] = false,
             ["<a-f>"] = false,
           },
         },
       },
       sources = {
+        files = {
+          hidden = true,
+          ignored = true,
+        },
+        grep = {
+          hidden = true,
+          ignored = true,
+        },
         explorer = {
           hidden = true, -- show hidden files
           actions = {
