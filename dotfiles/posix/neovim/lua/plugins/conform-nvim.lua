@@ -23,6 +23,7 @@ return {
         yaml = { "yamlfmt" },
         python = { "ruff_format" },
         zig = { "zigfmt" },
+        odin = { "odinfmt" },
       },
       formatters = {
         stylua = {
@@ -30,6 +31,11 @@ return {
             "--indent-type=Spaces",
             "--indent-width=2",
           },
+        },
+        odinfmt = {
+          command = "odinfmt",
+          args = { "-stdin" },
+          stdin = true,
         },
       },
     })

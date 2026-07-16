@@ -21,6 +21,8 @@ vim.lsp.enable({
   "zls",
   -- Rust
   "rust_analyzer",
+  -- Odin
+  "ols",
 })
 
 vim.api.nvim_create_user_command("LspRestart", function()
