@@ -1,5 +1,4 @@
 #:schema https://starship.rs/config-schema.json
-
 add_newline = true
 
 command_timeout = 2000
@@ -119,6 +118,11 @@ disabled = true
 min_time = 0
 show_milliseconds = true
 format = "[ ](bright-black)[$duration](yellow)[ ](bright-black)"
+
+[deno]
+format = "[ ](bright-black)[$symbol ](bright-black)[$version $name]($style)[ ](bright-black)"
+style = "bright-blue"
+symbol = ""
 
 [directory]
 truncation_symbol = "…/"
