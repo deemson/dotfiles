@@ -1,4 +1,5 @@
-"$schema" = "https://starship.rs/config-schema.json"
+#:schema https://starship.rs/config-schema.json
+
 add_newline = true
 
 command_timeout = 2000
@@ -168,6 +169,11 @@ format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ ](b
 symbol = "⎈"
 style = "fg:bright-blue"
 
+[hostname]
+ssh_symbol = "󰣀"
+format = "[ ](bright-black)[$ssh_symbol ](bright-black)[$hostname]($style)[ ](bright-black)"
+detect_env_vars = ['!TMUX', 'SSH_CONNECTION']
+
 [java]
 format = "[ ](bright-black)[$symbol](bright-black)[ $version]($style)[ ](bright-black)"
 symbol = ""
@@ -219,3 +225,6 @@ symbol = ""
 [time]
 disabled = false
 format = "[ ](bright-black)[ ](bright-black)$time[ ](bright-black)"
+
+[username]
+disabled = true
