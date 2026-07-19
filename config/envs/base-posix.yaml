@@ -4,4 +4,5 @@ apps:
   - posix/neovim
   - posix/starship
   - posix/yamlfmt
+  - posix/yazi
   - posix/zsh
