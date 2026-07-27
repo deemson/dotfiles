@@ -1,2 +1,2 @@
-- system: $HOME/.config/zellij
-  repo: zellij
+- system: $HOME/.config/zellij/config.kdl
+  repo: config.kdl
