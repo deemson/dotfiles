@@ -23,6 +23,7 @@ return {
         yaml = { "yamlfmt" },
         python = { "ruff_format" },
         zig = { "zigfmt" },
+        rust = { "rustfmt" },
         odin = { "odinfmt" },
       },
       formatters = {
