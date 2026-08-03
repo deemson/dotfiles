@@ -1,2 +1,3 @@
+# yaml-language-server: $schema=../schema.json
 - system: $HOME/.config/zellij/config.kdl
   repo: config.kdl

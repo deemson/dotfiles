@@ -12,3 +12,5 @@ export const cliDir = path.dirname(srcDir);
 export const topDir = path.dirname(cliDir);
 export const dotfilesDir = path.join(topDir, "dotfiles");
 export const configDir = path.join(topDir, "config");
+export const configAppsDir = path.join(configDir, "apps");
+export const configEnvsDir = path.join(configDir, "envs");

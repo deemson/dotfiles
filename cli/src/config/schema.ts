@@ -8,6 +8,9 @@ const pathSchema = z.strictObject({
 const appConfigPathSchema = z
   .string()
   .min(1)
+  // exactly two non-empty, slash-free segments: "os/app", e.g. "posix/neovim".
+  // resolves to config/apps/<os>/<app>.yaml, so no leading/trailing slash,
+  // no deeper nesting, and no bare app name without an os dir.
   .regex(/^[^/]+\/[^/]+$/);
 
 const envConfigSchemaTemporary = z.strictObject({

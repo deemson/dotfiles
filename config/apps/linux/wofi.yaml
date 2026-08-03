@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema.json
 - system: $HOME/.config/wofi/style.css
   repo: style.css
 - system: $HOME/.config/wofi/config

@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema.json
 - system: $HOME/.hammerspoon/init.lua
   repo: init.lua
 - system: $HOME/.hammerspoon/utils.lua
