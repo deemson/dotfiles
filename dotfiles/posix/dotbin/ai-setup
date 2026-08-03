@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-just --justfile $AI_SETUP_DIR/justfile "$@"

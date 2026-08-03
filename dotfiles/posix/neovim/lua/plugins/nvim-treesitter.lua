@@ -3,6 +3,23 @@ return {
   "nvim-treesitter/nvim-treesitter",
   lazy = false,
   build = ":TSUpdate",
+  init = function()
+    -- override the `just` parser with casey/tree-sitter-just#204 (grammar aligned
+    -- with just's GRAMMAR.md: `mod`/`foo::bar` targets, attributes, `?` sigil,
+    -- x"" and f"" string prefixes). Drop this once the PR is merged upstream.
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "TSUpdate",
+      callback = function()
+        require("nvim-treesitter.parsers").just = {
+          install_info = {
+            url = "https://github.com/tkatter/tree-sitter-just",
+            revision = "912ac5a7b763af3ac488dbfaafb05fde7e926ece",
+            queries = "queries/just",
+          },
+        }
+      end,
+    })
+  end,
   config = function()
     local treesitter = require("nvim-treesitter")
     local treesitter_config = require("nvim-treesitter.config")
