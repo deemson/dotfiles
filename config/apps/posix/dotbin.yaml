@@ -1,5 +1,3 @@
 # yaml-language-server: $schema=../schema.json
 - system: $HOME/.bin/dotfiles
   repo: dotfiles
-- system: $HOME/.bin/ai-setup
-  repo: ai-setup
