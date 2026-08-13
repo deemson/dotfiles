@@ -2,7 +2,7 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $alt Mod1
-set $term ghostty
+set $term ghostty +new-window
 set $resize_width_slow 10 px
 set $resize_height_slow 10 px
 set $resize_width_fast 100 px
