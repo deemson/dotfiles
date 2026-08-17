@@ -44,6 +44,7 @@ hs.hotkey.bind({ "cmd", "ctrl" }, "]", function()
   utils.changeWindowSize(changeWindowStep)
 end)
 
+hs.hotkey.bind({ "cmd" }, "§", utils.makeAppLauncher("Ghostty"))
 hs.hotkey.bind({ "cmd", "ctrl" }, "k", utils.makeAppLauncher("KeePassXC"))
 hs.hotkey.bind({ "cmd", "ctrl" }, "o", utils.makeAppLauncher("Obsidian"))
 hs.hotkey.bind({ "cmd", "ctrl" }, "b", utils.makeAppLauncher("Google Chrome"))
