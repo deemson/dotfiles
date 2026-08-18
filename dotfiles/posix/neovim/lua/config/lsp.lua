@@ -20,7 +20,8 @@ vim.lsp.enable({
   -- Zig
   "zls",
   -- Rust
-  "rust_analyzer",
+  -- disabled in favor of https://github.com/mrcjkb/rustaceanvim
+  -- "rust_analyzer",
   -- Odin
   "ols",
 })
