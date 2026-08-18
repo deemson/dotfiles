@@ -44,6 +44,6 @@ buf = "1.72.0"
 zig = "0.16.0"
 zls = "0.16.0"
 # rust
-rust = { version = "1.97.1", components = "rust-analyzer" }
+rust = { version = "1.97.1", components = ["rust-analyzer", "clippy"] }
 # generic things that require something from above
 "npm:hunkdiff" = "0.17.6"
