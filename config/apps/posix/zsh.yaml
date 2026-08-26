@@ -3,5 +3,3 @@
   repo: dotzsh.zsh
 - system: $HOME/.zsh/plugins
   repo: dotzsh/plugins
-- system: $HOME/.zsh/apps
-  repo: dotzsh/apps

@@ -1,0 +1,27 @@
+[private]
+default:
+	@just --justfile {{source_file()}} --list
+
+install-zap:
+	zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+
+[private]
+completions-dir:
+	mkdir -p $HOME/.zsh/completions
+
+bun:
+	bun completions
+
+fzf:
+	fzf --zsh > $HOME/.zsh/completions/fzf.zsh
+
+mise:
+	mise completions zsh > $HOME/.zsh/completions/mise.zsh
+
+task:
+	task --completion zsh > $HOME/.zsh/completions/task.zsh
+
+just:
+	just --completions zsh > $HOME/.zsh/completions/just.zsh
+
+completions: completions-dir bun fzf mise task just

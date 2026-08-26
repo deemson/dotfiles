@@ -34,7 +34,7 @@ for f in $HOME/.zsh/plugins/*.zsh(N); do
   source "$f"
 done
 # apps
-for f in $HOME/.zsh/apps/*.zsh(N); do
+for f in $HOME/.zsh/completions/*.zsh(N); do
   source "$f"
 done
 
