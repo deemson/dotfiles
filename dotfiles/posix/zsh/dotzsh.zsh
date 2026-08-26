@@ -22,8 +22,6 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
-export PATH="$HOME/.bin:$PATH"
-
 # os-specific
 for f in $HOME/.zsh/os/*.zsh(N); do
   source "$f"
@@ -40,5 +38,9 @@ done
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+# bun bin
+export PATH="$HOME/.bun/bin:$PATH"
+
+export PATH="$HOME/.bin:$PATH"
 
 eval "$(starship init zsh)"
