@@ -36,7 +36,10 @@ return {
                 if desc ~= nil and desc ~= "" then
                   return desc
                 end
-                return ctx.item.detail or ""
+                -- zls sends multi-line signatures for some builtins, and the menu
+                -- line must stay on one line
+                local detail = ctx.item.detail or ""
+                return (detail:gsub("%s+", " "))
               end,
             },
           },
