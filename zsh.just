@@ -10,18 +10,18 @@ completions-dir:
 	mkdir -p $HOME/.zsh/completions
 
 bun:
-	bun completions
+	bun completions; fi
 
 fzf:
-	fzf --zsh > $HOME/.zsh/completions/fzf.zsh
+	fzf --zsh > $HOME/.zsh/completions/fzf.zsh; fi
 
 mise:
-	mise completions zsh > $HOME/.zsh/completions/mise.zsh
+	if command -v mise >/dev/null 2>&1; then mise completions zsh > $HOME/.zsh/completions/mise.zsh; fi
 
 task:
-	task --completion zsh > $HOME/.zsh/completions/task.zsh
+	task --completion zsh > $HOME/.zsh/completions/task.zsh; fi
 
 just:
-	just --completions zsh > $HOME/.zsh/completions/just.zsh
+	just --completions zsh > $HOME/.zsh/completions/just.zsh; fi
 
 completions: completions-dir bun fzf mise task just
