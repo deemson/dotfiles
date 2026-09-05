@@ -197,7 +197,7 @@ symbol = ""
 style = "fg:bright-yellow"
 
 [python]
-format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[ $virtualenv](bright-black)[ ](bright-black)"
+format = "[ ](bright-black)[$symbol ](bright-black)[$version]($style)[( $virtualenv)](bright-black)[ ](bright-black)"
 symbol = "󰌠"
 style = "fg:yellow"
 
