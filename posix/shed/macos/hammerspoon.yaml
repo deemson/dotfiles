@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.hammerspoon/init.lua
+  shed: init.lua
+- system: $HOME/.hammerspoon/utils.lua
+  shed: utils.lua
+- system: $HOME/.hammerspoon/.luarc.json
+  shed: dotluarc.json

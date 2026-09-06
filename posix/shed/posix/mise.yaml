@@ -1,0 +1,3 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.config/starship.toml
+  shed: starship.toml

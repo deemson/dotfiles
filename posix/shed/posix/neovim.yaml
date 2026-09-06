@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.config/nvim/init.lua
+  shed: init.lua
+- system: $HOME/.config/nvim/filetype.lua
+  shed: filetype.lua
+- system: $HOME/.config/nvim/after
+  shed: after
+- system: $HOME/.config/nvim/lsp
+  shed: lsp
+- system: $HOME/.config/nvim/lua
+  shed: lua
+- system: $HOME/.config/nvim/queries
+  shed: queries
+- system: $HOME/.config/nvim/lazy-lock.json
+  shed: lazy-lock.json

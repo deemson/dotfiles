@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CollectionFile",
+  "type": "object",
+  "properties": {
+    "abstract": {
+      "description": "If true, this collection cannot be run directly (only inherited)",
+      "type": "boolean",
+      "default": false
+    },
+    "inherit": {
+      "description": "List of collection names to inherit (relative to this file's directory)",
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "items": {
+      "description": "List of item references (paths relative to items directory, without .yaml)",
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

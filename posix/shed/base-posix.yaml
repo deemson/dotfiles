@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=./collection.schema.json
+abstract: true
+items:
+  - posix/dotbin
+  - posix/neovim
+  - posix/starship
+  - posix/yamlfmt
+  - posix/yazi
+  - posix/zsh

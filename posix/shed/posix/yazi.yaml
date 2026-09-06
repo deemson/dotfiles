@@ -1,0 +1,3 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.config/yazi
+  shed: yazi

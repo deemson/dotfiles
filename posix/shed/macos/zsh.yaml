@@ -1,0 +1,3 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.zsh/os
+  shed: dotzsh/os
