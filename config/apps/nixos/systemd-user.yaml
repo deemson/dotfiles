@@ -1,4 +1,0 @@
-# yaml-language-server: $schema=../schema.json
-- system: $HOME/.config/systemd/user/waybar.service
-  repo: waybar.service
-

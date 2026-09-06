@@ -1,5 +1,0 @@
-# yaml-language-server: $schema=./schema.json
-inherit:
-  - base-linux
-apps:
-  - nixos/systemd-user

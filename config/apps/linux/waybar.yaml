@@ -1,7 +1,0 @@
-# yaml-language-server: $schema=../schema.json
-- system: $HOME/.config/waybar/config.jsonc
-  repo: config.jsonc
-- system: $HOME/.config/waybar/style.css
-  repo: style.css
-- system: $HOME/.config/waybar/themes
-  repo: themes

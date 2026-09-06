@@ -1,8 +1,0 @@
-# yaml-language-server: $schema=./schema.json
-inherit:
-  - base-posix
-apps:
-  - macos/zsh
-  - posix/mise
-  - macos/ghostty
-  - macos/hammerspoon

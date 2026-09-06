@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-bun $DOTFILES_DIR/cli/src/main.ts "$@"

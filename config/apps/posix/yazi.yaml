@@ -1,3 +1,0 @@
-# yaml-language-server: $schema=../schema.json
-- system: $HOME/.config/yazi
-  repo: yazi

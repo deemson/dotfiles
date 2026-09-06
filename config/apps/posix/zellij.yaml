@@ -1,5 +1,0 @@
-# yaml-language-server: $schema=../schema.json
-- system: $HOME/.config/zellij/config.kdl
-  repo: config.kdl
-- system: $HOME/.config/zellij/layouts
-  repo: layouts

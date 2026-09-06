@@ -1,5 +1,0 @@
-# yaml-language-server: $schema=../schema.json
-- system: $HOME/.zshrc
-  repo: dotzsh.zsh
-- system: $HOME/.zsh/plugins
-  repo: dotzsh/plugins
