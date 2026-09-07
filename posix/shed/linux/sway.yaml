@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.config/sway/config.d
+  shed: config.d
+- system: $HOME/.config/sway/themes
+  shed: themes
+- system: $HOME/.config/sway/config
+  shed: config

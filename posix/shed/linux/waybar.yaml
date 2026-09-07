@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.config/waybar/config.jsonc
+  shed: config.jsonc
+- system: $HOME/.config/waybar/style.css
+  shed: style.css
+- system: $HOME/.config/waybar/themes
+  shed: themes
+

@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.config/wofi/style.css
+  shed: style.css
+- system: $HOME/.config/wofi/config
+  shed: config
+- system: $HOME/.config/wofi/themes
+  shed: themes
+

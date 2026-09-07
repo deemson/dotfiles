@@ -1,0 +1,35 @@
+// vim: set filetype=jsonc :
+{
+  // stay above everything else
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 1,
+  "modules-left": ["sway/workspaces"],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "upower",
+    "sway/language",
+    "clock",
+    "tray"
+  ],
+  "network": {
+    "format-icons": {
+      "wifi": ""
+    },
+    "format-wifi": "{icon}"
+  },
+  "pulseaudio": {
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "format": "{icon}",
+    "format-muted": "󰸈"
+  },
+  "upower": {
+    "icon-size": 14
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}"
+  }
+}

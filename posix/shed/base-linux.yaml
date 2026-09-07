@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=./collection.schema.json
+abstract: true
+inherit:
+  - base-posix
+items:
+  - linux/ghostty
+  - linux/sway
+  - linux/waybar
+  - linux/wofi
