@@ -1,0 +1,9 @@
+# theme = "Gruvbox Dark Hard"
+# theme = "TokyoNight Night"
+theme = "Catppuccin Mocha"
+# theme = "Rose Pine"
+# theme = "Nord Wave"
+font-size = 14
+font-family = "JetBrainsMono Nerd Font"
+macos-option-as-alt = true
+quit-after-last-window-closed = true

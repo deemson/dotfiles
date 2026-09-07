@@ -1,0 +1,41 @@
+vim.lsp.enable({
+  "lua_language_server",
+  -- TOML
+  "tombi",
+  -- Go
+  "gopls",
+  -- TypeScript
+  "vtsls",
+  -- JSON/HTML/CSS
+  "vscode_json_language_server",
+  -- YAML
+  "yaml_language_server",
+  -- Python
+  "basedpyright",
+  "ruff",
+  -- GoDot
+  "godot",
+  -- Protobuf
+  "buf",
+  -- Zig
+  "zls",
+  -- Rust
+  -- disabled in favor of https://github.com/mrcjkb/rustaceanvim
+  -- "rust_analyzer",
+  -- Odin
+  "ols",
+})
+
+vim.api.nvim_create_user_command("LspRestart", function()
+  local lsp_clients = vim.lsp.get_clients({ bufnr = 0 })
+  local lsp_client_names = vim.tbl_map(function(lsp_config)
+    lsp_config:stop()
+    return lsp_config.name
+  end, lsp_clients)
+
+  vim.lsp.enable(lsp_client_names)
+end, { desc = "Restart LSP" })
+
+vim.api.nvim_create_user_command("LspLog", function()
+  vim.cmd("edit " .. vim.lsp.log.get_filename())
+end, { desc = "LSP Logs" })
