@@ -11,3 +11,9 @@ put:
 
 get:
     {{ shed }} get
+
+lazygit:
+    cd {{ source_directory() }} && lazygit
+
+status:
+    cd {{ source_directory() }} && git status
