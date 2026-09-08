@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pi-local:settings.schema.json",
+  "title": "Pi settings.json",
+  "description": "Schema generated from @earendil-works/pi-coding-agent 0.85.0",
+  "type": "object",
+  "properties": {
+    "lastChangelogVersion": {
+      "type": "string",
+      "description": "Last version of the changelog that was shown to the user"
+    },
+    "theme": {
+      "type": "string",
+      "description": "Color theme for the TUI",
+      "enum": ["dark", "light"]
+    },
+    "defaultProvider": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Default provider ID to use for model requests"
+    },
+    "defaultModel": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Default model name/ID to use"
+    },
+    "hideThinkingBlock": {
+      "type": "boolean",
+      "description": "Whether to hide the thinking/reasoning block in responses",
+      "default": false
+    },
+    "enableSkillCommands": {
+      "type": "boolean",
+      "description": "Whether to enable skill commands",
+      "default": true
+    },
+    "defaultThinkingLevel": {
+      "type": "string",
+      "description": "Startup thinking level for reasoning models",
+      "enum": ["off", "minimal", "low", "medium", "high", "xhigh", "max"]
+    },
+    "modelThinkingLevels": {
+      "type": "object",
+      "description": "Per-model startup thinking levels keyed by 'provider/modelId'",
+      "patternProperties": {
+        "^.*$": {
+          "type": "string",
+          "enum": ["off", "minimal", "low", "medium", "high", "xhigh", "max"]
+        }
+      }
+    },
+    "thinkingBudgets": {
+      "type": "object",
+      "description": "Custom token budgets per thinking level",
+      "properties": {
+        "minimal": { "type": "number" },
+        "low": { "type": "number" },
+        "medium": { "type": "number" },
+        "high": { "type": "number" },
+        "xhigh": { "type": "number" },
+        "max": { "type": "number" }
+      }
+    }
+  },
+  "additionalProperties": true
+}

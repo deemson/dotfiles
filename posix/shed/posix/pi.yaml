@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../items.schema.json
+- system: $HOME/.pi/agent/npm/package.json
+  shed: agent/npm/package.json
+- system: $HOME/.pi/agent/npm/package-lock.json
+  shed: agent/npm/package-lock.json
+- system: $HOME/.pi/agent/settings.schema.json
+  shed: agent/settings.schema.json
+- system: $HOME/.pi/agent/settings.json
+  shed: agent/settings.json
+- system: $HOME/.pi/agent/models.schema.json
+  shed: agent/models.schema.json
+- system: $HOME/.pi/web-search.json
+  shed: web-search.json
