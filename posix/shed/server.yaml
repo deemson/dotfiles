@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=./collection.schema.json
+inherit:
+  - base-posix
+apps:
+  - posix/zellij
