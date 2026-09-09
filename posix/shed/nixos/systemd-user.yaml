@@ -1,5 +1,5 @@
-# yaml-language-server: $schema=../items.schema.json
-- system: $HOME/.config/systemd/user/waybar.service
-  shed: waybar.service
+items:
+  - path: $HOME/.config/systemd/user/waybar.service
+    shed: ../../../nixos/systemd-user/waybar.service
 
 

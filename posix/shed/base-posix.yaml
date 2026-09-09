@@ -1,6 +1,4 @@
-# yaml-language-server: $schema=./collection.schema.json
-abstract: true
-items:
+include:
   - posix/dotbin
   - posix/neovim
   - posix/starship

@@ -1,5 +1,4 @@
-# yaml-language-server: $schema=./collection.schema.json
-inherit:
+include:
   - base-linux
 items:
   - nixos/systemd-user

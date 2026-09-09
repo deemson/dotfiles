@@ -1,6 +1,4 @@
-# yaml-language-server: $schema=./collection.schema.json
-abstract: true
-inherit:
+include:
   - base-posix
 items:
   - linux/ghostty
