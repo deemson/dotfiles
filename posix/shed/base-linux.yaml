@@ -1,6 +1,6 @@
+# yaml-language-server: $schema=./schema.json
 include:
   - base-posix
-items:
   - linux/ghostty
   - linux/sway
   - linux/waybar

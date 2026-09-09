@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ManifestFile",
+  "type": "object",
+  "properties": {
+    "include": {
+      "description": "Manifests to process before this manifest's local items.",
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "items": {
+      "description": "Top-level system-to-shed path trees.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RootItem"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ChildItem": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/Item"
+        }
+      ]
+    },
+    "Item": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "description": "Relative child items; a node with children is a path prefix, not an endpoint.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ChildItem"
+          }
+        },
+        "path": {
+          "description": "Relative system-path suffix.",
+          "type": "string"
+        },
+        "shed": {
+          "description": "Relative shed-path suffix; defaults to `path` when omitted.",
+          "type": "string",
+          "default": null
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    },
+    "RootItem": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "description": "Relative child items; a node with children is a path prefix, not an endpoint.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ChildItem"
+          }
+        },
+        "path": {
+          "description": "Absolute system path, optionally beginning with `$HOME`.",
+          "type": "string"
+        },
+        "shed": {
+          "description": "Absolute shed path or a path relative to this manifest.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "shed"
+      ]
+    }
+  }
+}
