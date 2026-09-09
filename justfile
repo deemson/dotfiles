@@ -1,16 +1,16 @@
 mod zsh
 
-shed := "shed --collection " + source_directory() / "posix/shed/$DOTFILES_PROFILE.yaml" + " --items-dir " + source_directory() / "posix/shed"
+shed_manifest := source_directory() / "posix/shed/$DOTFILES_PROFILE.yaml"
 
 [private]
 default:
     @just --list
 
 put:
-    {{ shed }} put
+    shed put {{ shed_manifest }}
 
 get:
-    {{ shed }} get
+    shed get {{ shed_manifest }}
 
 lazygit:
     cd {{ source_directory() }} && lazygit

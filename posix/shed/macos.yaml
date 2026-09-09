@@ -1,6 +1,5 @@
 include:
   - base-posix
-items:
   - macos/zsh
   - posix/mise
   - macos/ghostty
