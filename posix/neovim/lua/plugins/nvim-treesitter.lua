@@ -3,6 +3,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   lazy = false,
   build = ":TSUpdate",
+  branch = "main",
   init = function()
     -- override the `just` parser with casey/tree-sitter-just#204 (grammar aligned
     -- with just's GRAMMAR.md: `mod`/`foo::bar` targets, attributes, `?` sigil,
