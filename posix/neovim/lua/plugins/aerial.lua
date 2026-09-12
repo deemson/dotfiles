@@ -3,6 +3,8 @@ return {
   "stevearc/aerial.nvim",
   opts = {
     disable_max_lines = 30000,
+    highlight_mode = "last",
+    highlight_closest = true,
   },
   -- Optional dependencies
   dependencies = {
