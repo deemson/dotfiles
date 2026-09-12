@@ -143,8 +143,18 @@ return {
                 q = false,
               },
             },
+            preview = {
+              border = "rounded",
+              title = " PREVIEW ",
+              title_pos = "center",
+              wo = {
+                -- winbar = "%#DiagnosticWarn#  PREVIEW  %*",
+              },
+            },
           },
           layout = {
+            preview = "main",
+            hidden = { "preview" },
             layout = {
               width = 30,
             },
