@@ -32,7 +32,7 @@ local function yank_selection_reference()
   vim.notify("Yanked reference: " .. reference)
 end
 
-vim.keymap.set("x", "<leader>yr", yank_selection_reference, { desc = "Yank selection reference" })
+vim.keymap.set("x", "<leader>r", yank_selection_reference, { desc = "Yank selection reference" })
 
 vim.keymap.set("i", "<C-,>", "<C-d>", { noremap = true })
 vim.keymap.set("i", "<C-.>", "<C-t>", { noremap = true })
