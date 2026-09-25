@@ -3,4 +3,7 @@ vim.filetype.add({
     hlsl = "hlsl",
     slang = "slang",
   },
+  pattern = {
+    [".*%.tex%.mustache"] = "texmustache",
+  },
 })

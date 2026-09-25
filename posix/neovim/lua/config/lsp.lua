@@ -24,6 +24,8 @@ vim.lsp.enable({
   -- "rust_analyzer",
   -- Odin
   "ols",
+  -- (La)TeX, including the synchronized hidden buffers created by Otter
+  "texlab",
 })
 
 vim.api.nvim_create_user_command("LspRestart", function()
