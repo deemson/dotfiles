@@ -1,0 +1,4 @@
+#:schema ./schema.json
+[[actions]]
+label = 'shell'
+command = ['{{ env.SHELL }}']

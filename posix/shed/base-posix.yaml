@@ -6,3 +6,4 @@ include:
   - posix/yamlfmt
   - posix/yazi
   - posix/zsh
+  - posix/gbx

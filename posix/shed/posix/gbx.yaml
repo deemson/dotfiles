@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=../schema.json
+items:
+  - path: $HOME/.config/gbx/schema.json
+    shed: ../../gbx/schema.json
+  - path: $HOME/.config/gbx/config.toml
+    shed: ../../gbx/config.toml
