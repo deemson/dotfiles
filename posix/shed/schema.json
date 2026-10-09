@@ -1,10 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ManifestFile",
+  "title": "Manifest",
   "type": "object",
   "properties": {
     "include": {
-      "description": "Manifests to process before this manifest's local items.",
       "type": "array",
       "default": [],
       "items": {
@@ -12,43 +11,43 @@
       }
     },
     "items": {
-      "description": "Top-level system-to-shed path trees.",
       "type": "array",
       "items": {
-        "$ref": "#/$defs/RootItem"
+        "$ref": "#/$defs/ItemKind"
       }
+    },
+    "path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shed": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
   "additionalProperties": false,
   "$defs": {
-    "ChildItem": {
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "$ref": "#/$defs/Item"
-        }
-      ]
-    },
     "Item": {
       "type": "object",
       "properties": {
         "items": {
-          "description": "Relative child items; a node with children is a path prefix, not an endpoint.",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/ChildItem"
+            "$ref": "#/$defs/ItemKind"
           }
         },
         "path": {
-          "description": "Relative system-path suffix.",
           "type": "string"
         },
         "shed": {
-          "description": "Relative shed-path suffix; defaults to `path` when omitted.",
-          "type": "string",
-          "default": null
+          "type": [
+            "string",
+            "null"
+          ]
         }
       },
       "additionalProperties": false,
@@ -56,29 +55,14 @@
         "path"
       ]
     },
-    "RootItem": {
-      "type": "object",
-      "properties": {
-        "items": {
-          "description": "Relative child items; a node with children is a path prefix, not an endpoint.",
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/ChildItem"
-          }
-        },
-        "path": {
-          "description": "Absolute system path, optionally beginning with `$HOME`.",
+    "ItemKind": {
+      "anyOf": [
+        {
           "type": "string"
         },
-        "shed": {
-          "description": "Absolute shed path or a path relative to this manifest.",
-          "type": "string"
+        {
+          "$ref": "#/$defs/Item"
         }
-      },
-      "additionalProperties": false,
-      "required": [
-        "path",
-        "shed"
       ]
     }
   }
