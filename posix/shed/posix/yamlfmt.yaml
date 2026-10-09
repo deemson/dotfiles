@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.config/yamlfmt
+shed: ../../yamlfmt
 items:
-  - path: $HOME/.config/yamlfmt/yamlfmt.yaml
-    shed: ../../yamlfmt/yamlfmt.yaml
+  - yamlfmt.yaml

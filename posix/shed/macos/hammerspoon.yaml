@@ -1,9 +1,8 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.hammerspoon
+shed: ../../../macos/hammerspoon
 items:
-  - path: $HOME/.hammerspoon
-    shed: ../../../macos/hammerspoon
-    items:
-      - init.lua
-      - utils.lua
-      - path: .luarc.json
-        shed: dotluarc.json
+  - init.lua
+  - utils.lua
+  - path: .luarc.json
+    shed: dotluarc.json

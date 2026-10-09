@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.config
+shed: ../../starship
 items:
-  - path: $HOME/.config/starship.toml
-    shed: ../../starship/starship.toml
+  - starship.toml

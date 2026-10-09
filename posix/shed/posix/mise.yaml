@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.config/mise
+shed: ../../mise
 items:
-  - path: $HOME/.config/mise/config.toml
-    shed: ../../mise/config.toml
+  - config.toml

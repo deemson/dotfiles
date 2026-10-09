@@ -1,6 +1,8 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME
+shed: ../../zsh
 items:
-  - path: $HOME/.zshrc
-    shed: ../../zsh/dotzsh.zsh
-  - path: $HOME/.zsh/plugins
-    shed: ../../zsh/dotzsh/plugins
+  - path: .zshrc
+    shed: dotzsh.zsh
+  - path: .zsh/plugins
+    shed: dotzsh/plugins

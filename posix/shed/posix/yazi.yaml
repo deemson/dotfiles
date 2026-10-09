@@ -1,4 +1,3 @@
 # yaml-language-server: $schema=../schema.json
-items:
-  - path: $HOME/.config/yazi
-    shed: ../../yazi
+path: $HOME/.config/yazi
+shed: ../../yazi

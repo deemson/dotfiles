@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.bin
+shed: ../../dotbin
 items:
-  - path: $HOME/.bin
-    shed: ../../dotbin
-    items:
-      - dotfiles
+  - dotfiles

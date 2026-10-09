@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.config/ghostty
+shed: ../../../macos/ghostty
 items:
-  - path: $HOME/.config/ghostty/config
-    shed: ../../../macos/ghostty/config
+  - config

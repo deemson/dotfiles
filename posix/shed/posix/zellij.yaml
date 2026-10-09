@@ -1,7 +1,6 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.config/zellij
+shed: ../../zellij
 items:
-  - path: $HOME/.config/zellij
-    shed: ../../zellij
-    items:
-      - config.kdl
-      - layouts
+  - config.kdl
+  - layouts

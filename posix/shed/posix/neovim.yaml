@@ -1,12 +1,11 @@
 # yaml-language-server: $schema=../schema.json
+path: $HOME/.config/nvim
+shed: ../../neovim
 items:
-  - path: $HOME/.config/nvim
-    shed: ../../neovim
-    items:
-      - init.lua
-      - filetype.lua
-      - after
-      - lsp
-      - lua
-      - queries
-      - lazy-lock.json
+  - init.lua
+  - filetype.lua
+  - after
+  - lsp
+  - lua
+  - queries
+  - lazy-lock.json
