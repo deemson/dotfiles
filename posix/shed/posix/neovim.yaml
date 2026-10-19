@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.config/nvim
-shed: ../../neovim
+shed: $DOTFILES_DIR/posix/neovim
 items:
   - init.lua
   - filetype.lua

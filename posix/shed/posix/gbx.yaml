@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.config/gbx
-shed: ../../gbx
+shed: $DOTFILES_DIR/posix/gbx
 items:
   - schema.json
   - config.toml

@@ -1,3 +1,4 @@
 # yaml-language-server: $schema=../schema.json
-path: $HOME/.zsh/os
-shed: ../../../macos/zsh/dotzsh/os
+items:
+  - path: $HOME/.zsh/os
+    shed: $DOTFILES_DIR/macos/zsh/dotzsh/os

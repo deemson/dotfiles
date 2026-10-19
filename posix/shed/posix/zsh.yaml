@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME
-shed: ../../zsh
+shed: $DOTFILES_DIR/posix/zsh
 items:
   - path: .zshrc
     shed: dotzsh.zsh

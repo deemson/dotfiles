@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.config
-shed: ../../starship
+shed: $DOTFILES_DIR/posix/starship
 items:
   - starship.toml

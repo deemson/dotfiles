@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.config/yamlfmt
-shed: ../../yamlfmt
+shed: $DOTFILES_DIR/posix/yamlfmt
 items:
   - yamlfmt.yaml

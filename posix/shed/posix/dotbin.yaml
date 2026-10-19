@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.bin
-shed: ../../dotbin
+shed: $DOTFILES_DIR/posix/dotbin
 items:
   - dotfiles

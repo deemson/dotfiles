@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.hammerspoon
-shed: ../../../macos/hammerspoon
+shed: $DOTFILES_DIR/macos/hammerspoon
 items:
   - init.lua
   - utils.lua
