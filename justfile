@@ -6,11 +6,11 @@ shed_manifest := source_directory() / "posix/shed/$DOTFILES_PROFILE.yaml"
 default:
     @just --list
 
-put:
-    shed put {{ shed_manifest }}
+put *options:
+    shed put {{ shed_manifest }} {{ options }}
 
-get:
-    shed get {{ shed_manifest }}
+get *options:
+    shed get {{ shed_manifest }} {{ options }}
 
 lazygit:
     cd {{ source_directory() }} && lazygit
