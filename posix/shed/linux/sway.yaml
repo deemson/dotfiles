@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.config/sway
-shed: ../../../linux/sway
+shed: $DOTFILES_DIR/linux/sway
 items:
   - config
   - config.d

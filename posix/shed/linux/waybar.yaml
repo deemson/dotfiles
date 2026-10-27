@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.config/waybar
-shed: ../../../linux/waybar
+shed: $DOTFILES_DIR/linux/waybar
 items:
   - config.jsonc
   - style.css

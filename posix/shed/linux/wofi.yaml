@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 path: $HOME/.config/wofi
-shed: ../../../linux/wofi
+shed: $DOTFILES_DIR/linux/wofi
 items:
   - config
   - style.css
