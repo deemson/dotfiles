@@ -41,8 +41,8 @@ ruff = "0.16.7"
 # protobuf
 buf = "1.73.0"
 # zig
-zig = "0.16.0"
-zls = "0.16.0"
+zig = "0.17.0"
+zls = "0.17.0"
 # rust
 rust = { version = "1.98.1", components = ["rust-analyzer", "clippy"] }
 # generic things that require something from above
