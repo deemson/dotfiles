@@ -19,7 +19,7 @@ bindsym $mod+Ctrl+Shift+x kill
 # run terminal
 bindsym $mod+t exec $term
 # run file manager
-bindsym $mod+g exec pcmanfm
+bindsym $mod+g exec $filemanager
 # start programs via wofi
 bindsym $mod+r exec wofi --show run
 
